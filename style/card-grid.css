@@ -1,0 +1,358 @@
+.card-grid {
+  padding: 45px 50px 50px 79px;
+}
+
+.card-grid__list {
+  display: grid;
+  grid-gap: 61px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "one one one one one one"
+    "two three four four five five"
+    "six six four four seven seven"
+    "eight eight eight eight nine ten"
+    "eight eight eight eight nine eleven";
+}
+
+.card-banner {
+  width: 1770px;
+  height: 480px;
+  background-image: url("../img/banner.jpg");
+  grid-area: one;
+}
+
+.card-book {
+  width: 245px;
+  height: 228px;
+  background-image: url("../img/grid1.jpg");
+  grid-area: two;
+}
+
+.card-discount {
+  width: 245px;
+  height: 228px;
+  background-image: url("../img/grid2.jpg");
+  grid-area: three;
+}
+
+.card-sneakers {
+  width: 550px;
+  height: 516px;
+  background-image: url("../img/grid3.jpg");
+  grid-area: four;
+}
+
+.card-presents {
+  width: 550px;
+  height: 228px;
+  background-image: url("../img/grid4.jpg");
+  grid-area: five;
+}
+
+.card-red {
+  width: 550px;
+  height: 228px;
+  background-image: url("../img/grid5.jpg");
+  grid-area: six;
+}
+
+.card-appliances {
+  width: 550px;
+  height: 228px;
+  background-image: url("../img/grid6.jpg");
+  grid-area: seven;
+}
+
+.card-decorations {
+  width: 1160px;
+  height: 516px;
+  background-image: url("../img/grid7.jpg");
+  grid-area: eight;
+}
+
+.card-woman {
+  width: 245px;
+  height: 516px;
+  background-image: url("../img/grid8.jpg");
+  grid-area: nine;
+}
+
+.card-chemicals {
+  width: 245px;
+  height: 228px;
+  background-image: url("../img/grid9.jpg");
+  grid-area: ten;
+}
+
+.card-balls {
+  width: 245px;
+  height: 228px;
+  background-image: url("../img/grid10.jpg");
+  grid-area: eleven;
+}
+
+@media (max-width: 1024px) {
+  .card-grid {
+    padding: 24px 38px 45px 42px;
+  }
+
+  .card-grid__list {
+    column-gap: 26px;
+    row-gap: 23px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "one one one one"
+      "two three four four"
+      "six six four four"
+      "five five nine ten"
+      "seven seven nine eleven"
+      "eight eight eight eight";
+  }
+
+  .card-banner {
+    width: 944px;
+    height: 314px;
+    background-image: url("../img/banner1024.jpg");
+    margin-bottom: 24px;
+  }
+
+  .card-book {
+    width: 217px;
+    height: 202px;
+    background-image: url("../img/book1024.jpg");
+  }
+
+  .card-discount {
+    width: 217px;
+    height: 202px;
+    background-image: url("../img/discount1024.jpg");
+  }
+
+  .card-sneakers {
+    width: 446px;
+    height: 418px;
+    background-image: url("../img/sneackers1024.jpg");
+  }
+
+  .card-presents {
+    width: 464px;
+    height: 194px;
+    background-image: url("../img/presents1024.jpg");
+  }
+
+  .card-red {
+    width: 464px;
+    height: 194px;
+    background-image: url("../img/red1024.jpg");
+  }
+
+  .card-appliances {
+    width: 464px;
+    height: 194px;
+    margin-bottom: 27px;
+    background-image: url("../img/appliances1024.jpg");
+  }
+
+  .card-decorations {
+    width: 940px;
+    height: 418px;
+    background-image: url("../img/decorations1024.jpg");
+  }
+
+  .card-woman {
+    width: 206px;
+    height: 410px;
+    background-image: url("../img/woman1024.jpg");
+  }
+
+  .card-chemicals {
+    width: 210px;
+    height: 196px;
+    background-image: url("../img/chemicals1024.jpg");
+  }
+
+  .card-balls {
+    width: 210px;
+    height: 196px;
+    background-image: url("../img/balls1024.jpg");
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    padding: 23px 32px 30px 34px;
+  }
+
+  .card-grid__list {
+    column-gap: 18px;
+    row-gap: 18px;
+    grid-template-columns: 140px 140px 190px 190px;
+    grid-template-areas:
+      "one one one one"
+      "two three four four"
+      "six six four four"
+      "five five nine ten"
+      "seven seven nine eleven"
+      "eight eight eight eight";
+  }
+
+  .card-banner {
+    width: 700px;
+    height: 280px;
+    background-image: url("../img/banner768.jpg");
+    margin-bottom: 24px;
+  }
+
+  .card-book {
+    width: 140px;
+    height: 130px;
+    background-image: url("../img/book768.jpg");
+  }
+
+  .card-discount {
+    width: 140px;
+    height: 130px;
+    background-image: url("../img/discount768.jpg");
+  }
+
+  .card-sneakers {
+    width: 380px;
+    height: 278px;
+    background-image: url("../img/sneackers768.jpg");
+  }
+
+  .card-presents {
+    width: 300px;
+    height: 126px;
+    background-image: url("../img/presents768.jpg");
+  }
+
+  .card-red {
+    width: 300px;
+    height: 126px;
+    background-image: url("../img/red768.jpg");
+  }
+
+  .card-appliances {
+    width: 300px;
+    height: 126px;
+    margin-bottom: 0px;
+    background-image: url("../img/appliances768.jpg");
+  }
+
+  .card-decorations {
+    width: 700px;
+    height: 337px;
+    background-image: url("../img/decorations768.jpg");
+  }
+
+  .card-woman {
+    width: 182px;
+    height: 273px;
+    background-image: url("../img/woman768.jpg");
+  }
+
+  .card-chemicals {
+    width: 178px;
+    height: 131px;
+    background-image: url("../img/chemicals768.jpg");
+  }
+
+  .card-balls {
+    width: 178px;
+    height: 131px;
+    background-image: url("../img/balls768.jpg");
+  }
+}
+
+@media (max-width: 320px) {
+  .card-grid {
+    padding: 18px 21px 20px 20px;
+  }
+
+  .card-grid__list {
+    column-gap: 9px;
+    row-gap: 19px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "one one"
+      "one one"
+      "two three"
+      "six six"
+      "four four"
+      "four four"
+      "five five"
+      "seven seven"
+      "nine ten"
+      "nine eleven"
+      "eight eight";
+  }
+
+  .card-banner {
+    width: 280px;
+    height: 340px;
+    background-image: url("../img/banner320.jpg");
+    margin-bottom: 0px;
+  }
+
+  .card-book {
+    width: 130px;
+    height: 120px;
+    background-image: url("../img/book320.jpg");
+  }
+
+  .card-discount {
+    width: 130px;
+    height: 120px;
+    background-image: url("../img/discount320.jpg");
+  }
+
+  .card-sneakers {
+    width: 280px;
+    height: 206px;
+    background-image: url("../img/sneackers320.jpg");
+  }
+
+  .card-presents {
+    width: 280px;
+    height: 118px;
+    background-image: url("../img/presents320.jpg");
+  }
+
+  .card-red {
+    width: 280px;
+    height: 118px;
+    background-image: url("../img/red320.jpg");
+  }
+
+  .card-appliances {
+    width: 280px;
+    height: 118px;
+    margin-bottom: 0px;
+    background-image: url("../img/appliances320.jpg");
+  }
+
+  .card-decorations {
+    width: 280px;
+    height: 123px;
+    background-image: url("../img/decorations320.jpg");
+  }
+
+  .card-woman {
+    width: 130px;
+    height: 195px;
+    background-image: url("../img/woman320.jpg");
+  }
+
+  .card-chemicals {
+    width: 130px;
+    height: 95px;
+    background-image: url("../img/chemicals320.jpg");
+  }
+
+  .card-balls {
+    width: 130px;
+    height: 94px;
+    background-image: url("../img/balls320.jpg");
+  }
+}

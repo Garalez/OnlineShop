@@ -1,0 +1,167 @@
+.shoe-shine {
+  margin-bottom: 46px;
+}
+
+.shoe-care-home__title,
+.shoe-first__title,
+.warning__title {
+  margin-bottom: 7px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.shoe-shine__text,
+.shoe-first__text,
+.shoe-care-home__text,
+.warning__text {
+  margin-bottom: 12px;
+  line-height: 33px;
+}
+
+.shoe-shine__text {
+  margin-bottom: 51px;
+}
+
+.cream__text,
+.cream__title,
+.drying__text,
+.drying__title {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+}
+
+.shoe-shine__img320 {
+  display: none;
+}
+
+.drying__text:last-child {
+  margin-bottom: 71px;
+}
+
+@media (max-width: 1024px) {
+  .shoe-shine {
+    margin-bottom: 35px;
+  }
+
+  .shoe-care-home__title,
+  .shoe-first__title,
+  .warning__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  .shoe-shine__text,
+  .shoe-first__text,
+  .shoe-care-home__text,
+  .warning__text {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .shoe-shine__text {
+    margin-bottom: 39px;
+  }
+
+  .cream__text,
+  .cream__title,
+  .drying__text,
+  .drying__title {
+    margin-bottom: 9px;
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  .drying__text:last-child {
+    margin-bottom: 46px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shoe-shine {
+    margin-bottom: 26px;
+  }
+
+  .shoe-care-home__title,
+  .shoe-first__title,
+  .warning__title {
+    margin-bottom: 11px;
+    font-size: 22px;
+    line-height: 130%;
+  }
+
+  .shoe-shine__text,
+  .shoe-first__text,
+  .shoe-care-home__text,
+  .warning__text {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 20.8px;
+  }
+
+  .shoe-shine__text {
+    margin-bottom: 31px;
+  }
+
+  .cream__text,
+  .cream__title,
+  .drying__text,
+  .drying__title {
+    margin-bottom: 11px;
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  .drying__text:last-child {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 320px) {
+  .shoe-shine {
+    margin-bottom: 15px;
+  }
+
+  .shoe-care-home__title,
+  .shoe-first__title,
+  .warning__title {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  .shoe-shine__text,
+  .shoe-first__text,
+  .shoe-care-home__text,
+  .warning__text {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 15.6px;
+  }
+
+  .shoe-shine__text {
+    margin-bottom: 20px;
+  }
+
+  .cream__text,
+  .cream__title,
+  .drying__text,
+  .drying__title {
+    margin-bottom: 7px;
+    font-size: 12px;
+  }
+
+  .shoe-shine__img320 {
+    display: initial;
+  }
+
+  .shoe-shine__img {
+    display: none;
+  }
+
+  .drying__text:last-child {
+    margin-bottom: 31px;
+  }
+}

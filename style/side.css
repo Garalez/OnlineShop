@@ -1,0 +1,132 @@
+.side {
+  padding: 33px 59px 0 43px;
+}
+
+.side__city-title {
+  position: absolute;
+  width: 400px;
+  top: 67%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.side__city-subtitle {
+  position: absolute;
+  top: 84%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.side__car-title {
+  position: absolute;
+  width: 400px;
+  top: 73%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.side__car-subtitle {
+  position: absolute;
+  width: fit-content;
+  top: 84%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.side__city {
+  position: relative;
+  width: 532px;
+  height: 328px;
+  background-image: url("../img/Rectangle3.jpg");
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
+}
+
+.side__car {
+  position: relative;
+  width: 532px;
+  height: 328px;
+  background-image: url("../img/Rectangle4.jpg");
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .side {
+    padding: 45px 41px 0 0;
+  }
+
+  .side__city-title {
+    width: 256px;
+    top: 71%;
+    left: 48%;
+    font-size: 22px;
+  }
+
+  .side__city-subtitle {
+    width: 100%;
+    top: 89%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+  }
+
+  .side__car-title {
+    width: 100%;
+    top: 69%;
+    left: 55%;
+    font-size: 22px;
+  }
+
+  .side__car-subtitle {
+    width: 250px;
+    top: 85%;
+    left: 46%;
+    font-size: 14px;
+  }
+
+  .side__city {
+    width: 300px;
+    height: 254px;
+    background-image: url("../img/city1024.jpg");
+    margin-bottom: 40px;
+  }
+
+  .side__car {
+    width: 300px;
+    height: 254px;
+    background-image: url("../img/car1024.jpg");
+  }
+}
+
+@media (max-width: 768px) {
+  .side {
+    padding: 12px 36px 0 43px;
+  }
+
+  .side__list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 320px) {
+  .side {
+    display: none;
+  }
+}

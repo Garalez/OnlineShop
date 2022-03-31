@@ -1,0 +1,159 @@
+.shoe-care {
+  padding: 38px 95px 60px 75px;
+}
+
+.shoe-care__title {
+  margin-bottom: 38px;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 130%;
+}
+
+.shoe-care__figure {
+  margin-bottom: 47px;
+}
+
+.shoe-care__text {
+  max-width: 1090px;
+  line-height: 150%;
+  margin-bottom: 19px;
+}
+
+.shoe-care__text-wrap {
+  margin-bottom: 60px;
+}
+
+.shoe-care__figure-list {
+  margin-bottom: 59px;
+  padding-left: 25px;
+  list-style: decimal;
+}
+
+.shoe-care__figure-item {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.shoe-care__pic-320 {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .shoe-care {
+    padding: 31px 21px 35px 40px;
+  }
+
+  .shoe-care__title {
+    width: 520px;
+    margin-bottom: 29px;
+    font-size: 40px;
+  }
+
+  .shoe-care__figure {
+    margin-bottom: 38px;
+  }
+
+  .shoe-care__text {
+    font-size: 18px;
+  }
+
+  .shoe-care__text-wrap {
+    margin-bottom: 42px;
+  }
+
+  .shoe-care__figure-list {
+    margin-bottom: 39px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shoe-care {
+    padding: 23px 35px 35px 33px;
+  }
+
+  .shoe-care__title {
+    width: 100%;
+    margin-bottom: 18px;
+    font-size: 28px;
+  }
+
+  .shoe-care__text {
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  .shoe-care__text:first-child {
+    margin-bottom: 12px;
+  }
+
+  .shoe-care__text:last-child {
+    margin-bottom: 0;
+  }
+
+  .shoe-care__text-wrap {
+    margin-bottom: 27px;
+  }
+
+  .shoe-care__figure-list {
+    padding-left: 22px;
+    margin-bottom: 31px;
+  }
+
+  .shoe-care__figure-item {
+    font-size: 14px;
+  }
+
+  .shoe-care__figure {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 320px) {
+  .shoe-care {
+    padding: 11px 21px 21px 19px;
+  }
+
+  .shoe-care__title {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .shoe-care__text {
+    line-height: 130%;
+    font-size: 12px;
+  }
+
+  .shoe-care__text:first-child {
+    margin-bottom: 10px;
+  }
+
+  .shoe-care__text:last-child {
+    margin-bottom: 0;
+  }
+
+  .shoe-care__text-wrap {
+    margin-bottom: 33px;
+  }
+
+  .shoe-care__figure-list {
+    padding-left: 13px;
+    margin-bottom: 21px;
+  }
+
+  .shoe-care__pic {
+    display: none;
+  }
+
+  .shoe-care__pic-320 {
+    display: initial;
+  }
+
+  .shoe-care__figure-item {
+    font-size: 8px;
+  }
+
+  .shoe-care__figure {
+    margin-bottom: 14px;
+  }
+}
