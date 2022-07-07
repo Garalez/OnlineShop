@@ -1,4 +1,5 @@
 const article = document.querySelector('.shoe-care');
+const backToBlogs = document.querySelector('.footer__item-ref');
 
 const fullBlog = async () => {
   article.innerHTML = '';
@@ -37,6 +38,8 @@ const fullBlog = async () => {
   const commentsCount = document.createElement('span');
   commentsCount.classList.add('blog__item-comments');
   commentsCount.textContent = '0';
+
+  backToBlogs.href = 'blog.html';
 
   blogMedia.append(viewsCount, commentsCount);
   author.after(uploadDate, blogMedia);
