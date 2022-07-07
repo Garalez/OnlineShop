@@ -1,18 +1,12 @@
 @import url("./side.css");
-
 @import url("./shoe-care.css");
-
 @import url("./warning.css");
-
 @import url("./header.css");
-
 @import url("./card-grid.css");
-
 @import url("./card-footer.css");
-
 @import url("./var.css");
-
 @import url("./footer.css");
+@import url("./blog.css");
 
 @font-face {
   font-family: Lato;
