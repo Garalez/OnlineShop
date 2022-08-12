@@ -3,9 +3,9 @@
 }
 
 .header__nav-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    "logo menu input area";
 }
 
 .space {
@@ -133,7 +133,6 @@
   }
 
   .header__nav-list {
-    display: grid;
     row-gap: 35px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:

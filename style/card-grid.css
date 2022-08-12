@@ -14,81 +14,125 @@
     "eight eight eight eight nine eleven";
 }
 
+.card-grid__item-banner {
+  grid-area: one;
+}
+
+.card-grid__item-book {
+  grid-area: two;
+}
+
+.card-grid__item-discount {
+  grid-area: three;
+}
+
+.card-grid__item-sneakers {
+  grid-area: four;
+}
+
+.card-grid__item-presents {
+  grid-area: five;
+}
+
+.card-grid__item-red {
+  grid-area: six;
+}
+
+.card-grid__item-appliances {
+  grid-area: seven;
+}
+
+.card-grid__item-decorations {
+  grid-area: eight;
+}
+
+.card-grid__item-woman {
+  grid-area: nine;
+}
+
+.card-grid__item-chemicals {
+  grid-area: ten;
+}
+
+.card-grid__item-balls {
+  grid-area: eleven;
+}
+
 .card-banner {
   width: 1770px;
   height: 480px;
   background-image: url("../img/banner.jpg");
-  grid-area: one;
+  display: block;
 }
 
 .card-book {
   width: 245px;
   height: 228px;
   background-image: url("../img/grid1.jpg");
-  grid-area: two;
+  display: block;
 }
 
 .card-discount {
   width: 245px;
   height: 228px;
   background-image: url("../img/grid2.jpg");
-  grid-area: three;
+  display: block;
 }
 
 .card-sneakers {
   width: 550px;
   height: 516px;
   background-image: url("../img/grid3.jpg");
-  grid-area: four;
+  display: block;
 }
 
 .card-presents {
   width: 550px;
   height: 228px;
   background-image: url("../img/grid4.jpg");
-  grid-area: five;
+  display: block;
 }
 
 .card-red {
   width: 550px;
   height: 228px;
   background-image: url("../img/grid5.jpg");
-  grid-area: six;
+  display: block;
 }
 
 .card-appliances {
   width: 550px;
   height: 228px;
   background-image: url("../img/grid6.jpg");
-  grid-area: seven;
+  display: block;
 }
 
 .card-decorations {
   width: 1160px;
   height: 516px;
   background-image: url("../img/grid7.jpg");
-  grid-area: eight;
+  display: block;
 }
 
 .card-woman {
   width: 245px;
   height: 516px;
   background-image: url("../img/grid8.jpg");
-  grid-area: nine;
+  display: block;
 }
 
 .card-chemicals {
   width: 245px;
   height: 228px;
   background-image: url("../img/grid9.jpg");
-  grid-area: ten;
+  display: block;
 }
 
 .card-balls {
   width: 245px;
   height: 228px;
   background-image: url("../img/grid10.jpg");
-  grid-area: eleven;
+  display: block;
 }
 
 @media (max-width: 1024px) {

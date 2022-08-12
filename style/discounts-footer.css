@@ -1,0 +1,139 @@
+.footer-discounts__wrapper {
+  padding: 81px 0px 77px 75px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+a {
+  color: var(--white);
+}
+
+.footer-discounts__hrefs {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.footer-discounts__logo-text {
+  margin-right: 121px;
+  font-family: 'Open Sans';
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 41px;
+}
+
+.footer-discounts__logo-second {
+  color: var(--blue);
+}
+
+.footer-discounts__catalog-list,
+.footer-discounts__addition-list,
+.footer-discounts__clients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+}
+
+.footer-discounts__catalog-list {
+  margin-right: 42px;
+}
+
+.footer-discounts__addition-list {
+  margin-right: 114px;
+  justify-content: end;
+}
+
+.footer-discounts__clients-list {
+  margin-right: 189px;
+}
+
+.footer-discounts__contacts-list {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.footer-discounts__catalog-item:first-child,
+.footer-discounts__clients-item:first-child {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.footer-discounts__contacts-item:first-child {
+  margin-bottom: 42px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.footer-discounts__contacts-item {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.footer-discounts__contacts-item:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+.footer-discounts__contacts-item:nth-child(3) {
+  margin-bottom: 38px;
+}
+
+.footer-discounts__contacts-socials {
+  display: flex;
+  gap: 20px;;
+}
+
+.footer-discounts__contacts-whats-app {
+  width: 26px;
+  height: 26px;
+  background-image: url("../img/discounts/ant-design_whats-app-outlined.svg");
+  display: block;
+}
+
+.footer-discounts__contacts-instagram {
+  width: 26px;
+  height: 26px;
+  background-image: url("../img/discounts/bi_instagram.svg");
+  display: block;
+}
+
+.footer-discounts__contacts-youtube {
+  width: 26px;
+  height: 26px;
+  background-image: url("../img/discounts/ant-design_youtube-outlined.svg");
+  display: block;
+}
+
+.footer-discounts__contacts-facebook {
+  width: 26px;
+  height: 26px;
+  background-image: url("../img/discounts/feather_facebook.svg");
+  display: block;
+}
+
+.footer-discounts__contacts-telegram {
+  width: 26px;
+  height: 26px;
+  background-image: url("../img/discounts/la_telegram-plane.svg");
+  display: block;
+}
+
+.footer-discounts__copy-list {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 350px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.footer-discounts__copy-author {
+  margin-bottom: 13px;
+}

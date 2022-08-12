@@ -13,87 +13,200 @@
     <nav class="header__nav">
       <ul class="header__nav-list">
         <li class="header__nav-item header__nav-item1">
-          <a class="header__nav-logo" href="./article.html"></a>
+          <a class="header__nav-logo" href="./article.html" aria-label="Логотип сайта Shop Online"></a>
         </li>
         <li class="header__nav-item header__nav-item2">
-          <button class="header__nav-btn"></button>
+          <button class="header__nav-btn" aria-label="Меню"></button>
         </li>
         <li class="header__nav-item header__nav-item3">
           <input class="header__nav-input" type="text" placeholder="Я ищу...">
-          <button class="header__nav-input-btn"></button>
+          <button class="header__nav-input-btn" aria-label="Поиск"></button>
         </li>
         <li class="header__nav-item header__nav-item4">
-          <button class="header__nav-profile"></button>
-          <button class="header__nav-basket"></button>
-          <button class="header__nav-favorite"></button>
+          <button class="header__nav-profile" aria-label="Профиль"></button>
+          <button class="header__nav-basket" aria-label="Корзина"></button>
+          <button class="header__nav-favorite" aria-label="Избранное"></button>
         </li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="card-grid container">
-      <ul class="card-grid__list">
-        <li class="card-grid__item card-banner"></li>
-        <li class="card-grid__item card-book"></li>
-        <li class="card-grid__item card-discount"></li>
-        <li class="card-grid__item card-sneakers"></li>
-        <li class="card-grid__item card-presents"></li>
-        <li class="card-grid__item card-red"></li>
-        <li class="card-grid__item card-appliances"></li>
-        <li class="card-grid__item card-decorations"></li>
-        <li class="card-grid__item card-woman"></li>
-        <li class="card-grid__item card-chemicals"></li>
-        <li class="card-grid__item card-balls"></li>
+    <div class="container">
+    <section class="card-grid">
+        <h1 class="card-grid__title visually-hidden">Каталог</h1>
+
+        <ul class="card-grid__list">
+          <li class="card-grid__item card-grid__item-banner">
+            <a class="card-grid__item-btn card-banner" tabindex="0" href="" aria-label="Скидки на ноутбуки 50%"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-book">
+            <a class="card-grid__item-btn card-book" tabindex="0" href="" aria-label="Книга - лучший подарок"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-discount">
+            <a class="card-grid__item-btn card-discount" tabindex="0" href="" aria-label="Время скидок"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-sneakers">
+            <a class="card-grid__item-btn card-sneakers" tabindex="0" href="" aria-label="Вторая пара кроссовок в подарок"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-presents">
+            <a class="card-grid__item-btn card-presents" tabindex="0" href="" aria-label="Идеи новогодних подарков"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-red">
+            <a class="card-grid__item-btn card-red" tabindex="0" href="" aria-label="Скидки на кроссовки 40%"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-appliances">
+            <a class="card-grid__item-btn card-appliances" tabindex="0" href="" aria-label="Выгодно в декабре. Скидки 15%"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-decorations">
+            <a class="card-grid__item-btn card-decorations" tabindex="0" href="" aria-label="Новогодние украшения"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-woman">
+            <a class="card-grid__item-btn card-woman" tabindex="0" href="" aria-label="Скидки на платья 55%"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-chemicals">
+            <a class="card-grid__item-btn card-chemicals" tabindex="0" href="" aria-label="Скидки на бытовую химию 25%"></a>
+          </li>
+          <li class="card-grid__item card-grid__item-balls">
+            <a class="card-grid__item-btn card-balls" tabindex="0" href="" aria-label="Ёлочные игрушки"></a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card-footer">
+        <h2 class="card-footer__title">Это выгодно!</h2>
+        <ul class="card-footer__list">
+          <li class="card-footer__item" tabindex="0">
+            <div class="card-footer__item-shirts discount-50"></div>
+            <p class="card-footer__item-price">1299 ₽ <s class="line-through">2598 ₽</s></p>
+            <p class="card-footer__item-name">Пара футболок</p>
+          </li>
+          <li class="card-footer__item" tabindex="0">
+            <div class="card-footer__item-sneakers discount-40"></div>
+            <p class="card-footer__item-price">2099₽ <s class="line-through">5938 ₽</s></p>
+            <p class="card-footer__item-name">Кроссовки</p>
+          </li>
+          <li class="card-footer__item" tabindex="0">
+            <div class="card-footer__item-bedroom discount-10"></div>
+            <p class="card-footer__item-price">3902 ₽ <s class="line-through">4490 ₽</s></p>
+            <p class="card-footer__item-name">Постельное белье</p>
+          </li>
+          <li class="card-footer__item" tabindex="0">
+            <div class="card-footer__item-dryers discount-30"></div>
+            <p class="card-footer__item-price">2999 ₽ <s class="line-through">6030 ₽</s></p>
+            <p class="card-footer__item-name">Фен</p>
+          </li>
+          <li class="card-footer__item" tabindex="0">
+            <div class="card-footer__item-bedroom discount-10"></div>
+            <p class="card-footer__item-price">3902 ₽ <s class="line-through">4490 ₽</s></p>
+            <p class="card-footer__item-name">Постельное белье</p>
+          </li>
+          <li class="card-footer__item" tabindex="0">
+            <div class="card-footer__item-dryers discount-30"></div>
+            <p class="card-footer__item-price">2999 ₽ <s class="line-through">6030 ₽</s></p>
+            <p class="card-footer__item-name">Фен</p>
+          </li>
+          <li class="card-footer__item" tabindex="0">
+            <div class="card-footer__item-mittens discount-30"></div>
+            <p class="card-footer__item-price">540 ₽ <s class="line-through">890 ₽</s></p>
+            <p class="card-footer__item-name">Варежки-мишки</p>
+          </li>
+          <li class="card-footer__item" tabindex="0">
+            <div class="card-footer__item-shirts discount-50"></div>
+            <p class="card-footer__item-price">1299 ₽ <s class="line-through">2598 ₽</s></p>
+            <p class="card-footer__item-name">Пара футболок</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer-discounts">
+    <div class="footer-discounts__wrapper">
+      <div class="footer-discounts__hrefs">
+        <a class="footer-discounts__logo-text" href="">
+          <span class="footer-discounts__logo-first">Shop</span><span class="footer-discounts__logo-second">Online</span>
+        </a>
+
+        <ul class="footer-discounts__catalog-list">
+          <li class="footer-discounts__catalog-item">Каталог</li>
+          <li class="footer-discounts__catalog-item">
+            <a href="">Смартфоны</a>
+          </li>
+          <li class="footer-discounts__catalog-item">
+            <a href="">Ноутбуки</a>
+          </li>
+          <li class="footer-discounts__catalog-item">
+            <a href="">Ювелирные изделия</a>
+          </li>
+          <li class="footer-discounts__catalog-item">
+            <a href="">Одежда</a>
+          </li>
+          <li class="footer-discounts__catalog-item">
+            <a href="">Бытовая техника</a>
+          </li>
+        </ul>
+
+        <ul class="footer-discounts__addition-list">
+          <li class="footer-discounts__addition-item">
+            <a href="">Бытовая химия</a>
+          </li>
+          <li class="footer-discounts__addition-item">
+            <a href="">Книги и журналы</a>
+          </li>
+          <li class="footer-discounts__addition-item">
+            <a href="">Домашний текстиль</a>
+          </li>
+          <li class="footer-discounts__addition-item">
+            <a href="">Электроника</a>
+          </li>
+          <li class="footer-discounts__addition-item">
+            <a href="">Косметика</a>
+          </li>
+        </ul>
+
+        <ul class="footer-discounts__clients-list">
+          <li class="footer-discounts__clients-item">Покупателям</li>
+          <li class="footer-discounts__clients-item">
+            <a href="">Оплата заказа</a>
+          </li>
+          <li class="footer-discounts__clients-item">
+            <a href="">Условия доставки</a>
+          </li>
+          <li class="footer-discounts__clients-item">
+            <a href="">Условия возврата заказа</a>
+          </li>
+          <li class="footer-discounts__clients-item">
+            <a href="">Блог</a>
+          </li>
+        </ul>
+
+        <ul class="footer-discounts__contacts-list">
+          <li class="footer-discounts__contacts-item">Контакты</li>
+          <li class="footer-discounts__contacts-item">
+            <a href="tel:79378392361">Тел: +7 937 839 23-61</a>
+          </li>
+          <li class="footer-discounts__contacts-item">
+            <a href="mailto:OnlineShop@gmail.com">Email: OnlineShop@gmail.com</a>
+          </li>
+          <li class="footer-discounts__contacts-item footer-discounts__contacts-socials">
+            <a class="footer-discounts__contacts-whats-app" href="" aria-label="Ссылка на соцсеть whats-app"></a>
+            <a class="footer-discounts__contacts-instagram" href="" aria-label="Ссылка на соцсеть instagram"></a>
+            <a class="footer-discounts__contacts-youtube" href="" aria-label="Ссылка на соцсеть youtube"></a>
+            <a class="footer-discounts__contacts-facebook" href="" aria-label="Ссылка на соцсеть facebook"></a>
+            <a class="footer-discounts__contacts-telegram" href="" aria-label="Ссылка на соцсеть telegram"></a>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="footer-discounts__copy-list">
+        <li class="footer-discounts__copy-item">© OnlineShop, 2021</li>
+        <li class="footer-discounts__copy-item">
+          <p class="footer-discounts__copy-author">Design by Anastasia Ilina</p>
+          <a class="footer-discounts__copy-media" href="">Tg: @Mrshmallowww</a>
+        </li>
       </ul>
     </div>
-
-    <section class="card-footer container">
-      <h1 class="card-footer__title">Это выгодно!</h1>
-
-      <ul class="card-footer__list">
-        <li class="card-footer__item">
-          <div class="card-footer__item-shirts discount-50"></div>
-          <p class="card-footer__item-price">1299 ₽ <s class="line-through">2598 ₽</s></p>
-          <p class="card-footer__item-name">Пара футболок</p>
-        </li>
-        <li class="card-footer__item">
-          <div class="card-footer__item-sneakers discount-40"></div>
-          <p class="card-footer__item-price">2099₽ <s class="line-through">5938 ₽</s></p>
-          <p class="card-footer__item-name">Кроссовки</p>
-        </li>
-        <li class="card-footer__item">
-          <div class="card-footer__item-bedroom discount-10"></div>
-          <p class="card-footer__item-price">3902 ₽ <s class="line-through">4490 ₽</s></p>
-          <p class="card-footer__item-name">Постельное белье</p>
-        </li>
-        <li class="card-footer__item">
-          <div class="card-footer__item-dryers discount-30"></div>
-          <p class="card-footer__item-price">2999 ₽ <s class="line-through">6030 ₽</s></p>
-          <p class="card-footer__item-name">Фен</p>
-        </li>
-        <li class="card-footer__item">
-          <div class="card-footer__item-bedroom discount-10"></div>
-          <p class="card-footer__item-price">3902 ₽ <s class="line-through">4490 ₽</s></p>
-          <p class="card-footer__item-name">Постельное белье</p>
-        </li>
-        <li class="card-footer__item">
-          <div class="card-footer__item-dryers discount-30"></div>
-          <p class="card-footer__item-price">2999 ₽ <s class="line-through">6030 ₽</s></p>
-          <p class="card-footer__item-name">Фен</p>
-        </li>
-        <li class="card-footer__item">
-          <div class="card-footer__item-mittens discount-30"></div>  
-          <p class="card-footer__item-price">540 ₽ <s class="line-through">890 ₽</s></p>
-          <p class="card-footer__item-name">Варежки-мишки</p>
-        </li>
-        <li class="card-footer__item">
-          <div class="card-footer__item-shirts discount-50"></div>
-          <p class="card-footer__item-price">1299 ₽ <s class="line-through">2598 ₽</s></p>
-          <p class="card-footer__item-name">Пара футболок</p>
-        </li>
-      </ul>
-    </section>
-  </main>
+  </footer>
 </body>
 </html>
