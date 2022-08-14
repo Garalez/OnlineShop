@@ -1,0 +1,368 @@
+.footer {
+  &__wrapper {
+    padding: 81px 0px 77px 58px;
+    background-color: $black;
+    color: $white;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-areas: 
+    "logo hrefs"
+    "copyright copyright";
+    @media (max-width: 1024px) {
+      padding: 60px 0 43px 42px;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "logo"
+      "hrefs"
+      "copyright";
+    }
+    @media (max-width: 768px) {
+      padding: 41px 0 35px 34px;
+    }
+    @media (max-width: 320px) {
+      padding: 30px 0 19px 20px;
+    }
+  }
+
+  &__hrefs {
+    display: flex;
+    margin-bottom: 50px;
+    grid-area: hrefs;
+    @media (max-width: 1024px) {
+      display: grid;
+      grid-template-columns: 0.88fr 1fr 1fr;
+      grid-template-areas: 
+      "catalog clients contacts"
+      "addition clients contacts"
+      "copyright copyright copyright";
+      margin-bottom: 60px;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: 0.94fr 0.94fr 1fr;
+      margin-bottom: 55px;
+    }
+    @media (max-width: 320px) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__logo {
+    &-wrapper {
+      grid-area: logo;
+      @media (max-width: 1024px) {
+        margin-bottom: 63px;
+      }
+      @media (max-width: 768px) {
+        margin-bottom: 40px;
+      }
+      @media (max-width: 320px) {
+        margin-bottom: 29px;
+      }
+    }
+    &-text{
+    font-family: 'Open Sans';
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 41px;
+    @media (max-width: 1024px) {
+      font-size: 30px;
+    }
+    @media (max-width: 768px) {
+      font-size: 27px;
+      line-height: 33px;
+    }
+    @media (max-width: 320px) {
+      font-size: 22px;
+      line-height: 27px;
+    }
+    }
+    &-second {
+      color: $blue;
+    }
+  }
+
+  &__catalog-list,
+  &__addition-list,
+  &__clients-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    @media (max-width: 768px) {
+      gap: 10px;
+      font-size: 16px;
+    }
+    @media (max-width: 320px) {
+      font-size: 12px;
+    }
+  }
+
+  &__catalog {
+    &-list {
+      margin-right: 42px;
+      grid-area: catalog;
+      @media (max-width: 1024px) {
+        margin: 0 0 15px 0;
+      }
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+      @media (max-width: 320px) {
+        gap: 0;
+        margin-bottom: 11px;
+      }
+    }
+    &-item {
+      white-space: nowrap;
+      @media (max-width: 320px) {
+        height: 0;
+        overflow: hidden;
+        transition: height .4s ease-in-out;
+      }
+      &:first-child {
+        height: auto;
+        overflow: auto;
+        pointer-events: none;
+        margin-bottom: 25px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+        @media (max-width: 1024px) {
+          margin-bottom: 14px;
+        }
+        @media (max-width: 768px) {
+          margin-bottom: 9px;
+          font-size: 26px;
+        }
+        @media (max-width: 320px) {
+          display: flex;
+          gap: 13px;
+          margin-bottom: 9px;
+          font-size: 20px;
+          pointer-events: all;
+        }
+      }
+    }
+    &-btn {
+      display: none;
+      @media (max-width: 320px) {
+        display: block;
+        width: 0;
+        height: 0;
+        border: 7px solid transparent; 
+        border-top: 7px solid $white;
+        background-color: transparent;
+        align-self: flex-end;
+        transform: translate(0px, -3px);
+      }
+    }
+  }
+
+  &__addition {
+    &-list {
+      margin-right: 114px;
+      justify-content: end;
+      grid-area: addition;
+      @media (max-width: 1024px) {
+        margin: 0;
+      }
+      @media (max-width: 320px) {
+        gap: 0;
+        margin-bottom: 0px;
+      }
+    }
+    &-item {
+      @media (max-width: 320px) {
+        height: 0;
+        overflow: hidden;
+        transition: height .4s ease-in-out;
+      }
+    }
+  }
+
+  &__clients {
+    &-list {
+      margin-right: 189px;
+      grid-area: clients;
+      @media (max-width: 1024px) {
+        margin: 0;
+      }
+      @media (max-width: 320px) {
+        gap: 4px;
+        margin-bottom: 30px;
+      }
+    }
+    &-item {
+      @media (max-width: 320px) {
+        height: 0;
+        overflow: hidden;
+        transition: height .4s ease-in-out;
+      }
+      &:first-child {
+        height: auto;
+        overflow: auto;
+        margin-bottom: 25px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+        pointer-events: none;
+        @media (max-width: 1024px) {
+          margin-bottom: 14px;
+        }
+        @media (max-width: 768px) {
+          margin-bottom: 9px;
+          font-size: 26px;
+        }
+        @media (max-width: 320px) {
+          display: flex;
+          gap: 13px;
+          margin-bottom: 3px;
+          font-size: 20px;
+          pointer-events: all;
+        }
+      }
+    }
+    &-btn {
+      display: none;
+      @media (max-width: 320px) {
+        display: block;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent; 
+        border-top: 7px solid $white;
+        background-color: transparent;
+        align-self: flex-end;
+        transform: translate(0px, -2px);
+      }
+    }
+  }
+
+  &__contacts {
+    &-list {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      grid-area: contacts;
+    }
+    &-item {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
+      @media (max-width: 320px) {
+        font-size: 10px;
+      }
+      &:first-child {
+        margin-bottom: 42px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+        @media (max-width: 1024px) {
+          margin-bottom: 33px;
+        }
+        @media (max-width: 768px) {
+          margin-bottom: 20px;
+          font-size: 26px;
+        }
+        @media (max-width: 320px) {
+          margin-bottom: 9px;
+          font-size: 20px;
+        }
+      }
+      &:nth-child(2) {
+        margin-bottom: 20px;
+        @media (max-width: 768px) {
+          margin-bottom: 13px;
+        }
+        @media (max-width: 320px) {
+          margin-bottom: 9px;
+        }
+      }
+      &:nth-child(3) {
+        margin-bottom: 38px;
+        @media (max-width: 768px) {
+          margin-bottom: 28px;
+        }
+        @media (max-width: 320px) {
+          margin-bottom: 22px;
+        }
+      }
+    }
+    &-socials {
+      display: flex;
+      gap: 20px;
+      @media (max-width: 768px) {
+        gap: 15px;
+      }
+    }
+    &-whats-app {
+      width: 26px;
+      height: 26px;
+      background-image: url("../img/discounts/ant-design_whats-app-outlined.svg");
+      display: block;
+    }
+    &-instagram {
+      width: 26px;
+      height: 26px;
+      background-image: url("../img/discounts/bi_instagram.svg");
+      display: block;
+    }
+    &-youtube {
+      width: 26px;
+      height: 26px;
+      background-image: url("../img/discounts/ant-design_youtube-outlined.svg");
+      display: block;
+    }
+    &-facebook {
+      width: 26px;
+      height: 26px;
+      background-image: url("../img/discounts/feather_facebook.svg");
+      display: block;
+    }
+    &-telegram {
+      width: 26px;
+      height: 26px;
+      background-image: url("../img/discounts/la_telegram-plane.svg");
+      display: block;
+    }
+  }
+
+  &__copy {
+    grid-area: copyright;
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 350px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      @media (max-width: 1024px) {
+        padding-right: 87px;
+      }
+      @media (max-width: 768px) {
+        padding-right: 123px;
+        font-size: 12px;
+      }
+      @media (max-width: 320px) {
+        padding-right: 40px;
+        font-size: 10px;
+      }
+    }
+    &-author {
+      margin-bottom: 13px;
+      @media (max-width: 1024px) {
+        margin-bottom: 10px;
+      }
+      @media (max-width: 320px) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

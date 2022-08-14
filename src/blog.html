@@ -9,122 +9,140 @@
   <title>Blog</title>
 </head>
 <body>
-  <header class="header container">
-    <nav class="header__nav">
-      <ul class="header__nav-list space">
-        <li class="header__nav-item header__nav-item1">
-          <a class="header__nav-logo" href="./index.html"></a>
-        </li>
-        <li class="header__nav-item header__nav-item2">
-          <button class="header__nav-btn"></button>
-        </li>
-        <li class="header__nav-item header__nav-item3">
-          <input class="header__nav-input" type="text" placeholder="Я ищу...">
-          <button class="header__nav-input-btn"></button>
-        </li>
-        <li class="header__nav-item header__nav-item4">
-          <button class="header__nav-profile"></button>
-          <button class="header__nav-basket"></button>
-          <button class="header__nav-favorite"></button>
-        </li>
-      </ul>
-
-      <ul class="header__breadcrumb-list">
-        <li class="header__breadcrumb-item">
-          <a class="header__breadcrumb-ref" href="">Главная</a>
-        </li>
-        <li class="header__breadcrumb-item">
-          <a class="header__breadcrumb-ref" href="">Блог</a>
-        </li>
-      </ul>
-    </nav>
+  <header class="header">
+    <div class="container">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item header__nav-item1">
+            <a class="header__nav-logo" href="./index.html"></a>
+          </li>
+          <li class="header__nav-item header__nav-item2">
+            <button class="header__nav-btn"></button>
+          </li>
+          <li class="header__nav-item header__nav-item3">
+            <form class="header__nav-form" action="#">
+              <input class="header__nav-input" type="text" placeholder="Я ищу..." name="search">
+              <button class="header__nav-input-btn" type="submit"></button>
+            </form>
+          </li>
+          <li class="header__nav-item header__nav-item4">
+            <button class="header__nav-profile"></button>
+            <button class="header__nav-basket"></button>
+            <button class="header__nav-favorite"></button>
+          </li>
+        </ul>
+        <ul class="header__breadcrumb-list">
+          <li class="header__breadcrumb-item">
+            <a class="header__breadcrumb-ref" href="">Главная</a>
+          </li>
+          <li class="header__breadcrumb-item">
+            <a class="header__breadcrumb-ref" href="">Блог</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
   
   <main>
     <div class="blog-wrapper"></div>
   </main>
 
-  <footer class="footer-discounts">
+  <footer class="footer">
     <div class="container">
-      <div class="footer-discounts__wrapper">
-        <div class="footer-discounts__hrefs">
-          <a class="footer-discounts__logo-text" href="">
-            <span class="footer-discounts__logo-first">Shop</span><span class="footer-discounts__logo-second">Online</span>
+      <div class="footer__wrapper">
+        <div class="footer__logo-wrapper">
+          <a class="footer__logo-text" href="">
+            <span class="footer__logo-first">Shop</span><span class="footer__logo-second">Online</span>
           </a>
-          <ul class="footer-discounts__catalog-list">
-            <li class="footer-discounts__catalog-item">Каталог</li>
-            <li class="footer-discounts__catalog-item">
+        </div>
+
+        <div class="footer__hrefs">
+          <ul class="footer__catalog-list">
+            <li class="footer__catalog-item">
+              Каталог
+              <button class="footer__catalog-btn"></button>
+            </li>
+            <li class="footer__catalog-item">
               <a href="">Смартфоны</a>
             </li>
-            <li class="footer-discounts__catalog-item">
+            <li class="footer__catalog-item">
               <a href="">Ноутбуки</a>
             </li>
-            <li class="footer-discounts__catalog-item">
+            <li class="footer__catalog-item">
               <a href="">Ювелирные изделия</a>
             </li>
-            <li class="footer-discounts__catalog-item">
+            <li class="footer__catalog-item">
               <a href="">Одежда</a>
             </li>
-            <li class="footer-discounts__catalog-item">
+            <li class="footer__catalog-item">
               <a href="">Бытовая техника</a>
             </li>
           </ul>
-          <ul class="footer-discounts__addition-list">
-            <li class="footer-discounts__addition-item">
+
+          <ul class="footer__addition-list">
+            <li class="footer__addition-item">
               <a href="">Бытовая химия</a>
             </li>
-            <li class="footer-discounts__addition-item">
+            <li class="footer__addition-item">
               <a href="">Книги и журналы</a>
             </li>
-            <li class="footer-discounts__addition-item">
+            <li class="footer__addition-item">
               <a href="">Домашний текстиль</a>
             </li>
-            <li class="footer-discounts__addition-item">
+            <li class="footer__addition-item">
               <a href="">Электроника</a>
             </li>
-            <li class="footer-discounts__addition-item">
+            <li class="footer__addition-item">
               <a href="">Косметика</a>
             </li>
           </ul>
-          <ul class="footer-discounts__clients-list">
-            <li class="footer-discounts__clients-item">Покупателям</li>
-            <li class="footer-discounts__clients-item">
+
+          <ul class="footer__clients-list">
+            <li class="footer__clients-item">
+              Покупателям
+              <button class="footer__clients-btn"></button>
+            </li>
+            <li class="footer__clients-item">
               <a href="">Оплата заказа</a>
             </li>
-            <li class="footer-discounts__clients-item">
+            <li class="footer__clients-item">
               <a href="">Условия доставки</a>
             </li>
-            <li class="footer-discounts__clients-item">
+            <li class="footer__clients-item">
               <a href="">Условия возврата заказа</a>
             </li>
-            <li class="footer-discounts__clients-item">
+            <li class="footer__clients-item">
               <a href="">Блог</a>
             </li>
           </ul>
-          <ul class="footer-discounts__contacts-list">
-            <li class="footer-discounts__contacts-item">Контакты</li>
-            <li class="footer-discounts__contacts-item">
+
+          <ul class="footer__contacts-list">
+            <li class="footer__contacts-item">Контакты</li>
+            <li class="footer__contacts-item">
               <a href="tel:79378392361">Тел: +7 937 839 23-61</a>
             </li>
-            <li class="footer-discounts__contacts-item">
+            <li class="footer__contacts-item">
               <a href="mailto:OnlineShop@gmail.com">Email: OnlineShop@gmail.com</a>
             </li>
-            <li class="footer-discounts__contacts-item footer-discounts__contacts-socials">
-              <a class="footer-discounts__contacts-whats-app" href="" aria-label="Ссылка на соцсеть whats-app"></a>
-              <a class="footer-discounts__contacts-instagram" href="" aria-label="Ссылка на соцсеть instagram"></a>
-              <a class="footer-discounts__contacts-youtube" href="" aria-label="Ссылка на соцсеть youtube"></a>
-              <a class="footer-discounts__contacts-facebook" href="" aria-label="Ссылка на соцсеть facebook"></a>
-              <a class="footer-discounts__contacts-telegram" href="" aria-label="Ссылка на соцсеть telegram"></a>
+            <li class="footer__contacts-item footer__contacts-socials">
+              <a class="footer__contacts-whats-app" href="" aria-label="Ссылка на соцсеть whats-app"></a>
+              <a class="footer__contacts-instagram" href="" aria-label="Ссылка на соцсеть instagram"></a>
+              <a class="footer__contacts-youtube" href="" aria-label="Ссылка на соцсеть youtube"></a>
+              <a class="footer__contacts-facebook" href="" aria-label="Ссылка на соцсеть facebook"></a>
+              <a class="footer__contacts-telegram" href="" aria-label="Ссылка на соцсеть telegram"></a>
             </li>
           </ul>
         </div>
-        <ul class="footer-discounts__copy-list">
-          <li class="footer-discounts__copy-item">© OnlineShop, 2021</li>
-          <li class="footer-discounts__copy-item">
-            <p class="footer-discounts__copy-author">Design by Anastasia Ilina</p>
-            <a class="footer-discounts__copy-media" href="">Tg: @Mrshmallowww</a>
-          </li>
-        </ul>
+
+        <div class="footer__copy">
+          <ul class="footer__copy-list">
+            <li class="footer__copy-item">© OnlineShop, 2021</li>
+            <li class="footer__copy-item">
+              <p class="footer__copy-author">Design by Anastasia Ilina</p>
+              <a class="footer__copy-media" href="">Tg: @Mrshmallowww</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
