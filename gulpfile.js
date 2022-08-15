@@ -5,7 +5,7 @@ import gulpSass from 'gulp-sass';
 import gulpCssimport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 
-const prepros = 'scss';
+const prepros = true;
 
 const sass = gulpSass(sassPkg);
 // задачи

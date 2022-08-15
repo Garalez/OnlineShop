@@ -16,8 +16,7 @@ export const createPosts = async () => {
     blogItem.classList.add('blog__item');
 
     const imgWrapper = document.createElement('div');
-    imgWrapper.style.width = '195px';
-    imgWrapper.style.height = '195px';
+    imgWrapper.classList.add('blog__item-img-wrapper');
 
     const blogImg = document.createElement('a');
     blogImg.classList.add('blog__item-img');

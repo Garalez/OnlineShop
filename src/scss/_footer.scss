@@ -253,6 +253,7 @@
       font-weight: 700;
       font-size: 16px;
       line-height: 130%;
+
       @media (max-width: 768px) {
         font-size: 12px;
       }
@@ -364,5 +365,39 @@
         margin-bottom: 5px;
       }
     }
+  }
+  &__copy-media,
+  &__contacts-link,
+  &__clients-link,
+  &__addition-link,
+  &__catalog-link {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__copy-media::after,
+  &__contacts-link::after,
+  &__clients-link::after,
+  &__addition-link::after,
+  &__catalog-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &__copy-media:hover:after,
+  &__contacts-link:hover:after,
+  &__clients-link:hover:after,
+  &__addition-link:hover:after,
+  &__catalog-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 }

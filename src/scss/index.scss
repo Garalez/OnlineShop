@@ -2,20 +2,18 @@
 @import 'normalize';
 @import 'footer';
 @import 'header';
+@import 'blogMain';
+@import 'pagination';
+@import 'discountMain';
+@import 'dicsountCardFooter';
 
 
 @font-face {
-  font-family: Lato;
-  src: url("../fonts/lato-regular.woff2") format("woff2"), url("../fonts/lato-regular.woff") format("woff");
-  font-weight: 400;
-  font-display: swap;
+  @include font(Lato, regular)
 }
 
 @font-face {
-  font-family: Lato;
-  src: url("../fonts/lato-bold.woff2") format("woff2"), url("../fonts/lato-bold.woff") format("woff");
-  font-weight: 700;
-  font-display: swap;
+  @include font(Lato, bold)
 }
 
 html {
@@ -135,4 +133,22 @@ aside {
 
 .active {
   display: block;
+}
+
+.line-through {
+  vertical-align: text-top;
+  padding-left: 22px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  @include tablet {
+    padding-left: 11px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  @include mobile {
+    padding-left: 11px;
+    font-size: 12px;
+    line-height: 14px;
+  }
 }

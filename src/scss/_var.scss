@@ -3,3 +3,37 @@ $orange: #ffbd13;
 $blue: #3670c7;
 $black: #2d2d2d;
 $gray: #8F8F8F;
+
+@mixin font($name, $weight) {
+  font: {
+    family: $name;
+    weight: $weight;
+    display: swap;
+  }
+  src: url("../fonts/#{ $name }-#{ $weight }.woff2")  format("woff2"),
+    url("../fonts/#{ $name }-#{ $weight }.woff")  format("woff");
+}
+
+@mixin laptopL {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 320px) {
+    @content;
+  }
+}

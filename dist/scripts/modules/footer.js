@@ -7,7 +7,7 @@ const wrapper = document.querySelector('.footer__hrefs');
 const catalogBtn = document.querySelector('.footer__catalog-btn');
 const clientBtn = document.querySelector('.footer__clients-btn');
 
-export const acc = () => {
+const acc = () => {
   wrapper.addEventListener('click', (event) => {
     const target = event.target;
     if (target.closest('.footer__catalog-btn') ||
@@ -56,4 +56,5 @@ export const acc = () => {
   });
 };
 
+acc();
 

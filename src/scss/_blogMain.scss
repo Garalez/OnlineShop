@@ -1,0 +1,216 @@
+.blog {
+  &-wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 140px 50px 188px;
+    @include laptopL {
+      padding: 100px 77px 50px 150px;
+    }
+    @include laptop {
+      padding: 0 55px 0 42px;
+    }
+    @include tablet {
+      padding: 23px 0 0 34px;
+    }
+    @include mobile {
+      padding-left: 20px;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
+    @include laptop {
+      column-gap: 34px;
+    }
+    @include tablet {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 10px;
+    }
+    @include mobile {
+      row-gap: 40px;
+      justify-content: start;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @include laptop {
+      gap: 0;
+      &:nth-last-child(-n+2) &-subtitle {
+        margin-bottom: 50px;
+      }
+    }
+    @include tablet {
+      &:nth-last-child(-n+2) &-subtitle {
+        margin-bottom: 30px;
+      }
+    }
+    &-title {
+      margin-bottom: 13px;
+      color: $black;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+      grid-area: title;
+      @include laptopL {
+        font-size: 30px;
+        line-height: 130%;
+      }
+      @include laptop {
+        font-size: 24px;
+      }
+      @include tablet {
+        font-size: 22px;
+      }
+      @include mobile {
+        width: 200px;
+        font-size: 14px;
+      }
+    }
+    &-media {
+      display: flex;
+      gap: 22px;
+      color: $gray;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      grid-area: media;
+      @include laptop {
+        font-size: 13px;
+      }
+      @include tablet {
+        font-size: 12px;
+        gap: 10px;
+      }
+      @include tablet {
+        font-size: 8px;
+        gap: 0;
+      }
+    }
+    &-subtitle {
+      margin-bottom: 22px;
+      color: $gray;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      grid-area: subtitle;
+      @include laptop {
+        font-size: 13px;
+        margin-bottom: 15px;
+      }
+      @include tablet {
+        font-size: 12px;
+      }
+      @include mobile {
+        margin: 0 12px 0 0;
+        font-size: 8px;
+      }
+    }
+    &-views {
+      position: relative;
+      padding-left: 30px;
+      @include laptop {
+        padding-left: 23px;
+      }
+      @include tablet {
+        padding-left: 22px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        background: {
+          image: url("../img/blog/views.svg");
+          repeat: no-repeat;
+          size: contain;
+        }
+        width: 23px;
+        height: 18px;
+        left: 0;
+        top: 0 ;
+        @include laptop {
+          width: 20px;
+          height: 15px;
+          top: -1px;
+        }
+        @include tablet {
+          transform: scale(0.8);
+          top: -2px;
+        }
+      }
+    }
+    &-comments {
+      position: relative;
+      padding-left: 35px;
+      @include laptop {
+        padding-left: 25px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        background: {
+          image: url("../img/blog/comments.svg");
+          repeat: no-repeat;
+        }
+        width: 22px;
+        height: 21px;
+        left: 2px;
+        top: -2px;
+        @include laptop {
+          transform: scale(0.8);
+          padding-left: 25px;
+          top: -4px;
+        }
+        @include tablet {
+          transform: scale(0.6);
+          top: -5px;
+        }
+      }
+    }
+    &-img {
+      display: block;
+      width: 195px;
+      height: 195px;
+      background-size: cover;
+      @include laptop {
+        height: 140px;
+        width: 140px;
+      }
+      @include mobile {
+        height: 60px;
+        width: 60px;
+      }
+      &-wrapper {
+        @include laptop {
+          margin-right: 20px;
+        }
+        @include tablet {
+          margin-right: 20px;
+        }
+        @include mobile {
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+  &__text {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 415px;
+      padding-top: 16px;
+      @include tablet {
+        padding: 0;
+        justify-content: space-evenly;
+      }
+      @include mobile {
+        display: grid;
+        grid-template-areas: 
+        "title title"
+        "subtitle media";
+      }
+    }
+  }
+}

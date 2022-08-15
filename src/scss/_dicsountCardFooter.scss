@@ -1,0 +1,283 @@
+.card-footer {
+  padding: 47px 50px 142px 79px;
+  @include laptop {
+    padding: 47px 0 100px 42px;
+  }
+  @include tablet {
+    padding: 34px 34px 84px 34px;
+  }
+  @include mobile {
+    padding: 13px 20px 69px 19px;
+  }
+  &__title {
+    margin-bottom: 49px;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 130%;
+    @include laptop {
+      margin-bottom: 40px;
+      font-size: 40px;
+    }
+    @include tablet {
+      margin-bottom: 28px;
+      font-size: 30px;
+    }
+    @include mobile {
+      margin-bottom: 23px;
+      font-size: 20px;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 53px 30px;
+    @include laptop {
+      gap: 55px 20px;
+    }
+    @include tablet {
+      gap: 39px 20px;
+    }
+    @include mobile {
+      gap: 33px 21px;
+    }
+  }
+  &__item {
+    &-shirts {
+      position: relative;
+      width: 420px;
+      height: 295px;
+      margin-bottom: 20px;
+      background-image: url("../img/shirts.jpg");
+      @include laptop {
+        width: 300px;
+        background-image: url("../img/shirts-1024.jpg");
+      }
+      @include tablet {
+        width: 220px;
+        height: 216px;
+        margin-bottom: 15px;
+        background-image: url("../img/shirts-768.jpg");
+      }
+      @include mobile {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 15px;
+        background-image: url("../img/shirts-320.jpg");
+      }
+    }
+    &-sneakers {
+      position: relative;
+      width: 420px;
+      height: 295px;
+      margin-bottom: 20px;
+      background-image: url("../img/sneakers.jpg");
+      @include laptop {
+        width: 300px;
+        background-image: url("../img/sneakers-1024.jpg");
+      }
+      @include tablet {
+        width: 220px;
+        height: 216px;
+        margin-bottom: 15px;
+        background-image: url("../img/sneakers-768.jpg");
+      }
+      @include mobile {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 10px;
+        background-image: url("../img/sneakers-320.jpg");
+      }
+    }
+    &-bedroom {
+      position: relative;
+      width: 420px;
+      height: 295px;
+      margin-bottom: 20px;
+      background-image: url("../img/bedroom.jpg");
+      @include laptop {
+        width: 300px;
+        background-image: url("../img/bedroom-1024.jpg");
+      }
+      @include tablet {
+        width: 220px;
+        height: 216px;
+        margin-bottom: 15px;
+        background-image: url("../img/bedroom-768.jpg");
+      }
+      @include mobile {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 10px;
+        background-image: url("../img/bedroom-320.jpg");
+      }
+    }
+    &-dryers {
+      position: relative;
+      width: 420px;
+      height: 295px;
+      margin-bottom: 20px;
+      background-image: url("../img/dryers.jpg");
+      @include laptop {
+        width: 300px;
+        background-image: url("../img/dryers-1024.jpg");
+      }
+      @include tablet {
+        width: 220px;
+        height: 216px;
+        margin-bottom: 15px;
+        background-image: url("../img/dryers-768.jpg");
+      }
+      @include mobile {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 10px;
+        background-image: url("../img/dryers-320.jpg");
+      }
+    }
+    &-mittens {
+      position: relative;
+      width: 420px;
+      height: 295px;
+      margin-bottom: 20px;
+      background-image: url("../img/mittens.jpg");
+      @include laptop {
+        width: 300px;
+        background-image: url("../img/mittens-1024.jpg");
+      }
+      @include tablet {
+        width: 220px;
+        height: 216px;
+        margin-bottom: 15px;
+        background-image: url("../img/mittens-768.jpg");
+      }
+      @include mobile {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 10px;
+        background-image: url("../img/mittens-320.jpg");
+      }
+    }
+    &-price {
+      margin-bottom: 17px;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 34px;
+      @include tablet {
+        margin-bottom: 15px;
+        font-size: 22px;
+        line-height: 26px;
+      }
+      @include mobile {
+        margin-bottom: 3px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+    &-discount {
+      &-10::after {
+        position: absolute;
+        content: "";
+        background-image: url("../img/discount10.png");
+        background-repeat: no-repeat;
+        width: 88px;
+        height: 88px;
+        left: 20px;
+        bottom: 20px;
+        @include tablet {
+          background-image: url("../img/discount10-768.png");
+          width: 60px;
+          height: 60px;
+          left: 10px;
+          bottom: 12px;
+        }
+        @include mobile {
+          background-image: url("../img/discount10-320.png");
+          width: 40px;
+          height: 40px;
+          left: 7px;
+          bottom: 4px;
+        }
+      }
+      &-30::after {
+        position: absolute;
+        content: "";
+        background-image: url("../img/discount30.png");
+        background-repeat: no-repeat;
+        width: 88px;
+        height: 88px;
+        left: 20px;
+        bottom: 20px;
+        @include tablet {
+          background-image: url("../img/discount30-768.png");
+          width: 60px;
+          height: 60px;
+          left: 10px;
+          bottom: 12px;
+        }
+        @include mobile {
+          background-image: url("../img/discount30-320.png");
+          width: 40px;
+          height: 40px;
+          left: 7px;
+          bottom: 4px;
+        }
+      }
+      &-40::after {
+        position: absolute;
+        content: "";
+        background-image: url("../img/discount40.png");
+        background-repeat: no-repeat;
+        width: 88px;
+        height: 88px;
+        left: 20px;
+        bottom: 20px;
+        @include tablet {
+          background-image: url("../img/discount40-768.png");
+          width: 60px;
+          height: 60px;
+          left: 10px;
+          bottom: 12px;
+        }
+        @include mobile {
+          background-image: url("../img/discount40-320.png");
+          width: 40px;
+          height: 40px;
+          left: 7px;
+          bottom: 4px;
+        }
+      }
+      &-50::after {
+        position: absolute;
+        content: "";
+        background-image: url("../img/discount50.png");
+        background-repeat: no-repeat;
+        width: 88px;
+        height: 88px;
+        left: 20px;
+        bottom: 20px;
+        @include tablet {
+          background-image: url("../img/discount50-768.png");
+          width: 60px;
+          height: 60px;
+          left: 10px;
+          bottom: 12px;
+        }
+        @include mobile {
+          background-image: url("../img/discount50-320.png");
+          width: 40px;
+          height: 40px;
+          left: 7px;
+          bottom: 4px;
+        }
+      }
+    }
+    &-name {
+      @include tablet {
+        font-size: 18px;
+      }
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.pages {
+  padding: 49px 0 149px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  @include laptop {
+    padding: 20px 0 100px 0;
+  }
+  @include tablet {
+    padding: 49px 0 78px 0;
+    gap: 15px;
+  }
+  @include mobile {
+    padding: 20px 0 50px 0;
+  }
+  &__list {
+    display: flex;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    @include tablet {
+      gap: 10px;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border: 2px solid $black;
+    border-radius: 4px;
+    color: $black;
+    @include tablet {
+      width: 20px;
+      height: 20px;
+      border: 1px solid $black;
+      font-size: 12px;
+    }
+    &:nth-child(2) {
+      border: 2px solid $blue;
+      color: $blue;
+      @include tablet {
+        border: 1px solid $blue;
+      }
+    }
+  }
+  &__btn {
+    &-next,
+    &-previous {
+      width: 42px;
+      height: 42px;
+      background: {
+        image: url('../img/blog/page-arrow.svg');
+        color: transparent;
+        size: cover;
+        repeat: no-repeat;
+      };
+      border: none;
+      cursor: pointer;
+      @include tablet {
+        width: 28px;
+        height: 28px;
+      }
+    }
+    &-next {
+      transform: rotate(180deg);
+      &:hover {
+        background-image: url('../img/blog/page-arrow-hover.svg');
+        transform: rotate(360deg);
+      }
+    }
+    &-previous {
+      &:hover {
+        background-image: url('../img/blog/page-arrow-hover.svg');
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
