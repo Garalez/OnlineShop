@@ -1,0 +1,125 @@
+.menu {
+  position: absolute;
+  left: 0;
+  top: 580px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  &__wrapper {
+    position: absolute;
+    width: 100%;
+    padding: 14px 0 90px 74px;
+    background-color: $white;
+    color: $black;
+  }
+
+  &__hrefs {
+    display: flex;
+  }
+
+  &__catalog-list,
+  &__addition-list,
+  &__clients-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+  }
+
+  &__catalog {
+    &-list {
+      margin-right: 95px;
+    }
+    &-item {
+      &:first-child {
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+      }
+    }
+    &-btn {
+      display: none;
+    }
+  }
+
+  &__addition {
+    &-list {
+      margin-right: 242px;
+      justify-content: end;
+    }
+  }
+
+  &__clients {
+    &-list {
+      margin-right: 279px;
+    }
+    &-item {
+      word-break: break-all;
+      &:first-child {
+        margin-bottom: 19px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+      }
+    }
+  }
+
+  &__contacts {
+    &-list {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+    }
+    &-item {
+      &:first-child {
+        margin-bottom: 45px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+      }
+      &:nth-child(2) {
+        font-size: 22px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__contacts-link,
+  &__clients-link,
+  &__addition-link,
+  &__catalog-link {
+    display: inline-block;
+    position: relative;
+    color: $black;
+  }
+
+  &__contacts-link::after,
+  &__clients-link::after,
+  &__addition-link::after,
+  &__catalog-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &__contacts-link:hover:after,
+  &__clients-link:hover:after,
+  &__addition-link:hover:after,
+  &__catalog-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}

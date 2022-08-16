@@ -6,7 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const createLink = url => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet';
+        link.href = url;
+        document.head.append(link);
+      };
+      createLink('css/index.css')
+    });
+  </script>
   <script type="module" src="./scripts/modules/blogArticle.js"></script>
   <title>Обувь</title>
 </head>

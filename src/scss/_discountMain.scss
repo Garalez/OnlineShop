@@ -101,23 +101,63 @@
       width: 1770px;
       height: 480px;
       background-image: url("../img/banner.jpg");
+      background-image: -webkit-image-set(
+        url("../img/banner.avif") 1x,
+        url("../img/banner.webp") 1x,
+        url("../img/banner.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/banner.avif") 1x,
+        url("../img/banner.webp") 1x,
+        url("../img/banner.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 944px;
         height: 314px;
         background-image: url("../img/banner1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/banner1024.avif") 1x,
+          url("../img/banner1024.webp") 1x,
+          url("../img/banner1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/banner1024.avif") 1x,
+          url("../img/banner1024.webp") 1x,
+          url("../img/banner1024.jpg") 1x
+        );
         margin-bottom: 24px;
       }
       @include tablet {
         width: 700px;
         height: 280px;
         background-image: url("../img/banner768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/banner768.avif") 1x,
+          url("../img/banner768.webp") 1x,
+          url("../img/banner768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/banner768.avif") 1x,
+          url("../img/banner768.webp") 1x,
+          url("../img/banner768.jpg") 1x
+        );
         margin-bottom: 24px;
       }
       @include mobile {
         width: 280px;
         height: 340px;
         background-image: url("../img/banner320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/banner320.avif") 1x,
+          url("../img/banner320.webp") 1x,
+          url("../img/banner320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/banner320.avif") 1x,
+          url("../img/banner320.webp") 1x,
+          url("../img/banner320.jpg") 1x
+        );
         margin-bottom: 0px;
       }
     }
@@ -125,213 +165,613 @@
       width: 245px;
       height: 228px;
       background-image: url("../img/grid1.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid1.avif") 1x,
+        url("../img/grid1.webp") 1x,
+        url("../img/grid1.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid1.avif") 1x,
+        url("../img/grid1.webp") 1x,
+        url("../img/grid1.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 217px;
         height: 202px;
         background-image: url("../img/book1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/book1024.avif") 1x,
+          url("../img/book1024.webp") 1x,
+          url("../img/book1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/book1024.avif") 1x,
+          url("../img/book1024.webp") 1x,
+          url("../img/book1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 140px;
         height: 130px;
         background-image: url("../img/book768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/book768.avif") 1x,
+          url("../img/book768.webp") 1x,
+          url("../img/book768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/book768.avif") 1x,
+          url("../img/book768.webp") 1x,
+          url("../img/book768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 120px;
         background-image: url("../img/book320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/book320.avif") 1x,
+          url("../img/book320.webp") 1x,
+          url("../img/book320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/book320.avif") 1x,
+          url("../img/book320.webp") 1x,
+          url("../img/book320.jpg") 1x
+        );
       }
     }
     &-discount {
       width: 245px;
       height: 228px;
       background-image: url("../img/grid2.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid2.avif") 1x,
+        url("../img/grid2.webp") 1x,
+        url("../img/grid2.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid2.avif") 1x,
+        url("../img/grid2.webp") 1x,
+        url("../img/grid2.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 217px;
         height: 202px;
         background-image: url("../img/discount1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/discount1024.avif") 1x,
+          url("../img/discount1024.webp") 1x,
+          url("../img/discount1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/discount1024.avif") 1x,
+          url("../img/discount1024.webp") 1x,
+          url("../img/discount1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 140px;
         height: 130px;
         background-image: url("../img/discount768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/discount768.avif") 1x,
+          url("../img/discount768.webp") 1x,
+          url("../img/discount768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/discount768.avif") 1x,
+          url("../img/discount768.webp") 1x,
+          url("../img/discount768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 120px;
         background-image: url("../img/discount320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/discount320.avif") 1x,
+          url("../img/discount320.webp") 1x,
+          url("../img/discount320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/discount320.avif") 1x,
+          url("../img/discount320.webp") 1x,
+          url("../img/discount320.jpg") 1x
+        );
       }
     }
     &-sneakers {
       width: 550px;
       height: 516px;
       background-image: url("../img/grid3.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid3.avif") 1x,
+        url("../img/grid3.webp") 1x,
+        url("../img/grid3.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid3.avif") 1x,
+        url("../img/grid3.webp") 1x,
+        url("../img/grid3.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 446px;
         height: 418px;
         background-image: url("../img/sneackers1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/sneackers1024.avif") 1x,
+          url("../img/sneackers1024.webp") 1x,
+          url("../img/sneackers1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/sneackers1024.avif") 1x,
+          url("../img/sneackers1024.webp") 1x,
+          url("../img/sneackers1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 380px;
         height: 278px;
         background-image: url("../img/sneackers768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/sneackers768.avif") 1x,
+          url("../img/sneackers768.webp") 1x,
+          url("../img/sneackers768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/sneackers768.avif") 1x,
+          url("../img/sneackers768.webp") 1x,
+          url("../img/sneackers768.jpg") 1x
+        );
       }
       @include mobile {
         width: 280px;
         height: 206px;
         background-image: url("../img/sneackers320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/sneackers320.avif") 1x,
+          url("../img/sneackers320.webp") 1x,
+          url("../img/sneackers320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/sneackers320.avif") 1x,
+          url("../img/sneackers320.webp") 1x,
+          url("../img/sneackers320.jpg") 1x
+        );
       }
     }
     &-presents {
       width: 550px;
       height: 228px;
       background-image: url("../img/grid4.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid4.avif") 1x,
+        url("../img/grid4.webp") 1x,
+        url("../img/grid4.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid4.avif") 1x,
+        url("../img/grid4.webp") 1x,
+        url("../img/grid4.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 464px;
         height: 194px;
         background-image: url("../img/presents1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/presents1024.avif") 1x,
+          url("../img/presents1024.webp") 1x,
+          url("../img/presents1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/presents1024.avif") 1x,
+          url("../img/presents1024.webp") 1x,
+          url("../img/presents1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 300px;
         height: 126px;
         background-image: url("../img/presents768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/presents768.avif") 1x,
+          url("../img/presents768.webp") 1x,
+          url("../img/presents768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/presents768.avif") 1x,
+          url("../img/presents768.webp") 1x,
+          url("../img/presents768.jpg") 1x
+        );
       }
       @include mobile {
         width: 280px;
         height: 118px;
         background-image: url("../img/presents320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/presents320.avif") 1x,
+          url("../img/presents320.webp") 1x,
+          url("../img/presents320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/presents320.avif") 1x,
+          url("../img/presents320.webp") 1x,
+          url("../img/presents320.jpg") 1x
+        );
       }
     }
     &-red {
       width: 550px;
       height: 228px;
       background-image: url("../img/grid5.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid5.avif") 1x,
+        url("../img/grid5.webp") 1x,
+        url("../img/grid5.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid5.avif") 1x,
+        url("../img/grid5.webp") 1x,
+        url("../img/grid5.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 464px;
         height: 194px;
         background-image: url("../img/red1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/red1024.avif") 1x,
+          url("../img/red1024.webp") 1x,
+          url("../img/red1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/red1024.avif") 1x,
+          url("../img/red1024.webp") 1x,
+          url("../img/red1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 300px;
         height: 126px;
         background-image: url("../img/red768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/red768.avif") 1x,
+          url("../img/red768.webp") 1x,
+          url("../img/red768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/red768.avif") 1x,
+          url("../img/red768.webp") 1x,
+          url("../img/red768.jpg") 1x
+        );
       }
       @include mobile {
         width: 280px;
         height: 118px;
         background-image: url("../img/red320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/red320.avif") 1x,
+          url("../img/red320.webp") 1x,
+          url("../img/red320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/red320.avif") 1x,
+          url("../img/red320.webp") 1x,
+          url("../img/red320.jpg") 1x
+        );
       }
     }
     &-appliances {
       width: 550px;
       height: 228px;
       background-image: url("../img/grid6.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid6.avif") 1x,
+        url("../img/grid6.webp") 1x,
+        url("../img/grid6.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid6.avif") 1x,
+        url("../img/grid6.webp") 1x,
+        url("../img/grid6.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 464px;
         height: 194px;
         margin-bottom: 27px;
         background-image: url("../img/appliances1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/appliances1024.avif") 1x,
+          url("../img/appliances1024.webp") 1x,
+          url("../img/appliances1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/appliances1024.avif") 1x,
+          url("../img/appliances1024.webp") 1x,
+          url("../img/appliances1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 300px;
         height: 126px;
         margin-bottom: 0px;
         background-image: url("../img/appliances768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/appliances768.avif") 1x,
+          url("../img/appliances768.webp") 1x,
+          url("../img/appliances768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/appliances768.avif") 1x,
+          url("../img/appliances768.webp") 1x,
+          url("../img/appliances768.jpg") 1x
+        );
       }
       @include mobile {
         width: 280px;
         height: 118px;
         margin-bottom: 0px;
         background-image: url("../img/appliances320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/appliances320.avif") 1x,
+          url("../img/appliances320.webp") 1x,
+          url("../img/appliances320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/appliances320.avif") 1x,
+          url("../img/appliances320.webp") 1x,
+          url("../img/appliances320.jpg") 1x
+        );
       }
     }
     &-decorations {
       width: 1160px;
       height: 516px;
       background-image: url("../img/grid7.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid7.avif") 1x,
+        url("../img/grid7.webp") 1x,
+        url("../img/grid7.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid7.avif") 1x,
+        url("../img/grid7.webp") 1x,
+        url("../img/grid7.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 940px;
         height: 418px;
         background-image: url("../img/decorations1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/decorations1024.avif") 1x,
+          url("../img/decorations1024.webp") 1x,
+          url("../img/decorations1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/decorations1024.avif") 1x,
+          url("../img/decorations1024.webp") 1x,
+          url("../img/decorations1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 700px;
         height: 337px;
         background-image: url("../img/decorations768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/decorations768.avif") 1x,
+          url("../img/decorations768.webp") 1x,
+          url("../img/decorations768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/decorations768.avif") 1x,
+          url("../img/decorations768.webp") 1x,
+          url("../img/decorations768.jpg") 1x
+        );
       }
       @include mobile {
         width: 280px;
         height: 123px;
         background-image: url("../img/decorations320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/decorations320.avif") 1x,
+          url("../img/decorations320.webp") 1x,
+          url("../img/decorations320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/decorations320.avif") 1x,
+          url("../img/decorations320.webp") 1x,
+          url("../img/decorations320.jpg") 1x
+        );
       }
     }
     &-woman {
       width: 245px;
       height: 516px;
       background-image: url("../img/grid8.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid8.avif") 1x,
+        url("../img/grid8.webp") 1x,
+        url("../img/grid8.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid8.avif") 1x,
+        url("../img/grid8.webp") 1x,
+        url("../img/grid8.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 206px;
         height: 410px;
         background-image: url("../img/woman1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/woman1024.avif") 1x,
+          url("../img/woman1024.webp") 1x,
+          url("../img/woman1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/woman1024.avif") 1x,
+          url("../img/woman1024.webp") 1x,
+          url("../img/woman1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 182px;
         height: 273px;
         background-image: url("../img/woman768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/woman768.avif") 1x,
+          url("../img/woman768.webp") 1x,
+          url("../img/woman768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/woman768.avif") 1x,
+          url("../img/woman768.webp") 1x,
+          url("../img/woman768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 195px;
         background-image: url("../img/woman320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/woman320.avif") 1x,
+          url("../img/woman320.webp") 1x,
+          url("../img/woman320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/woman320.avif") 1x,
+          url("../img/woman320.webp") 1x,
+          url("../img/woman320.jpg") 1x
+        );
       }
     }
     &-chemicals {
       width: 245px;
       height: 228px;
       background-image: url("../img/grid9.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid9.avif") 1x,
+        url("../img/grid9.webp") 1x,
+        url("../img/grid9.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid9.avif") 1x,
+        url("../img/grid9.webp") 1x,
+        url("../img/grid9.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 210px;
         height: 196px;
         background-image: url("../img/chemicals1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/chemicals1024.avif") 1x,
+          url("../img/chemicals1024.webp") 1x,
+          url("../img/chemicals1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/chemicals1024.avif") 1x,
+          url("../img/chemicals1024.webp") 1x,
+          url("../img/chemicals1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 178px;
         height: 131px;
         background-image: url("../img/chemicals768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/chemicals768.avif") 1x,
+          url("../img/chemicals768.webp") 1x,
+          url("../img/chemicals768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/chemicals768.avif") 1x,
+          url("../img/chemicals768.webp") 1x,
+          url("../img/chemicals768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 95px;
         background-image: url("../img/chemicals320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/chemicals320.avif") 1x,
+          url("../img/chemicals320.webp") 1x,
+          url("../img/chemicals320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/chemicals320.avif") 1x,
+          url("../img/chemicals320.webp") 1x,
+          url("../img/chemicals320.jpg") 1x
+        );
       }
     }
     &-balls {
       width: 245px;
       height: 228px;
       background-image: url("../img/grid10.jpg");
+      background-image: -webkit-image-set(
+        url("../img/grid10.avif") 1x,
+        url("../img/grid10.webp") 1x,
+        url("../img/grid10.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/grid10.avif") 1x,
+        url("../img/grid10.webp") 1x,
+        url("../img/grid10.jpg") 1x
+      );
       display: block;
       @include laptop {
         width: 210px;
         height: 196px;
         background-image: url("../img/balls1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/balls1024.avif") 1x,
+          url("../img/balls1024.webp") 1x,
+          url("../img/balls1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/balls1024.avif") 1x,
+          url("../img/balls1024.webp") 1x,
+          url("../img/balls1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 178px;
         height: 131px;
         background-image: url("../img/balls768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/balls768.avif") 1x,
+          url("../img/balls768.webp") 1x,
+          url("../img/balls768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/balls768.avif") 1x,
+          url("../img/balls768.webp") 1x,
+          url("../img/balls768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 94px;
         background-image: url("../img/balls320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/balls320.avif") 1x,
+          url("../img/balls320.webp") 1x,
+          url("../img/balls320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/balls320.avif") 1x,
+          url("../img/balls320.webp") 1x,
+          url("../img/balls320.jpg") 1x
+        );
       }
     }
   }

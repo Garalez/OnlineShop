@@ -48,21 +48,61 @@
       height: 295px;
       margin-bottom: 20px;
       background-image: url("../img/shirts.jpg");
+      background-image: -webkit-image-set(
+        url("../img/shirts.avif") 1x,
+        url("../img/shirts.webp") 1x,
+        url("../img/shirts.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/shirts.avif") 1x,
+        url("../img/shirts.webp") 1x,
+        url("../img/shirts.jpg") 1x
+      );
       @include laptop {
         width: 300px;
         background-image: url("../img/shirts-1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/shirts-1024.avif") 1x,
+          url("../img/shirts-1024.webp") 1x,
+          url("../img/shirts-1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/shirts-1024.avif") 1x,
+          url("../img/shirts-1024.webp") 1x,
+          url("../img/shirts-1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 220px;
         height: 216px;
         margin-bottom: 15px;
         background-image: url("../img/shirts-768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/shirts-768.avif") 1x,
+          url("../img/shirts-768.webp") 1x,
+          url("../img/shirts-768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/shirts-768.avif") 1x,
+          url("../img/shirts-768.webp") 1x,
+          url("../img/shirts-768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 130px;
         margin-bottom: 15px;
         background-image: url("../img/shirts-320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/shirts-320.avif") 1x,
+          url("../img/shirts-320.webp") 1x,
+          url("../img/shirts-320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/shirts-320.avif") 1x,
+          url("../img/shirts-320.webp") 1x,
+          url("../img/shirts-320.jpg") 1x
+        );
       }
     }
     &-sneakers {
@@ -71,21 +111,61 @@
       height: 295px;
       margin-bottom: 20px;
       background-image: url("../img/sneakers.jpg");
+      background-image: -webkit-image-set(
+        url("../img/sneakers.avif") 1x,
+        url("../img/sneakers.webp") 1x,
+        url("../img/sneakers.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/sneakers.avif") 1x,
+        url("../img/sneakers.webp") 1x,
+        url("../img/sneakers.jpg") 1x
+      );
       @include laptop {
         width: 300px;
         background-image: url("../img/sneakers-1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/sneakers-1024.avif") 1x,
+          url("../img/sneakers-1024.webp") 1x,
+          url("../img/sneakers-1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/sneakers-1024.avif") 1x,
+          url("../img/sneakers-1024.webp") 1x,
+          url("../img/sneakers-1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 220px;
         height: 216px;
         margin-bottom: 15px;
         background-image: url("../img/sneakers-768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/sneakers-768.avif") 1x,
+          url("../img/sneakers-768.webp") 1x,
+          url("../img/sneakers-768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/sneakers-768.avif") 1x,
+          url("../img/sneakers-768.webp") 1x,
+          url("../img/sneakers-768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 130px;
         margin-bottom: 10px;
         background-image: url("../img/sneakers-320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/sneakers-320.avif") 1x,
+          url("../img/sneakers-320.webp") 1x,
+          url("../img/sneakers-320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/sneakers-320.avif") 1x,
+          url("../img/sneakers-320.webp") 1x,
+          url("../img/sneakers-320.jpg") 1x
+        );
       }
     }
     &-bedroom {
@@ -94,21 +174,61 @@
       height: 295px;
       margin-bottom: 20px;
       background-image: url("../img/bedroom.jpg");
+      background-image: -webkit-image-set(
+        url("../img/bedroom.avif") 1x,
+        url("../img/bedroom.webp") 1x,
+        url("../img/bedroom.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/bedroom.avif") 1x,
+        url("../img/bedroom.webp") 1x,
+        url("../img/bedroom.jpg") 1x
+      );
       @include laptop {
         width: 300px;
         background-image: url("../img/bedroom-1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/bedroom-1024.avif") 1x,
+          url("../img/bedroom-1024.webp") 1x,
+          url("../img/bedroom-1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/bedroom-1024.avif") 1x,
+          url("../img/bedroom-1024.webp") 1x,
+          url("../img/bedroom-1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 220px;
         height: 216px;
         margin-bottom: 15px;
         background-image: url("../img/bedroom-768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/bedroom-768.avif") 1x,
+          url("../img/bedroom-768.webp") 1x,
+          url("../img/bedroom-768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/bedroom-768.avif") 1x,
+          url("../img/bedroom-768.webp") 1x,
+          url("../img/bedroom-768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 130px;
         margin-bottom: 10px;
         background-image: url("../img/bedroom-320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/bedroom-320.avif") 1x,
+          url("../img/bedroom-320.webp") 1x,
+          url("../img/bedroom-320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/bedroom-320.avif") 1x,
+          url("../img/bedroom-320.webp") 1x,
+          url("../img/bedroom-320.jpg") 1x
+        );
       }
     }
     &-dryers {
@@ -117,21 +237,61 @@
       height: 295px;
       margin-bottom: 20px;
       background-image: url("../img/dryers.jpg");
+      background-image: -webkit-image-set(
+        url("../img/dryers.avif") 1x,
+        url("../img/dryers.webp") 1x,
+        url("../img/dryers.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/dryers.avif") 1x,
+        url("../img/dryers.webp") 1x,
+        url("../img/dryers.jpg") 1x
+      );
       @include laptop {
         width: 300px;
         background-image: url("../img/dryers-1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/dryers-1024.avif") 1x,
+          url("../img/dryers-1024.webp") 1x,
+          url("../img/dryers-1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/dryers-1024.avif") 1x,
+          url("../img/dryers-1024.webp") 1x,
+          url("../img/dryers-1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 220px;
         height: 216px;
         margin-bottom: 15px;
         background-image: url("../img/dryers-768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/dryers-768.avif") 1x,
+          url("../img/dryers-768.webp") 1x,
+          url("../img/dryers-768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/dryers-768.avif") 1x,
+          url("../img/dryers-768.webp") 1x,
+          url("../img/dryers-768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 130px;
         margin-bottom: 10px;
         background-image: url("../img/dryers-320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/dryers-320.avif") 1x,
+          url("../img/dryers-320.webp") 1x,
+          url("../img/dryers-320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/dryers-320.avif") 1x,
+          url("../img/dryers-320.webp") 1x,
+          url("../img/dryers-320.jpg") 1x
+        );
       }
     }
     &-mittens {
@@ -140,21 +300,61 @@
       height: 295px;
       margin-bottom: 20px;
       background-image: url("../img/mittens.jpg");
+      background-image: -webkit-image-set(
+        url("../img/mittens.avif") 1x,
+        url("../img/mittens.webp") 1x,
+        url("../img/mittens.jpg") 1x
+      );
+      background-image: image-set(
+        url("../img/mittens.avif") 1x,
+        url("../img/mittens.webp") 1x,
+        url("../img/mittens.jpg") 1x
+      );
       @include laptop {
         width: 300px;
         background-image: url("../img/mittens-1024.jpg");
+        background-image: -webkit-image-set(
+          url("../img/mittens-1024.avif") 1x,
+          url("../img/mittens-1024.webp") 1x,
+          url("../img/mittens-1024.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/mittens-1024.avif") 1x,
+          url("../img/mittens-1024.webp") 1x,
+          url("../img/mittens-1024.jpg") 1x
+        );
       }
       @include tablet {
         width: 220px;
         height: 216px;
         margin-bottom: 15px;
         background-image: url("../img/mittens-768.jpg");
+        background-image: -webkit-image-set(
+          url("../img/mittens-768.avif") 1x,
+          url("../img/mittens-768.webp") 1x,
+          url("../img/mittens-768.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/mittens-768.avif") 1x,
+          url("../img/mittens-768.webp") 1x,
+          url("../img/mittens-768.jpg") 1x
+        );
       }
       @include mobile {
         width: 130px;
         height: 130px;
         margin-bottom: 10px;
         background-image: url("../img/mittens-320.jpg");
+        background-image: -webkit-image-set(
+          url("../img/mittens-320.avif") 1x,
+          url("../img/mittens-320.webp") 1x,
+          url("../img/mittens-320.jpg") 1x
+        );
+        background-image: image-set(
+          url("../img/mittens-320.avif") 1x,
+          url("../img/mittens-320.webp") 1x,
+          url("../img/mittens-320.jpg") 1x
+        );
       }
     }
     &-price {
@@ -178,6 +378,16 @@
         position: absolute;
         content: "";
         background-image: url("../img/discount10.png");
+        background-image: -webkit-image-set(
+          url("../img/discount10.avif") 1x,
+          url("../img/discount10.webp") 1x,
+          url("../img/discount10.png") 1x
+        );
+        background-image: image-set(
+          url("../img/discount10.avif") 1x,
+          url("../img/discount10.webp") 1x,
+          url("../img/discount10.png") 1x
+        );
         background-repeat: no-repeat;
         width: 88px;
         height: 88px;
@@ -185,6 +395,16 @@
         bottom: 20px;
         @include tablet {
           background-image: url("../img/discount10-768.png");
+          background-image: -webkit-image-set(
+            url("../img/discount10-768.avif") 1x,
+            url("../img/discount10-768.webp") 1x,
+            url("../img/discount10-768.png") 1x
+          );
+          background-image: image-set(
+            url("../img/discount10-768.avif") 1x,
+            url("../img/discount10-768.webp") 1x,
+            url("../img/discount10-768.png") 1x
+          );
           width: 60px;
           height: 60px;
           left: 10px;
@@ -192,6 +412,16 @@
         }
         @include mobile {
           background-image: url("../img/discount10-320.png");
+          background-image: -webkit-image-set(
+            url("../img/discount10-320.avif") 1x,
+            url("../img/discount10-320.webp") 1x,
+            url("../img/discount10-320.png") 1x
+          );
+          background-image: image-set(
+            url("../img/discount10-320.avif") 1x,
+            url("../img/discount10-320.webp") 1x,
+            url("../img/discount10-320.png") 1x
+          );
           width: 40px;
           height: 40px;
           left: 7px;
@@ -202,6 +432,16 @@
         position: absolute;
         content: "";
         background-image: url("../img/discount30.png");
+        background-image: -webkit-image-set(
+          url("../img/discount30.avif") 1x,
+          url("../img/discount30.webp") 1x,
+          url("../img/discount30.png") 1x
+        );
+        background-image: image-set(
+          url("../img/discount30.avif") 1x,
+          url("../img/discount30.webp") 1x,
+          url("../img/discount30.png") 1x
+        );
         background-repeat: no-repeat;
         width: 88px;
         height: 88px;
@@ -209,6 +449,16 @@
         bottom: 20px;
         @include tablet {
           background-image: url("../img/discount30-768.png");
+          background-image: -webkit-image-set(
+            url("../img/discount30-768.avif") 1x,
+            url("../img/discount30-768.webp") 1x,
+            url("../img/discount30-768.png") 1x
+          );
+          background-image: image-set(
+            url("../img/discount30-768.avif") 1x,
+            url("../img/discount30-768.webp") 1x,
+            url("../img/discount30-768.png") 1x
+          );
           width: 60px;
           height: 60px;
           left: 10px;
@@ -216,6 +466,16 @@
         }
         @include mobile {
           background-image: url("../img/discount30-320.png");
+          background-image: -webkit-image-set(
+            url("../img/discount30-320.avif") 1x,
+            url("../img/discount30-320.webp") 1x,
+            url("../img/discount30-320.png") 1x
+          );
+          background-image: image-set(
+            url("../img/discount30-320.avif") 1x,
+            url("../img/discount30-320.webp") 1x,
+            url("../img/discount30-320.png") 1x
+          );
           width: 40px;
           height: 40px;
           left: 7px;
@@ -226,6 +486,16 @@
         position: absolute;
         content: "";
         background-image: url("../img/discount40.png");
+        background-image: -webkit-image-set(
+          url("../img/discount40.avif") 1x,
+          url("../img/discount40.webp") 1x,
+          url("../img/discount40.png") 1x
+        );
+        background-image: image-set(
+          url("../img/discount40.avif") 1x,
+          url("../img/discount40.webp") 1x,
+          url("../img/discount40.png") 1x
+        );
         background-repeat: no-repeat;
         width: 88px;
         height: 88px;
@@ -233,6 +503,16 @@
         bottom: 20px;
         @include tablet {
           background-image: url("../img/discount40-768.png");
+          background-image: -webkit-image-set(
+            url("../img/discount40-768.avif") 1x,
+            url("../img/discount40-768.webp") 1x,
+            url("../img/discount40-768.png") 1x
+          );
+          background-image: image-set(
+            url("../img/discount40-768.avif") 1x,
+            url("../img/discount40-768.webp") 1x,
+            url("../img/discount40-768.png") 1x
+          );
           width: 60px;
           height: 60px;
           left: 10px;
@@ -240,6 +520,16 @@
         }
         @include mobile {
           background-image: url("../img/discount40-320.png");
+          background-image: -webkit-image-set(
+            url("../img/discount40-320.avif") 1x,
+            url("../img/discount40-320.webp") 1x,
+            url("../img/discount40-320.png") 1x
+          );
+          background-image: image-set(
+            url("../img/discount40-320.avif") 1x,
+            url("../img/discount40-320.webp") 1x,
+            url("../img/discount40-320.png") 1x
+          );
           width: 40px;
           height: 40px;
           left: 7px;
@@ -250,6 +540,16 @@
         position: absolute;
         content: "";
         background-image: url("../img/discount50.png");
+        background-image: -webkit-image-set(
+          url("../img/discount50.avif") 1x,
+          url("../img/discount50.webp") 1x,
+          url("../img/discount50.png") 1x
+        );
+        background-image: image-set(
+          url("../img/discount50.avif") 1x,
+          url("../img/discount50.webp") 1x,
+          url("../img/discount50.png") 1x
+        );
         background-repeat: no-repeat;
         width: 88px;
         height: 88px;
@@ -257,6 +557,16 @@
         bottom: 20px;
         @include tablet {
           background-image: url("../img/discount50-768.png");
+          background-image: -webkit-image-set(
+            url("../img/discount50-768.avif") 1x,
+            url("../img/discount50-768.webp") 1x,
+            url("../img/discount50-768.png") 1x
+          );
+          background-image: image-set(
+            url("../img/discount50-768.avif") 1x,
+            url("../img/discount50-768.webp") 1x,
+            url("../img/discount50-768.png") 1x
+          );
           width: 60px;
           height: 60px;
           left: 10px;
@@ -264,6 +574,16 @@
         }
         @include mobile {
           background-image: url("../img/discount50-320.png");
+          background-image: -webkit-image-set(
+            url("../img/discount50-320.avif") 1x,
+            url("../img/discount50-320.webp") 1x,
+            url("../img/discount50-320.png") 1x
+          );
+          background-image: image-set(
+            url("../img/discount50-320.avif") 1x,
+            url("../img/discount50-320.webp") 1x,
+            url("../img/discount50-320.png") 1x
+          );
           width: 40px;
           height: 40px;
           left: 7px;

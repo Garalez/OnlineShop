@@ -78,17 +78,17 @@
     &-btn {
       width: 151px;
       height: 54px;
-      background-image: url("../img/btn.jpg");
+      background-image: url("../img/btn.svg");
       background-repeat: no-repeat;
       border: none;
       &:hover {
-        background-image: url("../img/btn.png");
+        background-image: url("../img/btn-menu-hover.svg");
         transition: all 0.4s ease;
       }
       @include tablet {
         width: 115px;
         height: 42px;
-        background-image: url("../img/btn768.png");
+        background-image: url("../img/btn768.svg");
         pointer-events: none;
       }
       @include mobile {
@@ -96,6 +96,9 @@
         height: 30px;
         background-image: url("../img/btn320.svg");
       }
+    }
+    &-btn.menu-active {
+      background-image: url("../img/menu-open-btn.svg");
     }
     &-form {
       display: flex;

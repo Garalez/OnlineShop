@@ -4,7 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const createLink = url => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet';
+        link.href = url;
+        document.head.append(link);
+      };
+      createLink('css/index.css')
+    });
+  </script>
   <script type="module" src="./scripts/index.js"></script>
   <script defer src="./scripts/modules/footer.js"></script>
   <title>Blog</title>

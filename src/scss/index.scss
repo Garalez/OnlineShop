@@ -1,11 +1,12 @@
 @import 'var';
 @import 'normalize';
-@import 'footer';
 @import 'header';
+@import 'menu';
 @import 'blogMain';
 @import 'pagination';
 @import 'discountMain';
 @import 'dicsountCardFooter';
+@import 'footer';
 
 
 @font-face {
@@ -151,4 +152,9 @@ aside {
     font-size: 12px;
     line-height: 14px;
   }
+}
+
+.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
