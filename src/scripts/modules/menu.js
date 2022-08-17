@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 const navBar = document.querySelector('.header__nav');
 const navMenuBtn = document.querySelector('.header__nav-btn');
+const breadCrumb = document.querySelector('.header__breadcrumb-list');
 
 
 const showMenu = () => {
@@ -87,59 +88,60 @@ const showMenu = () => {
 
 
 const modalEvents = () => {
-  const {menuOverlay, menuWrapper} = showMenu();
-
   navBar.addEventListener('click', e => {
-    const duration = 700;
-    const distance = menuWrapper.clientHeight;
-
-    const startAnimation = (duration, callback) => {
-      let startAnimation = NaN;
-
-      requestAnimationFrame(function step(timestamp) {
-        startAnimation ||= timestamp;
-
-        const progress = (timestamp - startAnimation) / duration;
-
-        callback(progress);
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        }
-      });
-    };
-
-    const easeInOut = time => 0.5 * (1 - Math.cos(Math.PI * time));
     const target = e.target;
 
     if (target.closest('.header__nav-btn')) {
-      if (!navMenuBtn.classList.contains('menu-active')) {
-        navMenuBtn.classList.add('menu-active');
-        menuOverlay.classList.add('is-visible');
-        menuWrapper.style.top = `${-distance * 2.11}px`;
-        startAnimation(duration, (progress) => {
-          const top = easeInOut(progress) * distance;
-          menuWrapper.style.transform = `translateY(${top}px)`;
-        });
-      } else {
-        navMenuBtn.classList.remove('menu-active');
-        menuWrapper.style.top = `${-distance * 1.1}px`;
-        startAnimation(duration, (progress) => {
-          const top = easeInOut(progress) * distance;
-          menuWrapper.style.transform = `translateY(${-top}px)`;
-        });
-        menuOverlay.classList.remove('is-visible');
-      }
-    }
+      const {menuOverlay, menuWrapper} = showMenu();
 
-    menuOverlay.addEventListener('click', () => {
-      navMenuBtn.classList.remove('menu-active');
-      menuWrapper.style.top = `${-distance * 1.1}px`;
+      const duration = 700;
+      const distance = menuWrapper.clientHeight;
+
+      const startAnimation = (duration, callback) => {
+        let startAnimation = NaN;
+
+        requestAnimationFrame(function step(timestamp) {
+          startAnimation ||= timestamp;
+
+          const progress = (timestamp - startAnimation) / duration;
+
+          callback(progress);
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        });
+      };
+
+      const easeInOut = time => 0.5 * (1 - Math.cos(Math.PI * time));
+      if (breadCrumb) {
+        breadCrumb.style.display = 'none';
+      }
+      navMenuBtn.classList.add('menu-active');
+      menuOverlay.classList.add('is-visible');
+      menuWrapper.style.top = `${-distance / 1.6}px`;
       startAnimation(duration, (progress) => {
         const top = easeInOut(progress) * distance;
-        menuWrapper.style.transform = `translateY(${-top}px)`;
+        menuWrapper.style.transform = `translateY(${top}px)`;
       });
-      menuOverlay.classList.remove('is-visible');
-    });
+
+      menuOverlay.addEventListener('click', event => {
+        if (!event.target.closest('.menu__wrapper')) {
+          if (breadCrumb) {
+            breadCrumb.style.display = 'flex';
+          }
+          navMenuBtn.classList.remove('menu-active');
+          menuWrapper.style.top = `${distance / 3.3}px`;
+          startAnimation(duration, (progress) => {
+            const top = easeInOut(progress) * distance;
+            menuWrapper.style.transform = `translateY(${-top}px)`;
+          });
+          menuOverlay.classList.remove('is-visible');
+          setTimeout(() => {
+            menuOverlay.remove();
+          }, 500);
+        }
+      });
+    }
   });
 };
 

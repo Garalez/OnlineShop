@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import sassPkg from 'sass';
@@ -13,8 +14,8 @@ import gulpAvif from 'gulp-avif';
 import {stream as critical} from 'critical';
 import gulpIf from 'gulp-if';
 import autoprefixer from 'gulp-autoprefixer';
-import babel from 'gulp-babel';
-import concat from 'gulp-concat';
+// import babel from 'gulp-babel';
+// import concat from 'gulp-concat';
 import sourcemaps from 'gulp-sourcemaps';
 
 const prepros = true;
@@ -23,9 +24,9 @@ const sass = gulpSass(sassPkg);
 
 let dev = false;
 
-const allJS = [
-  'src/scripts/modules/**/*.js',
-];
+// const allJS = [
+//   'src/scripts/modules/**/*.js',
+// ];
 // задачи
 
 export const html = () => gulp

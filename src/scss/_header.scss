@@ -85,9 +85,9 @@
         background-image: url("../img/btn-menu-hover.svg");
         transition: all 0.4s ease;
       }
-      // @include laptopL {
-      //   pointer-events: none;
-      // }
+      @include laptopL {
+        pointer-events: none;
+      }
       @include tablet {
         width: 115px;
         height: 42px;
