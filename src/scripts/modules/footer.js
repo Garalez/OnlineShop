@@ -1,5 +1,3 @@
-import './menu.js';
-
 const catalogList = document.querySelector('.footer__catalog-list');
 const additionList = document.querySelector('.footer__addition-list');
 const catalogItems = document.querySelectorAll('.footer__catalog-item');

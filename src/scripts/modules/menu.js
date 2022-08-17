@@ -89,37 +89,26 @@ const showMenu = () => {
 const modalEvents = () => {
   const {menuOverlay, menuWrapper} = showMenu();
 
-  const duration = 700;
-  const distance = menuWrapper.clientHeight;
-
-  const startAnimation = (duration, callback) => {
-    let startAnimation = NaN;
-
-    requestAnimationFrame(function step(timestamp) {
-      startAnimation ||= timestamp;
-
-      const progress = (timestamp - startAnimation) / duration;
-
-      callback(progress);
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    });
-  };
-
-  const easeInOut = time => 0.5 * (1 - Math.cos(Math.PI * time));
-
-  const closeModal = () => {
-    navMenuBtn.classList.remove('menu-active');
-    menuWrapper.style.top = `${-distance * 1.1}px`;
-    startAnimation(duration, (progress) => {
-      const top = easeInOut(progress) * distance;
-      menuWrapper.style.transform = `translateY(${-top}px)`;
-    });
-    menuOverlay.classList.remove('is-visible');
-  };
-
   navBar.addEventListener('click', e => {
+    const duration = 700;
+    const distance = menuWrapper.clientHeight;
+
+    const startAnimation = (duration, callback) => {
+      let startAnimation = NaN;
+
+      requestAnimationFrame(function step(timestamp) {
+        startAnimation ||= timestamp;
+
+        const progress = (timestamp - startAnimation) / duration;
+
+        callback(progress);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      });
+    };
+
+    const easeInOut = time => 0.5 * (1 - Math.cos(Math.PI * time));
     const target = e.target;
 
     if (target.closest('.header__nav-btn')) {
@@ -132,12 +121,24 @@ const modalEvents = () => {
           menuWrapper.style.transform = `translateY(${top}px)`;
         });
       } else {
-        closeModal();
+        navMenuBtn.classList.remove('menu-active');
+        menuWrapper.style.top = `${-distance * 1.1}px`;
+        startAnimation(duration, (progress) => {
+          const top = easeInOut(progress) * distance;
+          menuWrapper.style.transform = `translateY(${-top}px)`;
+        });
+        menuOverlay.classList.remove('is-visible');
       }
     }
 
     menuOverlay.addEventListener('click', () => {
-      closeModal();
+      navMenuBtn.classList.remove('menu-active');
+      menuWrapper.style.top = `${-distance * 1.1}px`;
+      startAnimation(duration, (progress) => {
+        const top = easeInOut(progress) * distance;
+        menuWrapper.style.transform = `translateY(${-top}px)`;
+      });
+      menuOverlay.classList.remove('is-visible');
     });
   });
 };

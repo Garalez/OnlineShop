@@ -12,8 +12,10 @@ import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
 import {stream as critical} from 'critical';
 import gulpIf from 'gulp-if';
-// import concat from 'gulp-concat';
-// import sourcemaps from 'gulp-sourcemaps';
+import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
+import concat from 'gulp-concat';
+import sourcemaps from 'gulp-sourcemaps';
 
 const prepros = true;
 
@@ -21,9 +23,9 @@ const sass = gulpSass(sassPkg);
 
 let dev = false;
 
-// const allJS = [
-//   'src/libs',
-// ];
+const allJS = [
+  'src/scripts/modules/**/*.js',
+];
 // задачи
 
 export const html = () => gulp
@@ -39,40 +41,46 @@ export const style = () => {
   if (prepros) {
     return gulp
         .src('src/scss/**/*.scss')
-        // .pipe(gulpIf(dev, sourcemaps.init()))
+        .pipe(gulpIf(dev, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer())
         .pipe(cleanCss({
           2: {
             specialComments: 0,
           },
         }))
-        // .pipe(gulpIf(dev, sourcemaps.write('../maps')))
+        .pipe(gulpIf(dev, sourcemaps.write('../maps')))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
   }
 
   return gulp
       .src('src/css/index.css')
-      // .pipe(sourcemaps.init())
+      .pipe(sourcemaps.init())
       .pipe(gulpCssimport({
         extensions: ['css'],
       }))
+      .pipe(autoprefixer())
       .pipe(cleanCss({
         2: {
           specialComments: 0,
         },
       }))
-      // .pipe(sourcemaps.write('../maps'))
+      .pipe(sourcemaps.write('../maps'))
       .pipe(gulp.dest('dist/css'))
       .pipe(browserSync.stream());
 };
 
 export const js = () => gulp
     .src('src/scripts/**/*.js')
-    // .pipe(gulpIf(dev, sourcemaps.init()))
+    .pipe(gulpIf(dev, sourcemaps.init()))
+    // .pipe(babel({
+    //   presets: ['@babel/preset-env'],
+    //   ignore: [...allJS, 'src/scripts/**/*.min.js'],
+    // }))
     .pipe(terser())
     // .pipe(concat('index.min.js'))
-    // .pipe(gulpIf(dev, sourcemaps.write('../maps')))
+    .pipe(gulpIf(dev, sourcemaps.write('../maps')))
     .pipe(gulp.dest('dist/scripts'))
     .pipe(browserSync.stream());
 
