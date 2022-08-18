@@ -342,10 +342,8 @@
           height: 24px;
         }
       }
-      &-checkbox:checked + &-favorite::before {
+      &-favorite::before {
         content: '';
-        display: block;
-        position: absolute;
         top: 0;
         left: 0;
         width: 33px;
@@ -356,10 +354,16 @@
           color: transparent;  
           size: cover;
         };
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
         @include mobile {
           width: 24px;
           height: 24px;
         }
+      }
+      &-checkbox:checked + &-favorite::before {
+        position: absolute;
+        opacity: 1;
       }
     }
     &-info {
