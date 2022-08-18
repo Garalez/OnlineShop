@@ -290,6 +290,7 @@
       }
     }
     &-btns {
+      position: relative;
       display: flex;
       align-items: center;
       gap: 23px;
@@ -322,19 +323,42 @@
           font-size: 12px;
         }
       }
+      &-checkbox {
+        display: none;
+      }
       &-favorite {
+        position: relative;
+        cursor: pointer;
         width: 33px;
         height: 33px;
         background: {
           image: url("../img/card/card-favorite.svg");
           repeat: no-repeat;
           color: transparent; 
+          size: cover;
         };
-        border: none;
         @include mobile {
           width: 24px;
           height: 24px;
-          background-image: url("../img/card/card-favorite@320.svg");
+        }
+      }
+      &-checkbox:checked + &-favorite::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 33px;
+        height: 33px;
+        background: {
+          image: url("../img/card/card-favorite-active.svg");
+          repeat: no-repeat;
+          color: transparent;  
+          size: cover;
+        };
+        @include mobile {
+          width: 24px;
+          height: 24px;
         }
       }
     }

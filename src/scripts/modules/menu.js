@@ -130,7 +130,7 @@ const modalEvents = () => {
             breadCrumb.style.visibility = 'visible';
           }
           navMenuBtn.classList.remove('menu-active');
-          menuWrapper.style.top = `${distance / 3.3}px`;
+          menuWrapper.style.top = `${distance / 2.5}px`;
           startAnimation(duration, (progress) => {
             const top = easeInOut(progress) * distance;
             menuWrapper.style.transform = `translateY(${-top}px)`;
