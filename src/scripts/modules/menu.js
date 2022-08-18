@@ -114,7 +114,7 @@ const modalEvents = () => {
 
       const easeInOut = time => 0.5 * (1 - Math.cos(Math.PI * time));
       if (breadCrumb) {
-        breadCrumb.style.display = 'none';
+        breadCrumb.style.visibility = 'hidden';
       }
       navMenuBtn.classList.add('menu-active');
       menuOverlay.classList.add('is-visible');
@@ -127,7 +127,7 @@ const modalEvents = () => {
       menuOverlay.addEventListener('click', event => {
         if (!event.target.closest('.menu__wrapper')) {
           if (breadCrumb) {
-            breadCrumb.style.display = 'flex';
+            breadCrumb.style.visibility = 'visible';
           }
           navMenuBtn.classList.remove('menu-active');
           menuWrapper.style.top = `${distance / 3.3}px`;

@@ -1,11 +1,55 @@
 .product {
   padding: 38px 0 0 75px;
+  @include laptop {
+    padding: 32px 0 0 42px;
+  }
+  @include tablet {
+    padding: 25px 0 0 34px;
+  }
+  @include mobile {
+    padding: 10px 0 0 20px;
+  }
   &__title {
+    position: relative;
     margin-bottom: 64px;
     font-weight: 700;
     font-size: 50px;
     line-height: 130%;
     color: $black;
+    @include laptop {
+      margin-bottom: 67px;
+      font-size: 40px;
+      max-width: 538px;
+    }
+    @include tablet {
+      margin-bottom: 45px;
+      font-size: 28px;
+    }
+    @include mobile {
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 97%;
+      bottom: -21px;
+      left: 0;
+      background-color: $underline-clr;
+      @include laptop {
+        width: 92vw;
+        bottom: -17px;
+      }
+      @include tablet {
+        width: 91vw;
+        bottom: -8px;
+      }
+      @include mobile {
+        width: 87.5vw;
+        bottom: -4px;
+      }
+    }
   }
   &__list {
     display: grid;
@@ -14,6 +58,30 @@
     grid-template-areas: 
     "pic card"
     "desc ." ;
+    @include laptop {
+      row-gap: 53px;
+      grid-template-areas: 
+      "pic card"
+      "desc desc" ;
+    }
+    @include tablet {
+      grid-template-columns: 1fr 0.5fr;
+      grid-template-rows: 0px 1fr;
+      grid-template-areas:
+      ". card" 
+      "pic card"
+      "desc desc" ;
+      row-gap: 40px;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+      "pic" 
+      "card"
+      "desc" ;
+      row-gap: 20px;
+    }
   }
   &__item{
     &-pic {
@@ -25,6 +93,21 @@
         repeat: no-repeat;
       }
       grid-area: pic;
+      @include laptop {
+        width: 540px;
+        height: 303px;
+        background-image: url("../img/card/laptop1@1024.png");
+      }
+      @include tablet {
+        width: 380px;
+        height: 213px;
+        background-image: url("../img/card/laptop1@768.png");
+      }
+      @include mobile {
+        width: 280px;
+        height: 157px;
+        background-image: url("../img/card/laptop1@320.png");
+      }
       &:after {
         content: "";
         position: absolute;
@@ -36,43 +119,143 @@
           image: url("../img/card/discount15.svg");
           repeat: no-repeat;
         }
+        @include laptop {
+          width: 66px;
+          height: 66px;
+          right: 30px;
+          top: 10px;
+          background-image: url("../img/card/discount15@1024.svg");
+        }
+        @include tablet {
+          width: 50px;
+          height: 50px;
+          right: 30px;
+          top: 10px;
+          background-image: url("../img/card/discount15@768.svg");
+        }
+        @include mobile {
+          width: 32px;
+          height: 32px;
+          right: 5px;
+          top: 5px;
+          background-image: url("../img/card/discount15@320.svg");
+        }
       }
     }
     &-card {
-      padding: 6px 75px 0 120px;
+      padding: 6px 58px 0 128px;
       grid-area: card;
+      @include laptop {
+        padding: 0 41px 0 100px;
+      }
+      @include tablet {
+        padding: 0 41px 0 20px;
+      }
+      @include mobile {
+        padding: 0;
+      }
     }
     &-desc {
       grid-area: desc;
+      @include laptop {
+        padding-right: 30px;
+      }
+      @include tablet {
+        padding-right: 35px;
+      }
+      @include mobile {
+        padding: 16px 15px 0px 0px;
+      }
       &-title {
         margin-bottom: 19px;
         font-weight: 700;
         font-size: 32px;
         line-height: 130%;
+        @include laptop {
+          font-size: 24px;
+        }
+        @include tablet {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        @include mobile {
+          margin-bottom: 5px;
+          font-size: 16px;
+        }
       }
       &-subtitle {
         font-weight: 400;
         font-size: 22px;
         line-height: 150%;
+        @include laptop {
+          font-size: 18px;
+        }
+        @include tablet {
+          font-size: 16px;
+        }
+        @include mobile {
+          font-size: 12px;
+        }
       }
     }
   }
   &__card{
     &-list {
+      position: relative;
       display: flex;
       flex-direction: column;
       box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
       border-radius: 16px;
       padding: 46px 0 35px 42px;
+      @include laptop {
+        padding: 27px 0px 25px 19px;
+      }
+      @include tablet {
+        padding: 24px 0 25px 19px;
+      }
+      @include mobile {
+        box-shadow: unset;
+        border-radius: 0;
+        padding: 26px 0 25px 30px;
+      }
+      &:before {
+        @include mobile {
+          content: "";
+          width: 100vw;
+          height: 250px;
+          position: absolute;
+          top: 0px;
+          left: -20px;
+          background-color: transparent;
+          box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+        }
+      }
     }
     &-price {
       margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      @include laptop {
+        gap: 25px;
+        margin-bottom: 15px;
+      }
+      @include mobile {
+        margin-bottom: 14px;
+      }
       &-discount {
-        margin-right: 15px;
         color: $red;
         font-weight: 700;
         font-size: 36px;
         line-height: 43px;
+        @include laptop {
+          font-size: 28px;
+          line-height: 34px;
+        }
+        @include mobile {
+          font-size: 20px;
+          line-height: 24px;
+        }
       }
       &-nodiscount {
         text-decoration: line-through;
@@ -81,20 +264,44 @@
         font-weight: 400;
         font-size: 22px;
         line-height: 26px;
+        @include laptop {
+          font-size: 18px;
+          line-height: 22px;
+        }
+        @include mobile {
+          font-size: 12px;
+          line-height: 14px;
+        }
       }
     }
     &-credit {
+      margin-bottom: 27px;
+      color: $blue;
       font-weight: 700;
       font-size: 16px;
       line-height: 130%;
-      color: $blue;
-      margin-bottom: 27px;
+      @include laptop {
+        margin-bottom: 29px;
+        font-size: 14px;
+      }
+      @include mobile {
+        margin-bottom: 18px;
+        font-size: 12px;
+      }
     }
     &-btns {
       display: flex;
       align-items: center;
       gap: 23px;
       margin-bottom: 33px;
+      @include laptop {
+        padding-right: 23px;
+      }
+      @include mobile {
+        padding: 0;
+        gap: 18px;
+        margin-bottom: 21px;
+      }
       &-bucket {
         width: 234px;
         height: 55px;
@@ -105,6 +312,15 @@
         line-height: 130%;
         color: $white;
         border: none;
+        @include laptop {
+          width: 202px;
+          height: 45px;
+        }
+        @include mobile {
+          width: 148px;
+          height: 32px;
+          font-size: 12px;
+        }
       }
       &-favorite {
         width: 33px;
@@ -115,34 +331,61 @@
           color: transparent; 
         };
         border: none;
+        @include mobile {
+          width: 24px;
+          height: 24px;
+          background-image: url("../img/card/card-favorite@320.svg");
+        }
       }
     }
     &-info {
       display: flex;
       gap: 77px;
       margin-bottom: 27px;
+      @include laptop {
+        gap: 62px;
+      }
+      @include mobile {
+        margin-bottom: 18px;
+        gap: 33px;
+      }
       &-shipping,
       &-seller {
         &-wrapper {
           display: flex;
           flex-direction: column;
           gap: 5px;
+          @include mobile {
+            gap: 8px;
+          }
         }
         font-weight: 400;
         font-size: 16px;
         line-height: 130%;
         color: $gray;
+        @include mobile {
+          font-size: 12px;
+        }
       }
       &-date,
       &-name {
         font-weight: 400;
         font-size: 16px;
         line-height: 130%;
+        @include mobile {
+          font-size: 12px;
+        }
       }
     }
     &-discount {
       display: flex;
       gap: 11px;
+      @include laptop {
+        gap: 6px;
+      }
+      @include mobile {
+        gap: 4px;
+      }
       &-btn {
         width: 24px;
         height: 24px;
@@ -152,6 +395,11 @@
           color: transparent; 
         };
         border: none;
+        @include mobile {
+          width: 14px;
+          height: 14px;
+          background-image: url("../img/card/card-bell@320.svg");
+        }
       }
       &-txt {
         display: flex;
@@ -160,6 +408,12 @@
         font-size: 16px;
         line-height: 130%;
         color: $blue;
+        @include laptop {
+          font-size: 14px;
+        }
+        @include mobile {
+          font-size: 8px;
+        }
       }
     }
   }

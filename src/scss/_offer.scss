@@ -1,17 +1,27 @@
 .offer {
   padding: 103px 0 149px 75px;
+  @include laptop {
+    padding: 60px 0 98px 44px;
+  }
+  @include tablet {
+    padding: 62px 0 75px 34px
+  }
+  @include mobile {
+    padding: 51px 0 48px 20px;
+  }
   &-profit {
     &__list {
       display: none;
       @include laptop {
         display: flex;
-        gap: 55px 20px;
+        flex-wrap: wrap;
+        gap: 48px 20px;
       }
       @include tablet {
-        gap: 39px 20px;
+        gap: 35px 20px;
       }
       @include mobile {
-        gap: 33px 21px;
+        gap: 28px 20px;
       }
     }
     &__item {
@@ -20,6 +30,7 @@
         @include laptop {
           margin-bottom: 20px;
           width: 300px;
+          height: 295px;
           background-image: url("../img/shirts-1024.jpg");
           background-image: -webkit-image-set(
             url("../img/shirts-1024.avif") 1x,
@@ -51,7 +62,7 @@
         @include mobile {
           width: 130px;
           height: 130px;
-          margin-bottom: 15px;
+          margin-bottom: 12px;
           background-image: url("../img/shirts-320.jpg");
           background-image: -webkit-image-set(
             url("../img/shirts-320.avif") 1x,
@@ -70,6 +81,7 @@
         @include laptop {
           margin-bottom: 20px;
           width: 300px;
+          height: 295px;
           background-image: url("../img/sneakers-1024.jpg");
           background-image: -webkit-image-set(
             url("../img/sneakers-1024.avif") 1x,
@@ -120,6 +132,7 @@
         @include laptop {
           margin-bottom: 20px;
           width: 300px;
+          height: 295px;
           background-image: url("../img/bedroom-1024.jpg");
           background-image: -webkit-image-set(
             url("../img/bedroom-1024.avif") 1x,
@@ -151,7 +164,7 @@
         @include mobile {
           width: 130px;
           height: 130px;
-          margin-bottom: 10px;
+          margin-bottom: 12px;
           background-image: url("../img/bedroom-320.jpg");
           background-image: -webkit-image-set(
             url("../img/bedroom-320.avif") 1x,
@@ -170,6 +183,7 @@
         @include laptop {
           margin-bottom: 20px;
           width: 300px;
+          height: 295px;
           background-image: url("../img/dryers-1024.jpg");
           background-image: -webkit-image-set(
             url("../img/dryers-1024.avif") 1x,
@@ -270,7 +284,7 @@
             width: 60px;
             height: 60px;
             left: 10px;
-            bottom: 12px;
+            bottom: 10px;
           }
           @include mobile {
             background-image: url("../img/discount10-320.png");
@@ -286,8 +300,8 @@
             );
             width: 40px;
             height: 40px;
-            left: 7px;
-            bottom: 4px;
+            left: 6px;
+            bottom: 6px;
           }
         }
         &-30::after {
@@ -326,7 +340,7 @@
             width: 60px;
             height: 60px;
             left: 10px;
-            bottom: 12px;
+            bottom: 10px;
           }
           @include mobile {
             background-image: url("../img/discount30-320.png");
@@ -342,8 +356,8 @@
             );
             width: 40px;
             height: 40px;
-            left: 7px;
-            bottom: 4px;
+            left: 6px;
+            bottom: 6px;
           }
         }
         &-40::after {
@@ -382,7 +396,7 @@
             width: 60px;
             height: 60px;
             left: 10px;
-            bottom: 12px;
+            bottom: 10px;
           }
           @include mobile {
             background-image: url("../img/discount40-320.png");
@@ -398,8 +412,8 @@
             );
             width: 40px;
             height: 40px;
-            left: 7px;
-            bottom: 4px;
+            left: 6px;
+            bottom: 6px;
           }
         }
         &-50::after {
@@ -421,7 +435,7 @@
             width: 88px;
             height: 88px;
             left: 20px;
-            bottom: 20px;
+            bottom: 124px;
           }
           @include tablet {
             background-image: url("../img/discount50-768.png");
@@ -438,7 +452,7 @@
             width: 60px;
             height: 60px;
             left: 10px;
-            bottom: 12px;
+            bottom: 93px;
           }
           @include mobile {
             background-image: url("../img/discount50-320.png");
@@ -454,8 +468,8 @@
             );
             width: 40px;
             height: 40px;
-            left: 7px;
-            bottom: 4px;
+            left: 6px;
+            bottom: 58px;
           }
         }
       }
@@ -479,6 +493,14 @@
     font-weight: 700;
     font-size: 50px;
     line-height: 130%;
+    @include laptop {
+      margin-bottom: 27px;
+      font-size: 30px;
+    }
+    @include mobile {
+      margin-bottom: 23px;
+      font-size: 20px;
+    }
   }
   &__list {
     display: flex;
