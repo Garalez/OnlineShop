@@ -1,0 +1,112 @@
+.side {
+  padding: 33px 59px 0 43px;
+  @include laptop {
+    padding: 45px 41px 0 0;
+  }
+  @include tablet {
+    padding: 12px 36px 0 43px;
+  }
+  @include mobile {
+    display: none;
+  }
+  &__list {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__city {
+    position: relative;
+    width: 532px;
+    height: 328px;
+    background-image: url("../img/Rectangle3.jpg");
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+    @include laptop {
+      width: 300px;
+      height: 254px;
+      background-image: url("../img/city1024.jpg");
+      margin-bottom: 40px;
+    }
+    &-title {
+      position: absolute;
+      width: 400px;
+      top: 67%;
+      left: 43%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+      @include laptop {
+        width: 256px;
+        top: 71%;
+        left: 48%;
+        font-size: 22px;
+      }
+    }
+    &-subtitle {
+      position: absolute;
+      top: 84%;
+      left: 34%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      @include laptop {
+        width: 100%;
+        top: 89%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+      }
+    }
+  }
+  &__car {
+    position: relative;
+    width: 532px;
+    height: 328px;
+    background-image: url("../img/Rectangle4.jpg");
+    background-repeat: no-repeat;
+    @include laptop {
+    width: 300px;
+    height: 254px;
+    background-image: url("../img/car1024.jpg");
+    }
+    &-title {
+      position: absolute;
+      width: 400px;
+      top: 73%;
+      left: 44%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+      @include laptop {
+        width: 100%;
+        top: 69%;
+        left: 55%;
+        font-size: 22px;
+      }
+    }
+    &-subtitle {
+      position: absolute;
+      width: fit-content;
+      top: 84%;
+      left: 38%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      @include laptop {
+        width: 250px;
+        top: 85%;
+        left: 46%;
+        font-size: 14px;
+      }
+    }
+  }
+}

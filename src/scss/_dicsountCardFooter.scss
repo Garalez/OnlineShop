@@ -42,6 +42,11 @@
     }
   }
   &__item {
+    &-hideable {
+      @include laptop {
+        display: none;
+      }
+    }
     &-shirts {
       position: relative;
       width: 420px;

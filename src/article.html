@@ -14,10 +14,10 @@
         link.href = url;
         document.head.append(link);
       };
-      createLink('css/index.css')
+      createLink('css/index.min.css')
     });
   </script>
-  <script type="module" src="./scripts/modules/blogArticle.js"></script>
+  <script defer src="./js/index.min.js"></script>
   <title>Обувь</title>
 </head>
 <body>
@@ -40,6 +40,7 @@
           <li class="header__nav-item header__nav-item4">
             <button class="header__nav-profile"></button>
             <button class="header__nav-basket"></button>
+            <p class="header__nav-basket-quantity"></p>
             <button class="header__nav-favorite"></button>
           </li>
         </ul>
@@ -55,8 +56,9 @@
     </div>
   </header>
 
-    <main>
-      <article class="shoe-care">
+  <div class="content-wrapper">
+    <main class="shoe-care">
+      <article class="shoe-care__blog">
         <h1 class="shoe-care__title">Как ухаживать за обувью из кожи</h1>
           <div class="shoe-care__text-wrap">
             <p class="shoe-care__text">
@@ -75,6 +77,7 @@
               аккуратной и сияющей, словно только что из магазина.
             </p>
           </div>
+          
         <figure class="shoe-care__figure">
           <figcaption>
             <ul class="shoe-care__figure-list">
@@ -89,8 +92,8 @@
 
         <article class="warning">
           <h2 class="warning__title">На что стоит обратить внимание перед покупкой </h2>
-          <p class="warning__text">Подбирайте обувь точно по размеру и полноте. Слишком тесная 
-            обувь будет чрезмерно растягиваться, и кожа испортится, не говоря уже о дискомфорте. 
+          <p class="warning__text">Подбирайте обувь точно по размеру и полноте. Слишком тесная
+            обувь будет чрезмерно растягиваться, и кожа испортится, не говоря уже о дискомфорте.
             А если модель сидит слишком свободно, то при ходьбе на ней начнут образовываться складки и заломы.</p>
         </article>
 
@@ -124,17 +127,16 @@
           <img class="shoe-shine__img320" src="./img/care-items320.jpg" alt="Принадлежности для ухода за обувью">
         </figure>
 
-
         <article class="drying">
           <h2 class="drying__title">Второй этап – сушка. </h2>
             <p class="drying__text">Ни в коем случае не используйте источники тепла – батарею, обогреватель, фен с
               горячим воздухом. Да, они сушат быстро, но за это приходит расплата в виде
-              задубевшей покоробившейся кожи.</p> 
+              задубевшей покоробившейся кожи.</p>
             <p class="drying__text">
               Нужно вытащить стельки, набить обувь бумагой либо положить внутрь формодержатели
               и сушить при комнатной температуре. Тогда
               ваши туфли или сапоги надолго сохранят красивую форму без заломов.
-            </p> 
+            </p>
             <p class="drying__text">
               Сушка длится довольно долго, и поэтому не рекомендуется носить одну и ту же пару каждый день.
               Обувь и подкладка должны отдохнуть и расправиться, только тогда вам будет комфортно
@@ -156,18 +158,26 @@
           <p class="cream__text">
             Крем подбирается точно в цвет обуви, поэтому стоит задуматься ещё перед покупкой,
             каким уходовым средством вы будете пользоваться.
-          </p> 
+          </p>
           <p class="cream__text">
             В магазине легко подобрать черный, коричневый и самый универсальный – бесцветный крем. В продаже есть и другие цвета,
             но бывает сложно найти нужный оттенок.
-          </p> 
+          </p>
           <p class="cream__text">
             По мере необходимости дополнительно обрабатывайте пару водоотталкивающими спреями.
           </p>
         </article>
       </article>
+    
+      <ul class="author__list">
+        <li class="author__item author__item-backward">
+          <a class="author__item-ref" href="">К списку статей</a>
+        </li>
+        <li class="author__item">
+          <p class="author__item-name">Инга Соловьёва</p>
+        </li>
+      </ul>
     </main>
-
     <aside class="side">
       <ul class="side__list">
         <li class="side__item side__city">
@@ -180,117 +190,107 @@
         </li>
       </ul>
     </aside>
+  </div>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__wrapper">
-          <div class="footer__logo-wrapper">
-            <a class="footer__logo-text" href="">
-              <span class="footer__logo-first">Shop</span><span class="footer__logo-second">Online</span>
-            </a>
-          </div>
-  
-          <div class="footer__hrefs">
-            <ul class="footer__catalog-list">
-              <li class="footer__catalog-item">
-                Каталог
-                <button class="footer__catalog-btn"></button>
-              </li>
-              <li class="footer__catalog-item">
-                <a class="footer__catalog-link" href="">Смартфоны</a>
-              </li>
-              <li class="footer__catalog-item">
-                <a class="footer__catalog-link" href="">Ноутбуки</a>
-              </li>
-              <li class="footer__catalog-item">
-                <a class="footer__catalog-link" href="">Ювелирные изделия</a>
-              </li>
-              <li class="footer__catalog-item">
-                <a class="footer__catalog-link" href="">Одежда</a>
-              </li>
-              <li class="footer__catalog-item">
-                <a class="footer__catalog-link" href="">Бытовая техника</a>
-              </li>
-            </ul>
-  
-            <ul class="footer__addition-list">
-              <li class="footer__addition-item">
-                <a class="footer__addition-link" href="">Бытовая химия</a>
-              </li>
-              <li class="footer__addition-item">
-                <a class="footer__addition-link" href="">Книги и журналы</a>
-              </li>
-              <li class="footer__addition-item">
-                <a class="footer__addition-link" href="">Домашний текстиль</a>
-              </li>
-              <li class="footer__addition-item">
-                <a class="footer__addition-link" href="">Электроника</a>
-              </li>
-              <li class="footer__addition-item">
-                <a class="footer__addition-link" href="">Косметика</a>
-              </li>
-            </ul>
-  
-            <ul class="footer__clients-list">
-              <li class="footer__clients-item">
-                Покупателям
-                <button class="footer__clients-btn"></button>
-              </li>
-              <li class="footer__clients-item">
-                <a class="footer__clients-link" href="">Оплата заказа</a>
-              </li>
-              <li class="footer__clients-item">
-                <a class="footer__clients-link" href="">Условия доставки</a>
-              </li>
-              <li class="footer__clients-item">
-                <a class="footer__clients-link" href="">Условия возврата заказа</a>
-              </li>
-              <li class="footer__clients-item">
-                <a class="footer__clients-link" href="">Блог</a>
-              </li>
-            </ul>
-  
-            <ul class="footer__contacts-list">
-              <li class="footer__contacts-item">Контакты</li>
-              <li class="footer__contacts-item">
-                <a class="footer__contacts-link footer__contacts-tel" href="tel:79378392361">Тел: +7 937 839 23-61</a>
-              </li>
-              <li class="footer__contacts-item">
-                <a class="footer__contacts-link footer__contacts-email" href="mailto:OnlineShop@gmail.com">Email: OnlineShop@gmail.com</a>
-              </li>
-              <li class="footer__contacts-socials">
-                <a class="footer__contacts-whats-app" href="" aria-label="Ссылка на соцсеть whats-app"></a>
-                <a class="footer__contacts-instagram" href="" aria-label="Ссылка на соцсеть instagram"></a>
-                <a class="footer__contacts-youtube" href="" aria-label="Ссылка на соцсеть youtube"></a>
-                <a class="footer__contacts-facebook" href="" aria-label="Ссылка на соцсеть facebook"></a>
-                <a class="footer__contacts-telegram" href="" aria-label="Ссылка на соцсеть telegram"></a>
-              </li>
-            </ul>
-          </div>
-  
-          <div class="footer__copy">
-            <ul class="footer__copy-list">
-              <li class="footer__copy-item">© OnlineShop, 2021</li>
-              <li class="footer__copy-item">
-                <p class="footer__copy-author">Design by Anastasia Ilina</p>
-                <a class="footer__copy-media" href="">Tg: @Mrshmallowww</a>
-              </li>
-            </ul>
-          </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__logo-wrapper">
+          <a class="footer__logo-text" href="">
+            <span class="footer__logo-first">Shop</span><span class="footer__logo-second">Online</span>
+          </a>
+        </div>
+
+        <div class="footer__hrefs">
+          <ul class="footer__catalog-list">
+            <li class="footer__catalog-item">
+              Каталог
+              <button class="footer__catalog-btn"></button>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Смартфоны</a>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Ноутбуки</a>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Ювелирные изделия</a>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Одежда</a>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Бытовая техника</a>
+            </li>
+          </ul>
+
+          <ul class="footer__addition-list">
+            <li class="footer__addition-item">
+              <a class="footer__addition-link" href="">Бытовая химия</a>
+            </li>
+            <li class="footer__addition-item">
+              <a class="footer__addition-link" href="">Книги и журналы</a>
+            </li>
+            <li class="footer__addition-item">
+              <a class="footer__addition-link" href="">Домашний текстиль</a>
+            </li>
+            <li class="footer__addition-item">
+              <a class="footer__addition-link" href="">Электроника</a>
+            </li>
+            <li class="footer__addition-item">
+              <a class="footer__addition-link" href="">Косметика</a>
+            </li>
+          </ul>
+
+          <ul class="footer__clients-list">
+            <li class="footer__clients-item">
+              Покупателям
+              <button class="footer__clients-btn"></button>
+            </li>
+            <li class="footer__clients-item">
+              <a class="footer__clients-link" href="">Оплата заказа</a>
+            </li>
+            <li class="footer__clients-item">
+              <a class="footer__clients-link" href="">Условия доставки</a>
+            </li>
+            <li class="footer__clients-item">
+              <a class="footer__clients-link" href="">Условия возврата заказа</a>
+            </li>
+            <li class="footer__clients-item">
+              <a class="footer__clients-link" href="">Блог</a>
+            </li>
+          </ul>
+
+          <ul class="footer__contacts-list">
+            <li class="footer__contacts-item">Контакты</li>
+            <li class="footer__contacts-item">
+              <a class="footer__contacts-link footer__contacts-tel" href="tel:79378392361">Тел: +7 937 839 23-61</a>
+            </li>
+            <li class="footer__contacts-item">
+              <a class="footer__contacts-link footer__contacts-email" href="mailto:OnlineShop@gmail.com">Email: OnlineShop@gmail.com</a>
+            </li>
+            <li class="footer__contacts-socials">
+              <a class="footer__contacts-whats-app" href="" aria-label="Ссылка на соцсеть whats-app"></a>
+              <a class="footer__contacts-instagram" href="" aria-label="Ссылка на соцсеть instagram"></a>
+              <a class="footer__contacts-youtube" href="" aria-label="Ссылка на соцсеть youtube"></a>
+              <a class="footer__contacts-facebook" href="" aria-label="Ссылка на соцсеть facebook"></a>
+              <a class="footer__contacts-telegram" href="" aria-label="Ссылка на соцсеть telegram"></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__copy">
+          <ul class="footer__copy-list">
+            <li class="footer__copy-item">© OnlineShop, 2021</li>
+            <li class="footer__copy-item">
+              <p class="footer__copy-author">Design by Anastasia Ilina</p>
+              <a class="footer__copy-media" href="">Tg: @Mrshmallowww</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <!-- <footer class="footer">
-      <ul class="footer__list">
-        <li class="footer__item footer__item-backward">
-          <a class="footer__item-ref" href="">К списку статей</a>
-        </li>
-        <li class="footer__item">
-          <p class="footer__item-author">Инга Соловьёва</p>
-        </li>
-      </ul>
-    </footer> -->
-  </div>
+    </div>
+  </footer>
 </body>
 </html>
 

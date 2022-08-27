@@ -1,0 +1,944 @@
+.basket {
+  padding: 11px 58px 60px 75px;
+  display: grid;
+  row-gap: 30px;
+  grid-template-columns: 0.967fr 0.33fr;
+  grid-template-areas: 
+  "basket-head basket-total"
+  "basket-delivery basket-total";
+  @include laptop {
+    padding: 18px 42px 11px 42px;
+    row-gap: 30px;
+    grid-template-columns: 0.806fr 1fr;
+    grid-template-areas: 
+    "basket-head basket-head basket-head"
+    "basket-delivery basket-delivery basket-delivery"
+    "basket-total . .";
+  }
+  @include tablet {
+    padding: 19px 0px 27px 0px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "basket-head"
+    "basket-delivery"
+    "basket-total";
+  }
+  @include mobile {
+    padding: 14px 0px 39px 19px;
+    row-gap: 20px;
+  }
+  &-head {
+    position: relative;
+    grid-area: basket-head;
+    padding: 35px 37px 30px 40px;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    @include laptop {
+      padding: 33px 27px 40px 30px;
+      margin: 0;
+    }
+    @include tablet {
+      padding: 26px 27px 34px 64px;
+      box-shadow: none;
+    }
+    @include mobile {
+      padding: 1px 1px 28px 1px;
+    }
+    &::before {
+      @include tablet {
+        content: "";
+        position: absolute;
+        top: -6px;
+        right: 0;
+        height: 100%;
+        width: 100vw;
+        box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+      }
+      @include mobile {
+        height: 100.65%;
+        top: -16px;
+      }
+    }
+    &__title {
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 130%;
+      color: $black;
+      @include laptop {
+        margin-bottom: 10px;
+        font-size: 40px;
+      }
+      @include tablet {
+        margin-bottom: 16px;
+        font-size: 28px;
+      }
+      @include mobile {
+        margin-bottom: 12px;
+        font-size: 18px;
+      }
+    }
+    &__btn-wrapper {
+      margin-bottom: 41px;
+      position: relative;
+      display: flex;
+      @include laptop {
+        margin-bottom: 52px;
+        padding-left: 3px;
+      }
+      @include mobile {
+        margin-bottom: 31px;
+        padding-left: 0px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: 41px;
+        left: 0;
+        background-color: $underline-clr;
+        @include laptop {
+          top: 51px;
+        }
+        @include tablet {
+          display: none;
+        }
+      }
+    }
+    &__checkall {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      &-label {
+        position: relative;
+        display: flex;
+        gap: 10px;
+        padding-left: 3px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        cursor: pointer;
+        @include laptop {
+          padding-left: 0;
+        }
+        @include tablet {
+          align-items: flex-end;
+          font-size: 14px;
+        }
+        @include mobile {
+          align-items: center;
+          gap: 6px;
+          font-size: 10px;
+        }
+        &::before {
+          content: '';
+          top: 0;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          border: 1px solid $gray;
+          border-radius: 2px;
+          cursor: pointer;
+        }
+      }
+      &:checked + &-label::before {
+        background-color: $blue;
+      }
+      &:checked + &-label::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 6px;
+        width: 14px;
+        height: 14px;
+        background: {
+          image: url("../img/basket/done.svg");
+          repeat: no-repeat;  
+          size: contain;
+        };
+        cursor: pointer;
+        @include laptop {
+          top: 3px;
+          left: 3px;
+        }
+      }
+    }
+    &__clear {
+      position: absolute;
+      top: -5px;
+      right: 3px;
+      width: 30px;
+      height: 30px;
+      background: {
+        image: url("../img/basket/delete.svg");
+        size: contain;
+        repeat: no-repeat;
+        color: transparent;
+      };
+      border: none;
+      @include laptop {
+        top: -10px;
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      @include tablet {
+        gap: 42px;
+      }
+      @include mobile {
+        gap: 30px;
+      }
+    }
+    &__item {
+      display: flex;
+      position: relative;
+    }
+    &__product{
+      &-counter{
+        position: absolute;
+        top: 33px;
+        left: 240px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 130%;
+        @include laptop {
+          left: 195px;
+        }
+        @include tablet {
+          top: 24px;
+          left: 176px;
+          font-size: 16px;
+        }
+        @include mobile {
+          top: 2px;
+          left: 74px;
+          font-size: 12px;
+        }
+      }
+      &-id {
+        display: none;
+      }
+      &-check {
+        &-label {
+          @include tablet {
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+      &-remove {
+        display: none;
+        @include tablet {
+          display: block;
+          width: 24px;
+          height: 24px;
+          top: 111px;
+          right: 37px;
+        }
+        @include mobile {
+          top: 112px;
+          right: 19px;
+        }
+      }
+    }
+    &__desc {
+      display: flex;
+      @include tablet {
+        display: grid;
+        grid-template-areas: 
+        "pic price"
+        "pic desc"
+        "quant ."
+        ;
+      }
+      &::before {
+        @include tablet {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 84vw;
+          top: -21px;
+          left: 0;
+          background-color: $underline-clr;
+        }
+        @include mobile {
+          width: 87vw;
+          top: -15px;
+        }
+      }
+      &-pic {
+        width: 130px;
+        height: 130px;
+        @include tablet {
+          width: 91px;
+          height: 91px;
+        }
+      }
+      &-item {
+        &:first-child {
+          padding-top: 27px;
+          margin-right: 20px;
+          @include tablet {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        &:nth-child(2) {
+          width: 130px;
+          height: 130px;
+          margin-right: 12px;
+          grid-area: pic;
+          @include laptop {
+            width: 135px;
+            margin: 0;
+          }
+          @include tablet {
+            width: 91px;
+            height: 91px;
+            margin-right: 11px;
+          }
+          @include mobile {
+            margin-right: 0px;
+          }
+        }
+        &:nth-child(3) {
+          padding-top: 2px;
+          width: 500px;
+          margin-right: 170px;
+          grid-area: desc;
+          @include laptop {
+            width: 300px;
+            margin-right: 120px;
+            padding-left: 7px;
+          }
+          @include tablet {
+            padding: 0;
+          }
+          @include mobile {
+            margin-right: 0;
+            width: 160px;
+            padding-left: 7px;
+          }
+        }
+        &:nth-child(4) {
+          display: flex;
+          gap: 10px;
+          margin-right: 87px;
+          width: 156px;
+          grid-area: quant;
+          @include laptop {
+            margin-right: 0px;
+          }
+          @include tablet {
+            gap: 11px;
+            padding: 13px 0 0 3px;
+            margin: 0;
+          }
+          @include mobile {
+            width: 100px;
+            padding: 15px 0 0 0px;
+          }
+        }
+        &:nth-child(5) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          padding-top: 3px;
+          grid-area: price;
+          width: 143px;
+          @include laptop {
+            width: 143px;
+          }
+          @include tablet {
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            padding-top: 2px;
+            margin-bottom: 7px;
+          }
+          @include mobile {
+            padding: 2px 56px 1px 8px;
+            row-gap: 8px;
+            margin-bottom: 10px;
+            display: grid;
+            grid-template-areas: 
+            "total no-discount"
+            "credit .";
+          }
+        }
+      }
+      &-title {
+        display: block;
+        margin-bottom: 8px;
+        color: $black;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 150%;
+        @include tablet {
+          padding-left: 2px;
+          margin-bottom: 5px;
+          font-size: 18px;
+        }
+        @include mobile {
+          margin: 0;
+          padding: 0;
+          font-size: 12px;
+        }
+      }
+      &-color,
+      &-additional {
+        display: block;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: $gray;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @include tablet {
+          font-size: 10px;
+          padding-left: 2px;
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+    &__quantity {
+      &-btn {
+        width: 36px;
+        height: 36px;
+        background-color: transparent;
+        border: none;
+        @include tablet {
+          width: 28px;
+          height: 28px;
+        }
+        &_add {
+          background-image: url("../img/basket/quantity-add.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        &_subtract {
+          background-image: url("../img/basket/quantity-remove.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+      &-count {
+        padding-top: 6px;
+        @include tablet {
+          font-size: 18px;
+        }
+      }
+    }
+    &__total {
+      margin-bottom: 5px;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 31px;
+      @include laptop {
+        font-size: 26px;
+      }
+      @include tablet {
+        margin: 0 12px 0 0;
+        font-size: 22px;
+        line-height: 26px;
+      }
+      @include mobile {
+        grid-area: total;
+        margin: 0;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+    &__nodiscount {
+      margin-bottom: 15px;
+      color: $gray;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      text-decoration-line: line-through;
+      @include tablet {
+        margin: 0 12px 0 0;
+        font-size: 12px;
+        line-height: 14px;
+      }
+      @include mobile {
+        margin: 0;
+        font-size: 10px;
+        line-height: 12px;
+        grid-area: no-discount;
+      }
+    }
+    &__credit {
+      color: $blue;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      @include tablet {
+        font-size: 12px;
+      }
+      @include mobile {
+        font-size: 10px;
+        grid-area: credit;
+      }
+    }
+  }
+  &-delivery {
+    position: relative;
+    padding: 35px 0 23px 40px;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    grid-area: basket-delivery;
+    @include laptop {
+      padding: 33px 30px 27px 30px;
+    }
+    @include tablet {
+      padding: 33px 65px 27px 64px;
+      box-shadow: none;
+    }
+    @include mobile {
+      padding: 20px 0px 11px 0px
+    }
+    &::before {
+      @include tablet {
+        content: "";
+        position: absolute;
+        top: -15px;
+        right: 0;
+        height: 100%;
+        width: 100vw;
+        box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+      }
+      @include mobile {
+        top: 0;
+      }
+    }
+    &__title {
+      margin-bottom: 18px;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 130%;
+      @include laptop {
+        margin-bottom: 33px;
+        font-size: 40px;
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+    &__btn-change {
+      position: absolute;
+      top: 63px;
+      right: 38px;
+      border: none;
+      background: transparent;
+      color: $blue;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      @include laptop {
+        right: 30px;
+      }
+      @include tablet {
+        top: 32px;
+        right: auto;
+        left: 64px;
+      }
+      @include mobile {
+        top: 17px;
+        left: 1px;
+        font-size: 12px;
+      }
+    }
+    &__list {
+      position: relative;
+      display: flex;
+      gap: 116px;
+      @include laptop {
+        gap: 114px;
+      }
+      @include tablet {
+        padding-top: 39px;
+        flex-direction: column;
+        gap: 0;
+      }
+      @include mobile {
+        padding: 22px 30px 0 0;
+      }
+      &::before {
+        @include tablet {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 83vw;
+          top: 127px;
+          left: 0;
+          background-color: $underline-clr;
+        }
+        @include mobile {
+          width: 88vw;
+          top: 93px;
+        }
+      }
+    }
+    &__item {
+      &-point {
+        margin-bottom: 16px;
+        color: $gray;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        @include laptop {
+          margin-bottom: 41px;
+        }
+        @include tablet {
+          display: none;
+        }
+      }
+      &-cost {
+        margin-bottom: 30px;
+        color: $gray;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        @include laptop {
+          margin-bottom: 20px;
+          white-space: nowrap;
+        }
+        @include tablet {
+          display: none;
+        }
+      }
+      &-date {
+        padding-left: 2px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        @include laptop {
+          padding-left: 0px;
+        }
+        @include tablet {
+          position: absolute;
+          left: 0;
+          top: 150px;
+        }
+        @include mobile {
+          top: 111px;
+          font-size: 12px;
+        }
+      }
+      &-address {
+        margin-bottom: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        @include laptop {
+          margin-bottom: 20px;
+        }
+        @include tablet {
+          margin-bottom: 15px;
+          font-size: 14px;
+        }
+        @include mobile {
+          font-size: 10px;
+        }
+      }
+      &-price {
+        margin-bottom: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        @include laptop {
+          margin-bottom: 18px;
+        }
+        @include tablet {
+          display: none;
+        }
+        &-gray {
+          display: none;
+          @include tablet {
+            margin-bottom: 76px;
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            color: $gray;
+          }
+          @include mobile {
+            margin-bottom: 57px;
+            font-size: 12px;
+          }
+        }
+      }
+      &-pic {
+        margin-right: 11px;
+        width: 80px;
+        height: 80px;
+        @include tablet {
+          width: 60px;
+          height: 60px;
+          margin-right: 9px;
+        }
+      }
+    }
+  }
+
+  &-total {
+    padding-left: 30px;
+    grid-area: basket-total;
+    @include laptop {
+      padding-left: 0;
+    }
+    @include tablet {
+      position: relative;
+    }
+    &::before {
+      @include tablet {
+        content: "";
+        position: absolute;
+        top: -25px;
+        right: 0;
+        height: 105%;
+        width: 100vw;
+        box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+      }
+      @include mobile {
+        top: -1px;
+        height: 390px;
+      }
+    }
+    &__wrapper {
+      padding: 33px 26px 28px 40px;
+      box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+      border-radius: 16px;
+      @include tablet {
+        padding: 18px 18px 31px 28px;
+        box-shadow: none;
+      }
+      @include mobile {
+        padding: 15px 0 20px 0px;
+      }
+    }
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 14px;
+      margin-bottom: 19px;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 31px;
+      @include tablet {
+        font-size: 22px;
+        line-height: 26px;
+      }
+      @include mobile {
+        padding-right: 19px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 9px;
+      margin-bottom: 20px;
+      color: $gray;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      @include tablet {
+        font-size: 12px;
+      }
+      @include mobile {
+        margin-bottom: 17px;
+        padding-right: 17px;
+        font-size: 10px;
+      }
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @include tablet {
+        gap: 16px;
+      }
+      @include mobile {
+        gap: 10px;
+      }
+    }
+    &__delivery-cost {
+      padding-right: 5px;
+    }
+    &__price-nodiscount {
+      text-align: center;
+    }
+    &__discount-total {
+      text-align: center;
+      padding-left: 10px;
+    }
+    &__misc {
+      &-delivery {
+        margin-bottom: 11px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        @include tablet {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 15px;
+          font-size: 12px;
+        }
+        @include mobile {
+          padding-right: 21px;
+        }
+        &-point {
+          color: $blue;
+        }
+      }
+      &-hours {
+        margin-bottom: 5px;
+        color: gray;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        @include tablet {
+          margin-bottom: 10px;
+          font-size: 12px;
+        }
+        @include mobile {
+          font-size: 10px;
+        }
+      }
+      &-address {
+        padding-right: 5px;
+        margin-bottom: 20px;
+        color: gray;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        @include tablet {
+          font-size: 12px;
+        }
+        @include mobile {
+          margin-bottom: 15px;
+          padding-right: 22px;
+          font-size: 10px;
+        }
+      }
+      &-date {
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        @include tablet {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 15px;
+          font-size: 12px;
+        }
+        @include mobile {
+          margin-bottom: 15px;
+          padding-right: 20px;
+        }
+        &-blue {
+          color: $blue;
+        }
+      }
+      &-payment {
+        margin-bottom: 29px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        @include tablet {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 15px;
+          margin-bottom: 40px;
+          font-size: 12px;
+        }
+        @include mobile {
+          padding-right: 20px;
+          margin-bottom: 19px;
+        }
+        &-method {
+          color: $blue;
+        }
+      }
+      &-btn-submit {
+        width: 266px;
+        height: 51px;
+        background-color: $blue;
+        color: $white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        @include tablet {
+          width: 708px;
+          height: 48px;
+          font-size: 14px;
+        }
+        @include mobile {
+          width: 281px;
+          height: 36px;
+        }
+      }
+      &-item {
+        &-confirm {
+          display: flex;
+          justify-content: center;
+          padding-right: 14px;
+          margin-bottom: 22px;
+          @include tablet {
+            margin-bottom: 26px;
+          }
+          @include mobile {
+            margin-bottom: 16px;
+            padding-right: 18px;
+          }
+        }
+        &-copy {
+          display: flex;
+        }
+      }
+      &-copy-label::before {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 4px;
+        left: 0;
+      }
+      &-copy-check:checked + &-copy-label::after {
+        top: 7px;
+        left: 3px;
+      }
+      &-tos {
+        padding-left: 27px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        @include tablet {
+          padding: 8px 0 0 35px;
+          font-size: 12px;
+        }
+        @include mobile {
+          padding: 7px 0 0 25px;
+          font-size: 10px;
+        }
+        &-agreement {
+          color: $gray;
+        }
+      }
+    }
+  }
+}

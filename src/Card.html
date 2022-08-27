@@ -13,11 +13,10 @@
         link.href = url;
         document.head.append(link);
       };
-      createLink('css/index.css')
+      createLink('css/index.min.css')
     });
   </script>
-  <script defer src="./scripts/modules/footer.js"></script>
-  <script defer src="./scripts/modules/menu.js"></script>
+  <script defer src="./js/index.min.js"></script>
 </head>
 <body>
   <header class="header">
@@ -39,6 +38,7 @@
           <li class="header__nav-item header__nav-item4">
             <button class="header__nav-profile"></button>
             <button class="header__nav-basket"></button>
+            <p class="header__nav-basket-quantity"></p>
             <button class="header__nav-favorite"></button>
           </li>
         </ul>
