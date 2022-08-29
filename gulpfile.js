@@ -64,7 +64,6 @@ const path = {
       'src/icons/**/*.*',
       'src/video/**/*.*',
       'src/public/**/*.*',
-      'src/data.json',
     ],
   },
   watch: {

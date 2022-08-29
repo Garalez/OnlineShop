@@ -208,6 +208,7 @@
         font-weight: 700;
         font-size: 14px;
         line-height: 130%;
+        pointer-events: none;
         @include laptop {
           left: 145px;
         }

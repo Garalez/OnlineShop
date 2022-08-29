@@ -34,8 +34,6 @@ const openBasket = () => {
             <p class="basket-delivery__item-address">г. Москва (Московская область), улица Павлика Морозова, д. 48, (Пункт выдачи), Ежедневно 10:00-21:00</p>
             <p class="basket-delivery__item-price">Бесплатно</p>
             <p class="basket-delivery__item-price-gray">Бесплатная доставка</p>
-            <img class="basket-delivery__item-pic" src="./img/basket/product-mini1.jpg" alt="product-mini">
-            <img class="basket-delivery__item-pic" src="./img/basket/product-mini2.jpg" alt="product-mini2">
           </li>
         </ul>
       </section>
@@ -180,6 +178,7 @@ export const renderBasketProducts = (err, data) => {
   const sum = data.reduce((a, b) => a + (Number(b.price) * b.count), 0);
   let discountSum = 0;
   let basketProductCounter = 0;
+  let basketProductQuantity = 0;
 
   totalPriceNoDiscount.textContent = `${validNumber(sum)} ₽`;
 
@@ -194,11 +193,11 @@ export const renderBasketProducts = (err, data) => {
             <button class="basket-head__product-remove basket-head__clear"></button>
           </li>
           <li class="basket-head__desc-item">
-            <img class="basket-head__desc-pic" src="../../img/basket/product1.png" alt="Ваш товар">
+            <img class="basket-head__desc-pic" src="./img/${item.image}" alt="Ваш товар">
           </li>
-          <li class="basket-head__desc-item">
-            <a class="basket-head__desc-title" href="#">${item.title}</a>
-            <a class="basket-head__desc-color" href="#">${item.description}</a>
+          <li class="basket-head__desc-item basket-head__desc-item-txt">
+            <a class="basket-head__desc-title" href="card.html?id=${item.id}">${item.title}</a>
+            <a class="basket-head__desc-color" href="card.html?id=${item.id}">${item.description}</a>
           </li>
           <li class="basket-head__desc-item basket-head__desc-item-counter">
             <button class="basket-head__quantity-btn basket-head__quantity-btn_subtract"></button>
@@ -235,10 +234,12 @@ export const renderBasketProducts = (err, data) => {
     }
 
     basketProductCounter += item.count;
+    basketProductQuantity += 1;
 
     const imgMini = document.createElement('img');
     imgMini.classList.add('basket-delivery__item-pic');
-    imgMini.src = '../../img/basket/product1.png';
+    imgMini.src = `./img/${item.image}`;
+    imgMini.alt = `Мини картинка ${item.title}`;
     deliveryMisc.append(imgMini);
 
     itemCounter.addEventListener('click', e => {
@@ -315,7 +316,7 @@ export const renderBasketProducts = (err, data) => {
     });
   });
 
-  productCheckboxes.forEach((item) => {
+  productCheckboxes.forEach(item => {
     item.addEventListener('change', () => {
       if (arrFromNode.every(el => el.checked === true)) {
         allCheckboxes.checked = true;
@@ -354,13 +355,14 @@ export const renderBasketProducts = (err, data) => {
 
   totalPrice.textContent = `${validNumber(discountSum)} ₽`;
   totalDiscount.textContent = `${validNumber((sum - discountSum).toFixed(1))} ₽`;
-  productHeadCounter.textContent = basketProductCounter;
+  productHeadCounter.textContent = basketProductQuantity;
   productTotalCounter.textContent = basketProductCounter;
 
   const loader = document.querySelector('.lds-ring-wrapper');
   if (loader) {
     setTimeout(() => {
       loader.remove();
-    }, 1000);
+    }, 500);
   }
 };
+

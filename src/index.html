@@ -42,206 +42,12 @@
             <button class="header__nav-favorite"></button>
           </li>
         </ul>
-
-        <!-- Убрать с индекса крошки -->
-        <ul class="header__breadcrumb-list">
-          <li class="header__breadcrumb-item">
-            <a class="header__breadcrumb-ref" href="">Главная</a>
-          </li>
-          <li class="header__breadcrumb-item">
-            <a class="header__breadcrumb-ref" href="">Корзина</a>
-          </li>
-        </ul>
       </nav>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <!-- <form class="basket" action="#">
-        <section class="basket-head">
-          <h1 class="basket-head__title">Корзина</h1>
-          <span class="basket-head__product-counter">2</span>
-          <div class="basket-head__btn-wrapper">
-            <input class="basket-head__checkall" type="checkbox" id="checkall">
-            <label class="basket-head__checkall-label" for="checkall">Выбрать все</label>
-            <button class="basket-head__clear"></button>
-          </div>
-
-          <ul class="basket-head__list">
-            <li class="basket-head__item">
-              <ul class="basket-head__desc">
-                <li class="basket-head__desc-item basket-head__desc-item-checkbox">
-                  <input class="basket-head__product-check basket-head__checkall" type="checkbox" id="product1">
-                  <label class="basket-head__product-check-label basket-head__checkall-label" for="product1"></label>
-                  <button class="basket-head__product-remove basket-head__clear"></button>
-                </li>
-                <li class="basket-head__desc-item">
-                  <img class="basket-head__desc-pic" src="./img/basket/product1.png" alt="laptop">
-                </li>
-                <li class="basket-head__desc-item">
-                  <p class="basket-head__desc-title">15.6" Игровой ноутбук ASUS G513IE-HN004T</p>
-                  <p class="basket-head__desc-color">Цвет: черный</p>
-                  <p class="basket-head__desc-additional">Оперативная память: 16 ГБ</p>
-                </li>
-                <li class="basket-head__desc-item">
-                  <button class="basket-head__quantity-btn basket-head__quantity-btn_prev"></button>
-                  <p class="basket-head__quantity-count">1</p>
-                  <button class="basket-head__quantity-btn basket-head__quantity-btn_next"></button>
-                </li>
-                <li class="basket-head__desc-item">
-                  <p class="basket-head__total">109 090 ₽</p>
-                  <p class="basket-head__nodiscount">140 590 ₽</p>
-                  <a class="basket-head__credit" href="#">В кредит от 5600 ₽ </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="basket-head__item">
-              <ul class="basket-head__desc">
-                <li class="basket-head__desc-item basket-head__desc-item-checkbox">
-                  <input class="basket-head__product-check basket-head__checkall" type="checkbox" id="product2">
-                  <label class="basket-head__product-check-label basket-head__checkall-label" for="product2"></label>
-                  <button class="basket-head__product-remove basket-head__clear"></button>
-                </li>
-                <li class="basket-head__desc-item">
-                  <img class="basket-head__desc-pic2" src="./img/basket/product2.png" alt="laptop">
-                </li>
-                <li class="basket-head__desc-item">
-                  <p class="basket-head__desc-title">Постельное белье</p>
-                  <p class="basket-head__desc-color">Цвет: белый</p>
-                  <p class="basket-head__desc-additional">Размер: Евро, двуспальное</p>
-                </li>
-                <li class="basket-head__desc-item">
-                  <button class="basket-head__quantity-btn basket-head__quantity-btn_prev"></button>
-                  <p class="basket-head__quantity-count">1</p>
-                  <button class="basket-head__quantity-btn basket-head__quantity-btn_next"></button>
-                </li>
-                <li class="basket-head__desc-item">
-                  <p class="basket-head__total">3902 ₽</p>
-                  <p class="basket-head__nodiscount">4490 ₽</p>
-                  <a class="basket-head__credit" href="#">В кредит от 560 ₽ </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-
-        <section class="basket-delivery">
-          <h2 class="basket-delivery__title">Способ доставки</h2>
-          <button class="basket-delivery__btn-change">Изменить</button>
-
-          <ul class="basket-delivery__list">
-            <li class="basket-delivery__item">
-              <p class="basket-delivery__item-point">Пункт выдачи</p>
-              <p class="basket-delivery__item-cost">Стоимость доставки</p>
-              <p class="basket-delivery__item-date">10-13 февраля</p>
-            </li>
-            <li class="basket-delivery__item">
-              <p class="basket-delivery__item-address">г. Москва (Московская область), улица Павлика Морозова, д. 48, (Пункт выдачи), Ежедневно 10:00-21:00</p>
-              <p class="basket-delivery__item-price">Бесплатно</p>
-              <p class="basket-delivery__item-price-gray">Бесплатная доставка</p>
-              <img class="basket-delivery__item-pic" src="./img/basket/product-mini1.jpg" alt="product-mini">
-              <img class="basket-delivery__item-pic" src="./img/basket/product-mini2.jpg" alt="product-mini2">
-            </li>
-          </ul>
-        </section>
-
-        <section class="basket-total">
-          <div class="basket-total__wrapper">
-            <h2 class="basket-total__title">
-              <span class="basket-total__title-text">Итого:</span>
-              <span class="basket-total__title-price">112 992 ₽</span>
-            </h2>
-            <ul class="basket-total__list">
-              <li class="basket-total__item">
-                <p class="basket-total__quantity">Товары, <span class="basket-total__quantity-number">2</span> шт.</p>
-                <p class="basket-total__discount">Скидка</p>
-                <p class="basket-total__delivery">Доставка</p>
-              </li>
-              <li class="basket-total__item">
-                <p class="basket-total__price-nodiscount">145 080 ₽</p>
-                <p class="basket-total__discount-total">32 088 ₽</p>
-                <p class="basket-total__delivery-cost">Бесплатно</p>
-              </li>
-            </ul>
-            <ul class="basket-total__misc-list">
-              <li class="basket-total__misc-item">
-                <p class="basket-total__misc-delivery">Доставка: <span class="basket-total__misc-delivery-point">Пункт выдачи</span></p>
-              </li>
-              <li class="basket-total__misc-item">
-                <p class="basket-total__misc-hours">Ежедневно 10:00 - 21:00</p>
-              </li>
-              <li class="basket-total__misc-item">
-                <p class="basket-total__misc-address">г. Москва (Московская область), улица Павлика Морозова, д. 48</p>
-              </li>
-              <li class="basket-total__misc-item">
-                <p class="basket-total__misc-date">Дата: <span class="basket-total__misc-date-blue">10-13 февраля</span></p>
-              </li>
-              <li class="basket-total__misc-item">
-                <p class="basket-total__misc-payment">Оплата: <span class="basket-total__misc-payment-method">Картой</span></p>
-              </li>
-              <li class="basket-total__misc-item basket-total__misc-item-confirm">
-                <button class="basket-total__misc-btn-submit" type="submit">Заказать</button>
-              </li>
-              <li class="basket-total__misc-item basket-total__misc-item-copy">
-                <input class="basket-total__misc-copy-check basket-head__checkall" type="checkbox" id="copy">
-                <label class="basket-total__misc-copy-label basket-head__checkall-label" for="copy">
-                  <p class="basket-total__misc-tos">Согласен с условиями <span class="basket-total__misc-tos-agreement">правил пользования торговой площадкой и правилами возврата</span></p>
-                </label>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </form>
-
-      <section class="card-footer">
-        <h2 class="card-footer__title">Это выгодно!</h2>
-        <ul class="card-footer__list">
-          <li class="card-footer__item" tabindex="0">
-            <div class="card-footer__item-shirts card-footer__item-discount-50"></div>
-            <p class="card-footer__item-price">1299 ₽ <s class="line-through">2598 ₽</s></p>
-            <p class="card-footer__item-name">Пара футболок</p>
-          </li>
-          <li class="card-footer__item" tabindex="0">
-            <div class="card-footer__item-sneakers card-footer__item-discount-40"></div>
-            <p class="card-footer__item-price">2099₽ <s class="line-through">5938 ₽</s></p>
-            <p class="card-footer__item-name">Кроссовки</p>
-          </li>
-          <li class="card-footer__item" tabindex="0">
-            <div class="card-footer__item-bedroom card-footer__item-discount-10"></div>
-            <p class="card-footer__item-price">3902 ₽ <s class="line-through">4490 ₽</s></p>
-            <p class="card-footer__item-name">Постельное белье</p>
-          </li>
-          <li class="card-footer__item" tabindex="0">
-            <div class="card-footer__item-dryers card-footer__item-discount-30"></div>
-            <p class="card-footer__item-price">2999 ₽ <s class="line-through">6030 ₽</s></p>
-            <p class="card-footer__item-name">Фен</p>
-          </li>
-          <li class="card-footer__item" tabindex="0">
-            <div class="card-footer__item-bedroom card-footer__item-discount-10"></div>
-            <p class="card-footer__item-price">3902 ₽ <s class="line-through">4490 ₽</s></p>
-            <p class="card-footer__item-name">Постельное белье</p>
-          </li>
-          <li class="card-footer__item" tabindex="0">
-            <div class="card-footer__item-dryers card-footer__item-discount-30"></div>
-            <p class="card-footer__item-price">2999 ₽ <s class="line-through">6030 ₽</s></p>
-            <p class="card-footer__item-name">Фен</p>
-          </li>
-          <li class="card-footer__item card-footer__item-hideable" tabindex="0">
-            <div class="card-footer__item-mittens card-footer__item-discount-30"></div>
-            <p class="card-footer__item-price">540 ₽ <s class="line-through">890 ₽</s></p>
-            <p class="card-footer__item-name">Варежки-мишки</p>
-          </li>
-          <li class="card-footer__item card-footer__item-hideable" tabindex="0">
-            <div class="card-footer__item-shirts card-footer__item-discount-50"></div>
-            <p class="card-footer__item-price">1299 ₽ <s class="line-through">2598 ₽</s></p>
-            <p class="card-footer__item-name">Пара футболок</p>
-          </li>
-        </ul>
-      </section> -->
-
-
       <section class="card-grid">
         <h1 class="card-grid__title visually-hidden">Каталог</h1>
 
@@ -339,12 +145,11 @@
           </a>
         </div>
 
-        <div class="footer__hrefs">
+        <section class="footer__catalog">
+          <h2 class="footer__catalog-title">Каталог</h2>
+          <button class="footer__catalog-btn"></button>
+
           <ul class="footer__catalog-list">
-            <li class="footer__catalog-item">
-              Каталог
-              <button class="footer__catalog-btn"></button>
-            </li>
             <li class="footer__catalog-item">
               <a class="footer__catalog-link" href="">Смартфоны</a>
             </li>
@@ -360,31 +165,29 @@
             <li class="footer__catalog-item">
               <a class="footer__catalog-link" href="">Бытовая техника</a>
             </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Бытовая химия</a>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Книги и журналы</a>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Домашний текстиль</a>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Электроника</a>
+            </li>
+            <li class="footer__catalog-item">
+              <a class="footer__catalog-link" href="">Косметика</a>
+            </li>
           </ul>
+        </section>
 
-          <ul class="footer__addition-list">
-            <li class="footer__addition-item">
-              <a class="footer__addition-link" href="">Бытовая химия</a>
-            </li>
-            <li class="footer__addition-item">
-              <a class="footer__addition-link" href="">Книги и журналы</a>
-            </li>
-            <li class="footer__addition-item">
-              <a class="footer__addition-link" href="">Домашний текстиль</a>
-            </li>
-            <li class="footer__addition-item">
-              <a class="footer__addition-link" href="">Электроника</a>
-            </li>
-            <li class="footer__addition-item">
-              <a class="footer__addition-link" href="">Косметика</a>
-            </li>
-          </ul>
+        <section class="footer__clients">
+          <h2 class="footer__clients-title">Покупателям</h2>
+          <button class="footer__clients-btn"></button>
 
           <ul class="footer__clients-list">
-            <li class="footer__clients-item">
-              Покупателям
-              <button class="footer__clients-btn"></button>
-            </li>
             <li class="footer__clients-item">
               <a class="footer__clients-link" href="">Оплата заказа</a>
             </li>
@@ -398,9 +201,12 @@
               <a class="footer__clients-link" href="">Блог</a>
             </li>
           </ul>
+        </section>
+
+        <section class="footer__contacts">
+          <h2 class="footer__contacts-title">Контакты</h2>
 
           <ul class="footer__contacts-list">
-            <li class="footer__contacts-item">Контакты</li>
             <li class="footer__contacts-item">
               <a class="footer__contacts-link footer__contacts-tel" href="tel:79378392361">Тел: +7 937 839 23-61</a>
             </li>
@@ -415,7 +221,7 @@
               <a class="footer__contacts-telegram" href="" aria-label="Ссылка на соцсеть telegram"></a>
             </li>
           </ul>
-        </div>
+        </section>
 
         <div class="footer__copy">
           <ul class="footer__copy-list">

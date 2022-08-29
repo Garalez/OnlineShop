@@ -41,7 +41,88 @@
       gap: 33px 21px;
     }
   }
+  &__section {
+    padding: 0px 58px 55px 76px;
+    @include laptop {
+      padding: 0px 42px 55px 40px;
+      margin-bottom: 50px;
+    }
+    @include tablet{
+      padding: 0px 32px 55px 33px;
+    }
+    @include mobile{
+      padding: 18px 19px 55px 20px;
+    }
+  }
   &__item {
+    position: relative;
+    @include laptop {
+      max-width: 300px;
+    }
+    @include laptop {
+      max-width: 220px;
+    }
+    @include laptop {
+      max-width: 130px;
+    }
+    &-discount {
+      content: "";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 115px;
+      left: 19px;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: {
+        color: #FFBD13;
+      }
+      color: $white;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 130%;
+      @include laptop {
+        bottom: 158px;
+        left: 21px;
+        font-size: 20px;
+      }
+      @include tablet {
+        width: 60px;
+        height: 60px;
+        bottom: 119px;
+        left: 11px;
+        font-size: 16px;
+      }
+      @include mobile {
+        width: 40px;
+        height: 40px;
+        bottom: 76px;
+        left: 5px;
+        font-size: 12px;
+      }
+    }
+    &-pic {
+      height: 295px;
+      width: 420px;
+      border-radius: 14px;
+      @include laptop {
+        height: 295px;
+        width: 300px;
+        margin-bottom: 10px;
+      }
+      @include tablet {
+        height: 216px;
+        width: 220px;
+        border-radius: 12px;
+      }
+      @include mobile {
+        height: 130px;
+        width: 130px;
+        margin-bottom: 2px;
+      }
+    }
     &-hideable {
       @include laptop {
         display: none;
@@ -362,6 +443,24 @@
         );
       }
     }
+    &-nodiscount {
+      font-weight: 400;
+      font-size: 20px;    
+      line-height: 24px;
+      text-decoration: line-through;
+      align-self: flex-end;
+      @include laptop {
+        align-self: center;
+      }
+      @include tablet {
+        font-size: 16px;
+        line-height: 19px;
+      }
+      @include tablet {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
     &-price {
       margin-bottom: 17px;
       font-weight: 700;
@@ -376,6 +475,30 @@
         margin-bottom: 3px;
         font-size: 16px;
         line-height: 19px;
+      }
+      &-discount {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+        @include tablet {
+          font-size: 22px;
+          line-height: 26px;
+        }
+        @include tablet {
+          font-size: 16px;
+        }
+      }
+      &-wrapper {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 23px;
+        @include laptop {
+          margin-bottom: 15px;
+        }
+        @include mobile {
+          margin-bottom: 0px;
+          gap: 16px;
+        }
       }
     }
     &-discount {
@@ -597,6 +720,9 @@
       }
     }
     &-name {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 150%;
       @include tablet {
         font-size: 18px;
       }

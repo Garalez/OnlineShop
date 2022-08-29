@@ -4,6 +4,7 @@ import {pagination} from './modules/pagination.js';
 import {fullBlog} from './modules/blogArticle.js';
 import {modalEvents} from './modules/header.js';
 import {acc} from './modules/footer.js';
+import {renderProductInfo} from './modules/productDesc.js';
 const basketItemCounter = document.querySelector(
     '.header__nav-basket-quantity');
 
@@ -19,6 +20,10 @@ const init = () => {
   if (window.location.toString().includes('article')) {
     fullBlog();
   }
+  if (window.location.toString().includes('card')) {
+    renderProductInfo();
+  }
+
   fetch('https://hidden-castle-31466.herokuapp.com/api/goods')
       .then((response) => response.json())
       .then((data) => {
@@ -31,3 +36,4 @@ const init = () => {
 };
 
 init();
+

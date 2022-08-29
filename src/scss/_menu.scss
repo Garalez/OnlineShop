@@ -10,18 +10,14 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   &__wrapper {
     position: absolute;
+    display: flex;
     width: 100%;
-    padding: 14px 0 90px 74px;
+    padding: 62px 0 90px 74px;
     background-color: $white;
     color: $black;
   }
 
-  &__hrefs {
-    display: flex;
-  }
-
   &__catalog-list,
-  &__addition-list,
   &__clients-list {
     display: flex;
     flex-direction: column;
@@ -32,67 +28,51 @@
   }
 
   &__catalog {
+    margin-right: 511px;
+    &-title {
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+    }
     &-list {
-      margin-right: 95px;
-    }
-    &-item {
-      &:first-child {
-        margin-bottom: 20px;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 130%;
-      }
-    }
-    &-btn {
-      display: none;
-    }
-  }
-
-  &__addition {
-    &-list {
-      margin-right: 242px;
-      justify-content: end;
+      flex-wrap: wrap;
+      gap: 20px 93px;
+      max-height: 350px;
+      width: 100%;
     }
   }
 
   &__clients {
-    &-list {
-      margin-right: 279px;
-    }
-    &-item {
-      word-break: break-all;
-      &:first-child {
-        margin-bottom: 19px;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 130%;
-      }
+    margin-right: 233px;
+    &-title {
+      margin-bottom: 41px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
     }
   }
 
   &__contacts {
+    &-title {
+      margin-bottom: 45px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+    }
     &-list {
       font-weight: 700;
       font-size: 16px;
       line-height: 130%;
     }
     &-item {
-      &:first-child {
-        margin-bottom: 45px;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 130%;
-      }
-      &:nth-child(2) {
-        font-size: 22px;
-        font-weight: 400;
-      }
+      font-size: 22px;
+      font-weight: 400;
     }
   }
 
   &__contacts-link,
   &__clients-link,
-  &__addition-link,
   &__catalog-link {
     display: inline-block;
     position: relative;
@@ -101,7 +81,6 @@
 
   &__contacts-link::after,
   &__clients-link::after,
-  &__addition-link::after,
   &__catalog-link::after {
     content: '';
     position: absolute;
@@ -117,7 +96,6 @@
 
   &__contacts-link:hover:after,
   &__clients-link:hover:after,
-  &__addition-link:hover:after,
   &__catalog-link:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
