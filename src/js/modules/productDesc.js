@@ -4,15 +4,12 @@ import {loadCategoryGoods} from './footer.js';
 import {preloader} from './preloader.js';
 import {renewBasketQuantity, setStorage, getStorage} from './localStorage.js';
 
-export const renderProductInfo = () => {
-  const breadCrumb = document.querySelector('.header__breadcrumb-list');
-  breadCrumb.innerHTML = '';
-
+export const renderProductInfo = async () => {
   const pageParams = new URLSearchParams(location.search);
   const postId = pageParams.get('id');
   preloader();
 
-  httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods/${postId}`, {
+  await httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods/${postId}`, {
     method: 'GET',
     callback(err, data) {
       if (err) {
@@ -21,6 +18,8 @@ export const renderProductInfo = () => {
         const main = document.querySelector('main');
         const wrapper = main.children[0];
         wrapper.innerHTML = '';
+        const breadCrumb = document.querySelector('.header__breadcrumb-list');
+        breadCrumb.innerHTML = '';
 
         wrapper.insertAdjacentHTML('afterbegin', `
           <section class="product">

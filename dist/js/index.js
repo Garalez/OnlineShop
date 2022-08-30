@@ -1058,13 +1058,11 @@ const preloader = () => {
 
 
 
-const renderProductInfo = () => {
-  const breadCrumb = document.querySelector('.header__breadcrumb-list');
-  breadCrumb.innerHTML = '';
+const renderProductInfo = async () => {
   const pageParams = new URLSearchParams(location.search);
   const postId = pageParams.get('id');
   (0,_preloader_js__WEBPACK_IMPORTED_MODULE_1__/* .preloader */ .x)();
-  (0,_data_js__WEBPACK_IMPORTED_MODULE_2__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods/${postId}`, {
+  await (0,_data_js__WEBPACK_IMPORTED_MODULE_2__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods/${postId}`, {
     method: 'GET',
 
     callback(err, data) {
@@ -1074,6 +1072,8 @@ const renderProductInfo = () => {
         const main = document.querySelector('main');
         const wrapper = main.children[0];
         wrapper.innerHTML = '';
+        const breadCrumb = document.querySelector('.header__breadcrumb-list');
+        breadCrumb.innerHTML = '';
         wrapper.insertAdjacentHTML('afterbegin', `
           <section class="product">
             <h1 class="product__title">${data.title}</h1>
