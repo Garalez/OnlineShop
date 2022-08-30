@@ -5,13 +5,13 @@ import {fullBlog} from './modules/blogArticle.js';
 import {modalEvents} from './modules/header.js';
 import {acc} from './modules/footer.js';
 import {renderProductInfo} from './modules/productDesc.js';
-const basketItemCounter = document.querySelector(
-    '.header__nav-basket-quantity');
+import {renewBasketQuantity} from './modules/localStorage.js';
 
 
 const init = () => {
   acc();
   modalEvents();
+  renewBasketQuantity();
   if (window.location.toString().includes('blog')) {
     loadPosts();
     pagination();
@@ -23,16 +23,6 @@ const init = () => {
   if (window.location.toString().includes('card')) {
     renderProductInfo();
   }
-
-  fetch('https://hidden-castle-31466.herokuapp.com/api/goods')
-      .then((response) => response.json())
-      .then((data) => {
-        let productCounter = 0;
-        data.forEach(() => {
-          productCounter += 1;
-        });
-        basketItemCounter.textContent = productCounter;
-      });
 };
 
 init();

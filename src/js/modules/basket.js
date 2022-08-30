@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import {httpRequest} from './data.js';
+import {setStorage, getStorage, removeStorage, renewBasketQuantity} from './localStorage.js';
 
 const openBasket = () => {
   const main = document.querySelector('main');
@@ -133,6 +133,7 @@ const openBasket = () => {
     </section>
   `);
 
+  const basketTitle = document.querySelector('.basket-head__title');
   const productHeadCounter = document.querySelector('.basket-head__product-counter');
   const productTotalCounter = document.querySelector('.basket-total__quantity-number');
   const productList = document.querySelector('.basket-head__list');
@@ -142,7 +143,7 @@ const openBasket = () => {
   const totalDiscount = document.querySelector('.basket-total__discount-total');
   const deleteProduct = document.querySelector('.basket-head__clear');
   const allCheckboxes = document.querySelector('.basket-head__checkall');
-
+  const btnWrapper = document.querySelector('.basket-head__btn-wrapper');
 
   return {
     productHeadCounter,
@@ -154,16 +155,13 @@ const openBasket = () => {
     totalDiscount,
     deleteProduct,
     allCheckboxes,
+    basketTitle,
+    btnWrapper,
   };
 };
 
 
-export const renderBasketProducts = (err, data) => {
-  if (err) {
-    console.warn(err);
-    return;
-  }
-  const validNumber = (num) => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
+export const renderBasketProducts = (data) => {
   const {
     productHeadCounter,
     productTotalCounter,
@@ -174,13 +172,23 @@ export const renderBasketProducts = (err, data) => {
     totalDiscount,
     deleteProduct,
     allCheckboxes,
+    basketTitle,
+    btnWrapper,
   } = openBasket();
+
+  const validNumber = (num) => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
   const sum = data.reduce((a, b) => a + (Number(b.price) * b.count), 0);
   let discountSum = 0;
   let basketProductCounter = 0;
   let basketProductQuantity = 0;
 
   totalPriceNoDiscount.textContent = `${validNumber(sum)} ₽`;
+
+  if (data.length === 0) {
+    basketTitle.textContent = 'Корзина пуста';
+    productHeadCounter.remove();
+    btnWrapper.remove();
+  }
 
   data.map(item => {
     productList.insertAdjacentHTML('afterbegin', `
@@ -248,56 +256,24 @@ export const renderBasketProducts = (err, data) => {
       const counterText = target.parentNode.children[1];
       const productId = target.parentNode.parentNode.children[0].children[0].textContent;
 
-
       if (target.closest('.basket-head__quantity-btn_add')) {
         counterText.textContent = +counterText.textContent + 1;
-
-        httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods/${productId}`, {
-          method: 'PATCH',
-          body: {
-            count: +counterText.textContent,
-          },
-          callback(err, data) {
-            console.log(err, data);
-            if (err) {
-              console.log(err);
-            } else {
-              httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods`, {
-                method: 'GET',
-                callback: renderBasketProducts,
-              });
-            }
-          },
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+        const getData = getStorage('basket');
+        const storageItem = getData.findIndex(el => el.id === productId);
+        removeStorage(getData[storageItem].id, 'basket');
+        getData[storageItem].count += 1;
+        setStorage('basket', getData);
+        renderBasketProducts(getData);
       }
-
       if (target.closest('.basket-head__quantity-btn_subtract')) {
         if (counterText.textContent > 0) {
           counterText.textContent = +counterText.textContent - 1;
-
-          httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods/${productId}`, {
-            method: 'PATCH',
-            body: {
-              count: +counterText.textContent,
-            },
-            callback(err, data) {
-              console.log(err, data);
-              if (err) {
-                console.log(err);
-              } else {
-                httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods`, {
-                  method: 'GET',
-                  callback: renderBasketProducts,
-                });
-              }
-            },
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
+          const getData = getStorage('basket');
+          const storageItem = getData.findIndex(el => el.id === productId);
+          removeStorage(getData[storageItem].id, 'basket');
+          getData[storageItem].count -= 1;
+          setStorage('basket', getData);
+          renderBasketProducts(getData);
         }
       }
     });
@@ -329,26 +305,12 @@ export const renderBasketProducts = (err, data) => {
   deleteProduct.addEventListener('click', e => {
     e.preventDefault();
 
-    productCheckboxes.forEach((item) => {
+    productCheckboxes.forEach(item => {
       if (item.checked) {
         const itemToDelete = item.parentNode.children[0].textContent;
-        httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods/${itemToDelete}`, {
-          method: 'DELETE',
-          callback(err, data) {
-            console.log(err, data);
-            if (err) {
-              console.log(err);
-            } else {
-              httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods`, {
-                method: 'GET',
-                callback: renderBasketProducts,
-              });
-            }
-          },
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+        removeStorage(itemToDelete, 'basket');
+        renderBasketProducts(getStorage('basket'));
+        renewBasketQuantity();
       }
     });
   });

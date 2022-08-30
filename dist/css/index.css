@@ -1271,6 +1271,10 @@ template {
   position: relative;
 }
 
+.card-footer__item-link {
+  color: #2d2d2d;
+}
+
 .card-footer__item-discount {
   content: "";
   display: flex;

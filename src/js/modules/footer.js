@@ -33,13 +33,15 @@ export const loadCategoryGoods = (e, err, data) => {
       if (e.target.textContent === item.category) {
         categoryList.insertAdjacentHTML('afterbegin', `
           <li class="card-footer__item" tabindex="0">
-            <img class="card-footer__item-pic" src="./img/${item.image}" alt="${item.title}">
-            <p class="card-footer__item-discount">-${item.discount}%</p>
-            <div class="card-footer__item-price-wrapper">
-            <p class="card-footer__item-price-discount"></p>
-              <p class="card-footer__item-nodiscount"></p>
-            </div>
-            <p class="card-footer__item-name">${item.title}</p>
+            <a class="card-footer__item-link"  href="card.html?id=${item.id}">
+              <img class="card-footer__item-pic" src="./img/${item.image}" alt="${item.title}">
+              <p class="card-footer__item-discount">-${item.discount}%</p>
+              <div class="card-footer__item-price-wrapper">
+              <p class="card-footer__item-price-discount"></p>
+                <p class="card-footer__item-nodiscount"></p>
+              </div>
+              <p class="card-footer__item-name">${item.title}</p>
+            </a>
           </li>
         `);
         categorySection.append(categoryTitle, categoryList);

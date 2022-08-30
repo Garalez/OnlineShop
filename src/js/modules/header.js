@@ -3,6 +3,7 @@ import {showMenu} from './menu.js';
 import {renderBasketProducts} from './basket.js';
 import {preloader} from './preloader.js';
 import {httpRequest} from './data.js';
+import {getStorage} from './localStorage.js';
 
 const navBar = document.querySelector('.header__nav');
 const breadCrumb = document.querySelector('.header__breadcrumb-list');
@@ -41,10 +42,9 @@ export const modalEvents = () => {
         `);
       }
       preloader();
-      httpRequest('https://hidden-castle-31466.herokuapp.com/api/goods', {
-        method: 'GET',
-        callback: renderBasketProducts,
-      });
+      const storagedItems = getStorage('basket');
+      console.log(storagedItems);
+      renderBasketProducts(storagedItems);
     }
   });
 };

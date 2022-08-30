@@ -6,12 +6,13 @@
 /***/ ((__unused_webpack___webpack_module__, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 /* harmony import */ var _modules_blogs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(929);
-/* harmony import */ var _modules_data_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(732);
+/* harmony import */ var _modules_data_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(732);
 /* harmony import */ var _modules_pagination_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(64);
 /* harmony import */ var _modules_blogArticle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(702);
 /* harmony import */ var _modules_header_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(918);
 /* harmony import */ var _modules_footer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(592);
-/* harmony import */ var _modules_productDesc_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(773);
+/* harmony import */ var _modules_productDesc_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(773);
+/* harmony import */ var _modules_localStorage_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(424);
 
 
 
@@ -19,14 +20,15 @@
 
 
 
-const basketItemCounter = document.querySelector('.header__nav-basket-quantity');
+
 
 const init = () => {
   (0,_modules_footer_js__WEBPACK_IMPORTED_MODULE_4__/* .acc */ .P)();
   (0,_modules_header_js__WEBPACK_IMPORTED_MODULE_3__/* .modalEvents */ .D)();
+  (0,_modules_localStorage_js__WEBPACK_IMPORTED_MODULE_6__/* .renewBasketQuantity */ .xC)();
 
   if (window.location.toString().includes('blog')) {
-    (0,_modules_data_js__WEBPACK_IMPORTED_MODULE_5__/* .loadPosts */ .N)();
+    (0,_modules_data_js__WEBPACK_IMPORTED_MODULE_7__/* .loadPosts */ .N)();
     (0,_modules_pagination_js__WEBPACK_IMPORTED_MODULE_1__/* .pagination */ .o)();
     (0,_modules_blogs_js__WEBPACK_IMPORTED_MODULE_0__/* .createPosts */ .Y)();
   }
@@ -36,16 +38,8 @@ const init = () => {
   }
 
   if (window.location.toString().includes('card')) {
-    (0,_modules_productDesc_js__WEBPACK_IMPORTED_MODULE_6__/* .renderProductInfo */ .X)();
+    (0,_modules_productDesc_js__WEBPACK_IMPORTED_MODULE_5__/* .renderProductInfo */ .X)();
   }
-
-  fetch('https://hidden-castle-31466.herokuapp.com/api/goods').then(response => response.json()).then(data => {
-    let productCounter = 0;
-    data.forEach(() => {
-      productCounter += 1;
-    });
-    basketItemCounter.textContent = productCounter;
-  });
 };
 
 init();
@@ -58,7 +52,7 @@ init();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "X": () => (/* binding */ renderBasketProducts)
 /* harmony export */ });
-/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(732);
+/* harmony import */ var _localStorage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(424);
 /* eslint-disable max-len */
 
 
@@ -192,6 +186,7 @@ const openBasket = () => {
       </ul>
     </section>
   `);
+  const basketTitle = document.querySelector('.basket-head__title');
   const productHeadCounter = document.querySelector('.basket-head__product-counter');
   const productTotalCounter = document.querySelector('.basket-total__quantity-number');
   const productList = document.querySelector('.basket-head__list');
@@ -201,6 +196,7 @@ const openBasket = () => {
   const totalDiscount = document.querySelector('.basket-total__discount-total');
   const deleteProduct = document.querySelector('.basket-head__clear');
   const allCheckboxes = document.querySelector('.basket-head__checkall');
+  const btnWrapper = document.querySelector('.basket-head__btn-wrapper');
   return {
     productHeadCounter,
     productTotalCounter,
@@ -210,18 +206,13 @@ const openBasket = () => {
     totalPriceNoDiscount,
     totalDiscount,
     deleteProduct,
-    allCheckboxes
+    allCheckboxes,
+    basketTitle,
+    btnWrapper
   };
 };
 
-const renderBasketProducts = (err, data) => {
-  if (err) {
-    console.warn(err);
-    return;
-  }
-
-  const validNumber = num => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
-
+const renderBasketProducts = data => {
   const {
     productHeadCounter,
     productTotalCounter,
@@ -231,13 +222,25 @@ const renderBasketProducts = (err, data) => {
     totalPriceNoDiscount,
     totalDiscount,
     deleteProduct,
-    allCheckboxes
+    allCheckboxes,
+    basketTitle,
+    btnWrapper
   } = openBasket();
+
+  const validNumber = num => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
+
   const sum = data.reduce((a, b) => a + Number(b.price) * b.count, 0);
   let discountSum = 0;
   let basketProductCounter = 0;
   let basketProductQuantity = 0;
   totalPriceNoDiscount.textContent = `${validNumber(sum)} ₽`;
+
+  if (data.length === 0) {
+    basketTitle.textContent = 'Корзина пуста';
+    productHeadCounter.remove();
+    btnWrapper.remove();
+  }
+
   data.map(item => {
     productList.insertAdjacentHTML('afterbegin', `
       <li class="basket-head__item">
@@ -303,57 +306,23 @@ const renderBasketProducts = (err, data) => {
 
       if (target.closest('.basket-head__quantity-btn_add')) {
         counterText.textContent = +counterText.textContent + 1;
-        (0,_data_js__WEBPACK_IMPORTED_MODULE_0__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods/${productId}`, {
-          method: 'PATCH',
-          body: {
-            count: +counterText.textContent
-          },
-
-          callback(err, data) {
-            console.log(err, data);
-
-            if (err) {
-              console.log(err);
-            } else {
-              (0,_data_js__WEBPACK_IMPORTED_MODULE_0__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods`, {
-                method: 'GET',
-                callback: renderBasketProducts
-              });
-            }
-          },
-
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+        const getData = (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .getStorage */ .cF)('basket');
+        const storageItem = getData.findIndex(el => el.id === productId);
+        (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .removeStorage */ .Li)(getData[storageItem].id, 'basket');
+        getData[storageItem].count += 1;
+        (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .setStorage */ .po)('basket', getData);
+        renderBasketProducts(getData);
       }
 
       if (target.closest('.basket-head__quantity-btn_subtract')) {
         if (counterText.textContent > 0) {
           counterText.textContent = +counterText.textContent - 1;
-          (0,_data_js__WEBPACK_IMPORTED_MODULE_0__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods/${productId}`, {
-            method: 'PATCH',
-            body: {
-              count: +counterText.textContent
-            },
-
-            callback(err, data) {
-              console.log(err, data);
-
-              if (err) {
-                console.log(err);
-              } else {
-                (0,_data_js__WEBPACK_IMPORTED_MODULE_0__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods`, {
-                  method: 'GET',
-                  callback: renderBasketProducts
-                });
-              }
-            },
-
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          });
+          const getData = (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .getStorage */ .cF)('basket');
+          const storageItem = getData.findIndex(el => el.id === productId);
+          (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .removeStorage */ .Li)(getData[storageItem].id, 'basket');
+          getData[storageItem].count -= 1;
+          (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .setStorage */ .po)('basket', getData);
+          renderBasketProducts(getData);
         }
       }
     });
@@ -383,26 +352,9 @@ const renderBasketProducts = (err, data) => {
     productCheckboxes.forEach(item => {
       if (item.checked) {
         const itemToDelete = item.parentNode.children[0].textContent;
-        (0,_data_js__WEBPACK_IMPORTED_MODULE_0__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods/${itemToDelete}`, {
-          method: 'DELETE',
-
-          callback(err, data) {
-            console.log(err, data);
-
-            if (err) {
-              console.log(err);
-            } else {
-              (0,_data_js__WEBPACK_IMPORTED_MODULE_0__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods`, {
-                method: 'GET',
-                callback: renderBasketProducts
-              });
-            }
-          },
-
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+        (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .removeStorage */ .Li)(itemToDelete, 'basket');
+        renderBasketProducts((0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .getStorage */ .cF)('basket'));
+        (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_0__/* .renewBasketQuantity */ .xC)();
       }
     });
   });
@@ -610,13 +562,15 @@ const loadCategoryGoods = (e, err, data) => {
       if (e.target.textContent === item.category) {
         categoryList.insertAdjacentHTML('afterbegin', `
           <li class="card-footer__item" tabindex="0">
-            <img class="card-footer__item-pic" src="./img/${item.image}" alt="${item.title}">
-            <p class="card-footer__item-discount">-${item.discount}%</p>
-            <div class="card-footer__item-price-wrapper">
-            <p class="card-footer__item-price-discount"></p>
-              <p class="card-footer__item-nodiscount"></p>
-            </div>
-            <p class="card-footer__item-name">${item.title}</p>
+            <a class="card-footer__item-link"  href="card.html?id=${item.id}">
+              <img class="card-footer__item-pic" src="./img/${item.image}" alt="${item.title}">
+              <p class="card-footer__item-discount">-${item.discount}%</p>
+              <div class="card-footer__item-price-wrapper">
+              <p class="card-footer__item-price-discount"></p>
+                <p class="card-footer__item-nodiscount"></p>
+              </div>
+              <p class="card-footer__item-name">${item.title}</p>
+            </a>
           </li>
         `);
         categorySection.append(categoryTitle, categoryList);
@@ -752,10 +706,12 @@ const acc = () => {
 /* harmony export */   "D": () => (/* binding */ modalEvents)
 /* harmony export */ });
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(113);
-/* harmony import */ var _basket_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(957);
+/* harmony import */ var _basket_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(957);
 /* harmony import */ var _preloader_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(422);
 /* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(732);
+/* harmony import */ var _localStorage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(424);
 /* eslint-disable max-len */
+
 
 
 
@@ -798,12 +754,63 @@ const modalEvents = () => {
       }
 
       (0,_preloader_js__WEBPACK_IMPORTED_MODULE_2__/* .preloader */ .x)();
-      (0,_data_js__WEBPACK_IMPORTED_MODULE_1__/* .httpRequest */ .c)('https://hidden-castle-31466.herokuapp.com/api/goods', {
-        method: 'GET',
-        callback: _basket_js__WEBPACK_IMPORTED_MODULE_3__/* .renderBasketProducts */ .X
-      });
+      const storagedItems = (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_3__/* .getStorage */ .cF)('basket');
+      console.log(storagedItems);
+      (0,_basket_js__WEBPACK_IMPORTED_MODULE_4__/* .renderBasketProducts */ .X)(storagedItems);
     }
   });
+};
+
+/***/ }),
+
+/***/ 424:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Li": () => (/* binding */ removeStorage),
+/* harmony export */   "cF": () => (/* binding */ getStorage),
+/* harmony export */   "po": () => (/* binding */ setStorage),
+/* harmony export */   "xC": () => (/* binding */ renewBasketQuantity)
+/* harmony export */ });
+/* eslint-disable max-len */
+const getStorage = key => {
+  const objFromStorage = JSON.parse(localStorage.getItem(key));
+
+  if (objFromStorage === null) {
+    return [];
+  } else {
+    return objFromStorage;
+  }
+};
+const setStorage = (key, obj) => {
+  const getData = getStorage(key);
+
+  if (Array.isArray(obj)) {
+    getData.splice(0, getData.length, ...obj);
+  } else {
+    getData.push(obj);
+  }
+
+  const newData = JSON.stringify(getData);
+  localStorage.setItem(key, newData);
+};
+const removeStorage = (id, usersName) => {
+  const getDataFromStorage = getStorage(usersName);
+  getDataFromStorage.forEach((item, index) => {
+    if (id === item.id) {
+      getDataFromStorage.splice([index], 1);
+      setStorage(usersName, getDataFromStorage);
+    }
+  });
+};
+const renewBasketQuantity = () => {
+  const basketItemQuantity = document.querySelector('.header__nav-basket-quantity');
+  const itemsInStorage = getStorage('basket');
+  let productCounter = 0;
+  itemsInStorage.forEach(() => {
+    productCounter += 1;
+  });
+  basketItemQuantity.textContent = productCounter;
 };
 
 /***/ }),
@@ -1042,9 +1049,13 @@ const preloader = () => {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "X": () => (/* binding */ renderProductInfo)
 /* harmony export */ });
-/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(732);
-/* harmony import */ var _preloader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(422);
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(732);
+/* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(592);
+/* harmony import */ var _preloader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(422);
+/* harmony import */ var _localStorage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(424);
 /* eslint-disable max-len */
+
+
 
 
 const renderProductInfo = () => {
@@ -1052,8 +1063,8 @@ const renderProductInfo = () => {
   breadCrumb.innerHTML = '';
   const pageParams = new URLSearchParams(location.search);
   const postId = pageParams.get('id');
-  (0,_preloader_js__WEBPACK_IMPORTED_MODULE_0__/* .preloader */ .x)();
-  (0,_data_js__WEBPACK_IMPORTED_MODULE_1__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods/${postId}`, {
+  (0,_preloader_js__WEBPACK_IMPORTED_MODULE_1__/* .preloader */ .x)();
+  (0,_data_js__WEBPACK_IMPORTED_MODULE_2__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods/${postId}`, {
     method: 'GET',
 
     callback(err, data) {
@@ -1186,6 +1197,7 @@ const renderProductInfo = () => {
         `);
         const discountPrice = document.querySelector('.product__card-price-nodiscount');
         const discountNumber = document.querySelector('.product__item-discount');
+        const addToBasketBtn = document.querySelector('.product__card-btns-bucket');
 
         if (data.discount === 0) {
           discountPrice.remove();
@@ -1194,6 +1206,29 @@ const renderProductInfo = () => {
           discountNumber.textContent = `-${data.discount}%`;
         }
 
+        addToBasketBtn.addEventListener('click', () => {
+          const getData = (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_3__/* .getStorage */ .cF)('basket');
+          console.log(getData);
+
+          if (getData.length > 0) {
+            const storageItem = getData.findIndex(el => el.id === data.id);
+            console.log(storageItem);
+
+            if (storageItem >= 0) {
+              alert('Товар уже есть в корзине');
+            } else {
+              data.count = 1;
+              alert('Товар добавлен в корзину');
+              (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_3__/* .setStorage */ .po)('basket', data);
+              (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_3__/* .renewBasketQuantity */ .xC)();
+            }
+          } else {
+            data.count = 1;
+            alert('Товар добавлен в корзину');
+            (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_3__/* .setStorage */ .po)('basket', data);
+            (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_3__/* .renewBasketQuantity */ .xC)();
+          }
+        });
         const loader = document.querySelector('.lds-ring-wrapper');
 
         if (loader) {
@@ -1207,12 +1242,24 @@ const renderProductInfo = () => {
                 <a class="header__breadcrumb-ref" href="">Каталог</a>
               </li>
               <li class="header__breadcrumb-item">
-                <a class="header__breadcrumb-ref" href="">${data.category}</a>
+                <a class="header__breadcrumb-ref header__breadcrumb-ref-category" href="">${data.category}</a>
               </li>
               <li class="header__breadcrumb-item">
                 <a class="header__breadcrumb-ref" href="">${data.title}</a>
               </li>
             `);
+            const categoryCrumb = document.querySelector('.header__breadcrumb-ref-category');
+            categoryCrumb.addEventListener('click', e => {
+              e.preventDefault();
+              (0,_data_js__WEBPACK_IMPORTED_MODULE_2__/* .httpRequest */ .c)(`https://hidden-castle-31466.herokuapp.com/api/goods`, {
+                method: 'GET',
+
+                callback(err, data) {
+                  (0,_footer_js__WEBPACK_IMPORTED_MODULE_0__/* .loadCategoryGoods */ .T)(e, err, data);
+                }
+
+              });
+            });
           }, 500);
         }
       }
@@ -1279,6 +1326,7 @@ const renderProductInfo = () => {
 /******/ 	__webpack_require__(732);
 /******/ 	__webpack_require__(592);
 /******/ 	__webpack_require__(918);
+/******/ 	__webpack_require__(424);
 /******/ 	__webpack_require__(113);
 /******/ 	__webpack_require__(64);
 /******/ 	__webpack_require__(422);

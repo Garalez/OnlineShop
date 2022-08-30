@@ -65,6 +65,9 @@
     @include laptop {
       max-width: 130px;
     }
+    &-link {
+      color: $black;
+    }
     &-discount {
       content: "";
       display: flex;

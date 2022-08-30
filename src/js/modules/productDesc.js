@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import {httpRequest} from './data.js';
+import {loadCategoryGoods} from './footer.js';
 import {preloader} from './preloader.js';
+import {renewBasketQuantity, setStorage, getStorage} from './localStorage.js';
 
 export const renderProductInfo = () => {
   const breadCrumb = document.querySelector('.header__breadcrumb-list');
@@ -144,6 +146,7 @@ export const renderProductInfo = () => {
 
         const discountPrice = document.querySelector('.product__card-price-nodiscount');
         const discountNumber = document.querySelector('.product__item-discount');
+        const addToBasketBtn = document.querySelector('.product__card-btns-bucket');
 
         if (data.discount === 0) {
           discountPrice.remove();
@@ -151,6 +154,28 @@ export const renderProductInfo = () => {
         } else {
           discountNumber.textContent = `-${data.discount}%`;
         }
+
+        addToBasketBtn.addEventListener('click', () => {
+          const getData = getStorage('basket');
+          console.log(getData);
+          if (getData.length > 0) {
+            const storageItem = getData.findIndex(el => el.id === data.id);
+            console.log(storageItem);
+            if (storageItem >= 0) {
+              alert('Товар уже есть в корзине');
+            } else {
+              data.count = 1;
+              alert('Товар добавлен в корзину');
+              setStorage('basket', data);
+              renewBasketQuantity();
+            }
+          } else {
+            data.count = 1;
+            alert('Товар добавлен в корзину');
+            setStorage('basket', data);
+            renewBasketQuantity();
+          }
+        });
 
         const loader = document.querySelector('.lds-ring-wrapper');
         if (loader) {
@@ -164,12 +189,22 @@ export const renderProductInfo = () => {
                 <a class="header__breadcrumb-ref" href="">Каталог</a>
               </li>
               <li class="header__breadcrumb-item">
-                <a class="header__breadcrumb-ref" href="">${data.category}</a>
+                <a class="header__breadcrumb-ref header__breadcrumb-ref-category" href="">${data.category}</a>
               </li>
               <li class="header__breadcrumb-item">
                 <a class="header__breadcrumb-ref" href="">${data.title}</a>
               </li>
             `);
+            const categoryCrumb = document.querySelector('.header__breadcrumb-ref-category');
+            categoryCrumb.addEventListener('click', e => {
+              e.preventDefault();
+              httpRequest(`https://hidden-castle-31466.herokuapp.com/api/goods`, {
+                method: 'GET',
+                callback(err, data) {
+                  loadCategoryGoods(e, err, data);
+                },
+              });
+            });
           }, 500);
         }
       }
