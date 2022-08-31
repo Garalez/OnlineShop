@@ -59,44 +59,44 @@
       width: 190px;
       height: 41px;
       display: block;
-      background-image: url("/dist/img/logo.svg");
+      background-image: url("../img/logo.svg");
       background-repeat: no-repeat;
       @include tablet {
         height: 35px;
         width: 165px;
-        background-image: url("/dist/img/logo768.svg");
+        background-image: url("../img/logo768.svg");
         margin-right: 0;
         padding-top: 0;
       }
       @include mobile {
         width: 114px;
         height: 25px;
-        background-image: url("/dist/img/logo320.svg");
+        background-image: url("../img/logo320.svg");
       }
     }
     &-btn {
       width: 151px;
       height: 54px;
-      background-image: url("/dist/img/btn.svg");
+      background-image: url("../img/btn.svg");
       background-repeat: no-repeat;
       border: none;
       &:hover {
-        background-image: url("/dist/img/btn-menu-hover.svg");
+        background-image: url("../img/btn-menu-hover.svg");
         transition: all 0.4s ease;
       }
       @include tablet {
         width: 115px;
         height: 42px;
-        background-image: url("/dist/img/btn768.svg");
+        background-image: url("../img/btn768.svg");
       }
       @include mobile {
         width: 79px;
         height: 30px;
-        background-image: url("/dist/img/btn320.svg");
+        background-image: url("../img/btn320.svg");
       }
     }
     &-btn.menu-active {
-      background-image: url("/dist/img/menu-open-btn.svg");
+      background-image: url("../img/menu-open-btn.svg");
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -131,7 +131,7 @@
       &-btn {
         width: 101px;
         height: 54px;
-        background-image: url("/dist/img/search-btn.svg");
+        background-image: url("../img/search-btn.svg");
         background-repeat: no-repeat;
         border: none;
         border-radius: 30px;
@@ -140,13 +140,13 @@
           width: 82px;
           height: 42px;
           margin-left: -80px;
-          background-image: url("/dist/img/search-btn768.svg");
+          background-image: url("../img/search-btn768.svg");
         }
         @include mobile {
           width: 50px;
           height: 30px;
           margin-left: -50px;
-          background-image: url("/dist/img/search-btn320.svg");
+          background-image: url("../img/search-btn320.svg");
         }
       }
     }
@@ -154,36 +154,36 @@
       border: none;
       width: 69px;
       height: 61px;
-      background-image: url("/dist/img/profile.svg");
+      background-image: url("../img/profile.svg");
       background-repeat: no-repeat;
       background-color: $white;
       @include tablet {
         width: 52px;
         height: 44px;
-        background-image: url("/dist/img/profile768.svg");
+        background-image: url("../img/profile768.svg");
       }
       @include mobile {
         width: 30px;
         height: 30px;
-        background-image: url("/dist/img/profile320.svg");
+        background-image: url("../img/profile320.svg");
       }
     }
     &-basket {
       border: none;
       width: 63px;
       height: 61px;
-      background-image: url("/dist/img/basket.svg");
+      background-image: url("../img/basket.svg");
       background-repeat: no-repeat;
       background-color: $white;
       @include tablet {
         width: 47px;
         height: 44px;
-        background-image: url("/dist/img/basket768.svg");
+        background-image: url("../img/basket768.svg");
       }
       @include mobile {
         width: 30px;
         height: 30px;
-        background-image: url("/dist/img/basket320.svg");
+        background-image: url("../img/basket320.svg");
       }
       &-quantity {
         width: 14px;
@@ -217,18 +217,18 @@
       border: none;
       width: 82px;
       height: 61px;
-      background-image: url("/dist/img/favourite.svg");
+      background-image: url("../img/favourite.svg");
       background-repeat: no-repeat;
       background-color: $white;
       @include tablet {
         width: 62px;
         height: 44px;
-        background-image: url("/dist/img/favourite768.svg");
+        background-image: url("../img/favourite768.svg");
       }
       @include mobile {
         width: 30px;
         height: 30px;
-        background-image: url("/dist/img/favourite320.svg");
+        background-image: url("../img/favourite320.svg");
       }
     }
     
@@ -295,7 +295,7 @@
         content: "";
         position: absolute;
         background: {
-          image: url("/dist/img/breadcrumb-arrow@320.svg");
+          image: url("../img/breadcrumb-arrow@320.svg");
           repeat: no-repeat;
           size: cover;
         };

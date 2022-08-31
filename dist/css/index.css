@@ -394,25 +394,25 @@ template {
   width: 190px;
   height: 41px;
   display: block;
-  background-image: url("/dist/img/logo.svg");
+  background-image: url("../img/logo.svg");
   background-repeat: no-repeat;
 }
 
 .header__nav-btn {
   width: 151px;
   height: 54px;
-  background-image: url("/dist/img/btn.svg");
+  background-image: url("../img/btn.svg");
   background-repeat: no-repeat;
   border: none;
 }
 
 .header__nav-btn:hover {
-  background-image: url("/dist/img/btn-menu-hover.svg");
+  background-image: url("../img/btn-menu-hover.svg");
   transition: all 0.4s ease;
 }
 
 .header__nav-btn.menu-active {
-  background-image: url("/dist/img/menu-open-btn.svg");
+  background-image: url("../img/menu-open-btn.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -438,7 +438,7 @@ template {
 .header__nav-input-btn {
   width: 101px;
   height: 54px;
-  background-image: url("/dist/img/search-btn.svg");
+  background-image: url("../img/search-btn.svg");
   background-repeat: no-repeat;
   border: none;
   border-radius: 30px;
@@ -449,7 +449,7 @@ template {
   border: none;
   width: 69px;
   height: 61px;
-  background-image: url("/dist/img/profile.svg");
+  background-image: url("../img/profile.svg");
   background-repeat: no-repeat;
   background-color: #ffffff;
 }
@@ -458,7 +458,7 @@ template {
   border: none;
   width: 63px;
   height: 61px;
-  background-image: url("/dist/img/basket.svg");
+  background-image: url("../img/basket.svg");
   background-repeat: no-repeat;
   background-color: #ffffff;
 }
@@ -485,7 +485,7 @@ template {
   border: none;
   width: 82px;
   height: 61px;
-  background-image: url("/dist/img/favourite.svg");
+  background-image: url("../img/favourite.svg");
   background-repeat: no-repeat;
   background-color: #ffffff;
 }
@@ -520,7 +520,7 @@ template {
 .header__breadcrumb-item:not(:last-child)::after {
   content: "";
   position: absolute;
-  background-image: url("/dist/img/breadcrumb-arrow@320.svg");
+  background-image: url("../img/breadcrumb-arrow@320.svg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 10px;
@@ -888,7 +888,7 @@ template {
   cursor: pointer;
   width: 33px;
   height: 33px;
-  background-image: url("/dist/img/card/card-favorite.svg");
+  background-image: url("../img/card/card-favorite.svg");
   background-repeat: no-repeat;
   background-color: transparent;
   background-size: cover;
@@ -900,7 +900,7 @@ template {
   left: 0;
   width: 33px;
   height: 33px;
-  background-image: url("/dist/img/card/card-favorite-active.svg");
+  background-image: url("../img/card/card-favorite-active.svg");
   background-repeat: no-repeat;
   background-color: transparent;
   background-size: cover;
@@ -949,7 +949,7 @@ template {
 .product__card-discount-btn {
   width: 24px;
   height: 24px;
-  background-image: url("/dist/img/card/card-bell.svg");
+  background-image: url("../img/card/card-bell.svg");
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
@@ -3313,7 +3313,7 @@ main {
   .header__nav-logo {
     height: 35px;
     width: 165px;
-    background-image: url("/dist/img/logo768.svg");
+    background-image: url("../img/logo768.svg");
     margin-right: 0;
     padding-top: 0;
   }
@@ -3321,7 +3321,7 @@ main {
   .header__nav-btn {
     width: 115px;
     height: 42px;
-    background-image: url("/dist/img/btn768.svg");
+    background-image: url("../img/btn768.svg");
   }
 
   .header__nav-input {
@@ -3334,19 +3334,19 @@ main {
     width: 82px;
     height: 42px;
     margin-left: -80px;
-    background-image: url("/dist/img/search-btn768.svg");
+    background-image: url("../img/search-btn768.svg");
   }
 
   .header__nav-profile {
     width: 52px;
     height: 44px;
-    background-image: url("/dist/img/profile768.svg");
+    background-image: url("../img/profile768.svg");
   }
 
   .header__nav-basket {
     width: 47px;
     height: 44px;
-    background-image: url("/dist/img/basket768.svg");
+    background-image: url("../img/basket768.svg");
   }
 
   .header__nav-basket-quantity {
@@ -3357,7 +3357,7 @@ main {
   .header__nav-favorite {
     width: 62px;
     height: 44px;
-    background-image: url("/dist/img/favourite768.svg");
+    background-image: url("../img/favourite768.svg");
   }
 
   .header__nav-item2 {
@@ -4423,13 +4423,13 @@ main {
   .header__nav-logo {
     width: 114px;
     height: 25px;
-    background-image: url("/dist/img/logo320.svg");
+    background-image: url("../img/logo320.svg");
   }
 
   .header__nav-btn {
     width: 79px;
     height: 30px;
-    background-image: url("/dist/img/btn320.svg");
+    background-image: url("../img/btn320.svg");
   }
 
   .header__nav-input {
@@ -4442,19 +4442,19 @@ main {
     width: 50px;
     height: 30px;
     margin-left: -50px;
-    background-image: url("/dist/img/search-btn320.svg");
+    background-image: url("../img/search-btn320.svg");
   }
 
   .header__nav-profile {
     width: 30px;
     height: 30px;
-    background-image: url("/dist/img/profile320.svg");
+    background-image: url("../img/profile320.svg");
   }
 
   .header__nav-basket {
     width: 30px;
     height: 30px;
-    background-image: url("/dist/img/basket320.svg");
+    background-image: url("../img/basket320.svg");
   }
 
   .header__nav-basket-quantity {
@@ -4464,7 +4464,7 @@ main {
   .header__nav-favorite {
     width: 30px;
     height: 30px;
-    background-image: url("/dist/img/favourite320.svg");
+    background-image: url("../img/favourite320.svg");
   }
 
   .header__nav-item2 {
@@ -4704,7 +4704,7 @@ main {
   .product__card-discount-btn {
     width: 14px;
     height: 14px;
-    background-image: url("/dist/img/card/card-bell@320.svg");
+    background-image: url("../img/card/card-bell@320.svg");
   }
 
   .product__card-discount-txt {
