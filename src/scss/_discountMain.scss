@@ -214,60 +214,60 @@
       height: 100%;
       background-size: 100% 480px;
       background-repeat: no-repeat;
-      background-image: url("/dist/img/banner.jpg");
+      background-image: url("../img/banner.jpg");
       background-image: -webkit-image-set(
-        url("/dist/img/banner.avif") 1x,
-        url("/dist/img/banner.webp") 1x,
-        url("/dist/img/banner.jpg") 1x
+        url("../img/banner.avif") 1x,
+        url("../img/banner.webp") 1x,
+        url("../img/banner.jpg") 1x
       );
       background-image: image-set(
-        url("/dist/img/banner.avif") 1x,
-        url("/dist/img/banner.webp") 1x,
-        url("/dist/img/banner.jpg") 1x
+        url("../img/banner.avif") 1x,
+        url("../img/banner.webp") 1x,
+        url("../img/banner.jpg") 1x
       );
       display: block;
       @include laptop {
         background-size: 100% 314px;
-        background-image: url("/dist/img/banner1024.jpg");
+        background-image: url("../img/banner1024.jpg");
         background-image: -webkit-image-set(
-          url("/dist/img/banner1024.avif") 1x,
-          url("/dist/img/banner1024.webp") 1x,
-          url("/dist/img/banner1024.jpg") 1x
+          url("../img/banner1024.avif") 1x,
+          url("../img/banner1024.webp") 1x,
+          url("../img/banner1024.jpg") 1x
         );
         background-image: image-set(
-          url("/dist/img/banner1024.avif") 1x,
-          url("/dist/img/banner1024.webp") 1x,
-          url("/dist/img/banner1024.jpg") 1x
+          url("../img/banner1024.avif") 1x,
+          url("../img/banner1024.webp") 1x,
+          url("../img/banner1024.jpg") 1x
         );
         margin-bottom: 24px;
       }
       @include tablet {
         background-size: 100% 280px;
-        background-image: url("/dist/img/banner768.jpg");
+        background-image: url("../img/banner768.jpg");
         background-image: -webkit-image-set(
-          url("/dist/img/banner768.avif") 1x,
-          url("/dist/img/banner768.webp") 1x,
-          url("/dist/img/banner768.jpg") 1x
+          url("../img/banner768.avif") 1x,
+          url("../img/banner768.webp") 1x,
+          url("../img/banner768.jpg") 1x
         );
         background-image: image-set(
-          url("/dist/img/banner768.avif") 1x,
-          url("/dist/img/banner768.webp") 1x,
-          url("/dist/img/banner768.jpg") 1x
+          url("../img/banner768.avif") 1x,
+          url("../img/banner768.webp") 1x,
+          url("../img/banner768.jpg") 1x
         );
         margin-bottom: 24px;
       }
       @include mobile {
         background-size: 100% 340px;
-        background-image: url("/dist/img/banner320.jpg");
+        background-image: url("../img/banner320.jpg");
         background-image: -webkit-image-set(
-          url("/dist/img/banner320.avif") 1x,
-          url("/dist/img/banner320.webp") 1x,
-          url("/dist/img/banner320.jpg") 1x
+          url("../img/banner320.avif") 1x,
+          url("../img/banner320.webp") 1x,
+          url("../img/banner320.jpg") 1x
         );
         background-image: image-set(
-          url("/dist/img/banner320.avif") 1x,
-          url("/dist/img/banner320.webp") 1x,
-          url("/dist/img/banner320.jpg") 1x
+          url("../img/banner320.avif") 1x,
+          url("../img/banner320.webp") 1x,
+          url("../img/banner320.jpg") 1x
         );
         margin-bottom: 0px;
       }
@@ -276,16 +276,16 @@
       height: 100%;
       background-size: 100% 228px;
       background-repeat: no-repeat;
-      background-image: url("/dist/img/grid1.jpg");
+      background-image: url("../img/grid1.jpg");
       background-image: -webkit-image-set(
-        url("/dist/img/grid1.avif") 1x,
-        url("/dist/img/grid1.webp") 1x,
-        url("/dist/img/grid1.jpg") 1x
+        url("../img/grid1.avif") 1x,
+        url("../img/grid1.webp") 1x,
+        url("../img/grid1.jpg") 1x
       );
       background-image: image-set(
-        url("/dist/img/grid1.avif") 1x,
-        url("/dist/img/grid1.webp") 1x,
-        url("/dist/img/grid1.jpg") 1x
+        url("../img/grid1.avif") 1x,
+        url("../img/grid1.webp") 1x,
+        url("../img/grid1.jpg") 1x
       );
       display: block;
       @include laptop {
@@ -335,16 +335,16 @@
       height: 100%;
       background-size: 100% 228px;
       background-repeat: no-repeat;
-      background-image: url("/dist/img/grid2.jpg");
+      background-image: url("../img/grid2.jpg");
       background-image: -webkit-image-set(
-        url("/dist/img/grid2.avif") 1x,
-        url("/dist/img/grid2.webp") 1x,
-        url("/dist/img/grid2.jpg") 1x
+        url("../img/grid2.avif") 1x,
+        url("../img/grid2.webp") 1x,
+        url("../img/grid2.jpg") 1x
       );
       background-image: image-set(
-        url("/dist/img/grid2.avif") 1x,
-        url("/dist/img/grid2.webp") 1x,
-        url("/dist/img/grid2.jpg") 1x
+        url("../img/grid2.avif") 1x,
+        url("../img/grid2.webp") 1x,
+        url("../img/grid2.jpg") 1x
       );
       display: block;
       @include laptop {
@@ -394,16 +394,16 @@
       height: 100%;
       background-size: 100% 516px;
       background-repeat: no-repeat;
-      background-image: url("/dist/img/grid3.jpg");
+      background-image: url("../img/grid3.jpg");
       background-image: -webkit-image-set(
-        url("/dist/img/grid3.avif") 1x,
-        url("/dist/img/grid3.webp") 1x,
-        url("/dist/img/grid3.jpg") 1x
+        url("../img/grid3.avif") 1x,
+        url("../img/grid3.webp") 1x,
+        url("../img/grid3.jpg") 1x
       );
       background-image: image-set(
-        url("/dist/img/grid3.avif") 1x,
-        url("/dist/img/grid3.webp") 1x,
-        url("/dist/img/grid3.jpg") 1x
+        url("../img/grid3.avif") 1x,
+        url("../img/grid3.webp") 1x,
+        url("../img/grid3.jpg") 1x
       );
       display: block;
       @include laptop {
@@ -453,16 +453,16 @@
       height: 100%;
       background-size: 100% 228px;
       background-repeat: no-repeat;
-      background-image: url("/dist/img/grid4.jpg");
+      background-image: url("../img/grid4.jpg");
       background-image: -webkit-image-set(
-        url("/dist/img/grid4.avif") 1x,
-        url("/dist/img/grid4.webp") 1x,
-        url("/dist/img/grid4.jpg") 1x
+        url("../img/grid4.avif") 1x,
+        url("../img/grid4.webp") 1x,
+        url("../img/grid4.jpg") 1x
       );
       background-image: image-set(
-        url("/dist/img/grid4.avif") 1x,
-        url("/dist/img/grid4.webp") 1x,
-        url("/dist/img/grid4.jpg") 1x
+        url("../img/grid4.avif") 1x,
+        url("../img/grid4.webp") 1x,
+        url("../img/grid4.jpg") 1x
       );
       display: block;
       @include laptop {
