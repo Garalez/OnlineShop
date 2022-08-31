@@ -375,6 +375,7 @@ template {
 
 .header__nav-list {
   display: grid;
+  grid-template-columns: 0.35fr 0.28fr 0.84fr 0.5fr;
   grid-template-areas: "logo menu input area";
   margin-bottom: 58px;
 }
@@ -386,7 +387,6 @@ template {
 .header__nav-item1 {
   display: flex;
   align-items: flex-end;
-  margin-right: 54px;
   grid-area: logo;
 }
 
@@ -394,33 +394,36 @@ template {
   width: 190px;
   height: 41px;
   display: block;
-  background-image: url("../img/logo.svg");
+  background-image: url("/dist/img/logo.svg");
   background-repeat: no-repeat;
 }
 
 .header__nav-btn {
   width: 151px;
   height: 54px;
-  background-image: url("../img/btn.svg");
+  background-image: url("/dist/img/btn.svg");
   background-repeat: no-repeat;
   border: none;
 }
 
 .header__nav-btn:hover {
-  background-image: url("../img/btn-menu-hover.svg");
+  background-image: url("/dist/img/btn-menu-hover.svg");
   transition: all 0.4s ease;
 }
 
 .header__nav-btn.menu-active {
-  background-image: url("../img/menu-open-btn.svg");
+  background-image: url("/dist/img/menu-open-btn.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .header__nav-form {
   display: flex;
+  width: 100%;
 }
 
 .header__nav-input {
-  width: 757px;
+  width: 100%;
   height: 54px;
   padding-left: 40px;
   background: #efefef;
@@ -435,7 +438,7 @@ template {
 .header__nav-input-btn {
   width: 101px;
   height: 54px;
-  background-image: url("../img/search-btn.svg");
+  background-image: url("/dist/img/search-btn.svg");
   background-repeat: no-repeat;
   border: none;
   border-radius: 30px;
@@ -446,7 +449,7 @@ template {
   border: none;
   width: 69px;
   height: 61px;
-  background-image: url("../img/profile.svg");
+  background-image: url("/dist/img/profile.svg");
   background-repeat: no-repeat;
   background-color: #ffffff;
 }
@@ -455,7 +458,7 @@ template {
   border: none;
   width: 63px;
   height: 61px;
-  background-image: url("../img/basket.svg");
+  background-image: url("/dist/img/basket.svg");
   background-repeat: no-repeat;
   background-color: #ffffff;
 }
@@ -482,7 +485,7 @@ template {
   border: none;
   width: 82px;
   height: 61px;
-  background-image: url("../img/favourite.svg");
+  background-image: url("/dist/img/favourite.svg");
   background-repeat: no-repeat;
   background-color: #ffffff;
 }
@@ -517,7 +520,7 @@ template {
 .header__breadcrumb-item:not(:last-child)::after {
   content: "";
   position: absolute;
-  background-image: url("../img/breadcrumb-arrow@320.svg");
+  background-image: url("/dist/img/breadcrumb-arrow@320.svg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 10px;
@@ -566,6 +569,7 @@ template {
 
 .menu__catalog {
   margin-right: 511px;
+  grid-area: catalog;
 }
 
 .menu__catalog-title {
@@ -583,6 +587,7 @@ template {
 }
 
 .menu__clients {
+  grid-area: clients;
   margin-right: 233px;
 }
 
@@ -593,6 +598,10 @@ template {
   line-height: 130%;
 }
 
+.menu__contacts {
+  grid-area: contacts;
+}
+
 .menu__contacts-title {
   margin-bottom: 45px;
   font-weight: 700;
@@ -600,15 +609,10 @@ template {
   line-height: 130%;
 }
 
-.menu__contacts-list {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 130%;
-}
-
-.menu__contacts-item {
-  font-size: 22px;
+.menu__contacts-link {
   font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
 }
 
 .menu__contacts-link,
@@ -884,7 +888,7 @@ template {
   cursor: pointer;
   width: 33px;
   height: 33px;
-  background-image: url("../img/card/card-favorite.svg");
+  background-image: url("/dist/img/card/card-favorite.svg");
   background-repeat: no-repeat;
   background-color: transparent;
   background-size: cover;
@@ -896,7 +900,7 @@ template {
   left: 0;
   width: 33px;
   height: 33px;
-  background-image: url("../img/card/card-favorite-active.svg");
+  background-image: url("/dist/img/card/card-favorite-active.svg");
   background-repeat: no-repeat;
   background-color: transparent;
   background-size: cover;
@@ -945,7 +949,7 @@ template {
 .product__card-discount-btn {
   width: 24px;
   height: 24px;
-  background-image: url("../img/card/card-bell.svg");
+  background-image: url("/dist/img/card/card-bell.svg");
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
@@ -1098,103 +1102,120 @@ template {
 
 .card-grid__list {
   display: grid;
-  grid-gap: 61px;
+  gap: 61px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas: "one one one one one one" "two three four four five five" "six six four four seven seven" "eight eight eight eight nine ten" "eight eight eight eight nine eleven";
 }
 
 .card-grid__item-banner {
+  height: 480px;
   grid-area: one;
 }
 
 .card-grid__item-book {
+  height: 228px;
   grid-area: two;
 }
 
 .card-grid__item-discount {
+  height: 228px;
   grid-area: three;
 }
 
 .card-grid__item-sneakers {
+  height: 516px;
   grid-area: four;
 }
 
 .card-grid__item-presents {
+  height: 228px;
   grid-area: five;
 }
 
 .card-grid__item-red {
+  height: 228px;
   grid-area: six;
 }
 
 .card-grid__item-appliances {
+  height: 228px;
   grid-area: seven;
 }
 
 .card-grid__item-decorations {
+  height: 516px;
   grid-area: eight;
 }
 
 .card-grid__item-woman {
+  height: 516px;
   grid-area: nine;
 }
 
 .card-grid__item-chemicals {
+  height: 228px;
   grid-area: ten;
 }
 
 .card-grid__item-balls {
+  height: 228px;
   grid-area: eleven;
 }
 
 .card-grid__card-banner {
-  width: 1770px;
-  height: 480px;
-  background-image: url("../img/banner.jpg");
-  background-image: -webkit-image-set(url("../img/banner.avif") 1x, url("../img/banner.webp") 1x, url("../img/banner.jpg") 1x);
-  background-image: image-set(url("../img/banner.avif") 1x, url("../img/banner.webp") 1x, url("../img/banner.jpg") 1x);
+  height: 100%;
+  background-size: 100% 480px;
+  background-repeat: no-repeat;
+  background-image: url("/dist/img/banner.jpg");
+  background-image: -webkit-image-set(url("/dist/img/banner.avif") 1x, url("/dist/img/banner.webp") 1x, url("/dist/img/banner.jpg") 1x);
+  background-image: image-set(url("/dist/img/banner.avif") 1x, url("/dist/img/banner.webp") 1x, url("/dist/img/banner.jpg") 1x);
   display: block;
 }
 
 .card-grid__card-book {
-  width: 245px;
-  height: 228px;
-  background-image: url("../img/grid1.jpg");
-  background-image: -webkit-image-set(url("../img/grid1.avif") 1x, url("../img/grid1.webp") 1x, url("../img/grid1.jpg") 1x);
-  background-image: image-set(url("../img/grid1.avif") 1x, url("../img/grid1.webp") 1x, url("../img/grid1.jpg") 1x);
+  height: 100%;
+  background-size: 100% 228px;
+  background-repeat: no-repeat;
+  background-image: url("/dist/img/grid1.jpg");
+  background-image: -webkit-image-set(url("/dist/img/grid1.avif") 1x, url("/dist/img/grid1.webp") 1x, url("/dist/img/grid1.jpg") 1x);
+  background-image: image-set(url("/dist/img/grid1.avif") 1x, url("/dist/img/grid1.webp") 1x, url("/dist/img/grid1.jpg") 1x);
   display: block;
 }
 
 .card-grid__card-discount {
-  width: 245px;
-  height: 228px;
-  background-image: url("../img/grid2.jpg");
-  background-image: -webkit-image-set(url("../img/grid2.avif") 1x, url("../img/grid2.webp") 1x, url("../img/grid2.jpg") 1x);
-  background-image: image-set(url("../img/grid2.avif") 1x, url("../img/grid2.webp") 1x, url("../img/grid2.jpg") 1x);
+  height: 100%;
+  background-size: 100% 228px;
+  background-repeat: no-repeat;
+  background-image: url("/dist/img/grid2.jpg");
+  background-image: -webkit-image-set(url("/dist/img/grid2.avif") 1x, url("/dist/img/grid2.webp") 1x, url("/dist/img/grid2.jpg") 1x);
+  background-image: image-set(url("/dist/img/grid2.avif") 1x, url("/dist/img/grid2.webp") 1x, url("/dist/img/grid2.jpg") 1x);
   display: block;
 }
 
 .card-grid__card-sneakers {
-  width: 550px;
-  height: 516px;
-  background-image: url("../img/grid3.jpg");
-  background-image: -webkit-image-set(url("../img/grid3.avif") 1x, url("../img/grid3.webp") 1x, url("../img/grid3.jpg") 1x);
-  background-image: image-set(url("../img/grid3.avif") 1x, url("../img/grid3.webp") 1x, url("../img/grid3.jpg") 1x);
+  height: 100%;
+  background-size: 100% 516px;
+  background-repeat: no-repeat;
+  background-image: url("/dist/img/grid3.jpg");
+  background-image: -webkit-image-set(url("/dist/img/grid3.avif") 1x, url("/dist/img/grid3.webp") 1x, url("/dist/img/grid3.jpg") 1x);
+  background-image: image-set(url("/dist/img/grid3.avif") 1x, url("/dist/img/grid3.webp") 1x, url("/dist/img/grid3.jpg") 1x);
   display: block;
 }
 
 .card-grid__card-presents {
-  width: 550px;
-  height: 228px;
-  background-image: url("../img/grid4.jpg");
-  background-image: -webkit-image-set(url("../img/grid4.avif") 1x, url("../img/grid4.webp") 1x, url("../img/grid4.jpg") 1x);
-  background-image: image-set(url("../img/grid4.avif") 1x, url("../img/grid4.webp") 1x, url("../img/grid4.jpg") 1x);
+  height: 100%;
+  background-size: 100% 228px;
+  background-repeat: no-repeat;
+  background-image: url("/dist/img/grid4.jpg");
+  background-image: -webkit-image-set(url("/dist/img/grid4.avif") 1x, url("/dist/img/grid4.webp") 1x, url("/dist/img/grid4.jpg") 1x);
+  background-image: image-set(url("/dist/img/grid4.avif") 1x, url("/dist/img/grid4.webp") 1x, url("/dist/img/grid4.jpg") 1x);
   display: block;
 }
 
 .card-grid__card-red {
-  width: 550px;
-  height: 228px;
+  height: 100%;
+  background-size: 100% 228px;
+  background-repeat: no-repeat;
   background-image: url("../img/grid5.jpg");
   background-image: -webkit-image-set(url("../img/grid5.avif") 1x, url("../img/grid5.webp") 1x, url("../img/grid5.jpg") 1x);
   background-image: image-set(url("../img/grid5.avif") 1x, url("../img/grid5.webp") 1x, url("../img/grid5.jpg") 1x);
@@ -1202,8 +1223,9 @@ template {
 }
 
 .card-grid__card-appliances {
-  width: 550px;
-  height: 228px;
+  height: 100%;
+  background-size: 100% 228px;
+  background-repeat: no-repeat;
   background-image: url("../img/grid6.jpg");
   background-image: -webkit-image-set(url("../img/grid6.avif") 1x, url("../img/grid6.webp") 1x, url("../img/grid6.jpg") 1x);
   background-image: image-set(url("../img/grid6.avif") 1x, url("../img/grid6.webp") 1x, url("../img/grid6.jpg") 1x);
@@ -1211,8 +1233,9 @@ template {
 }
 
 .card-grid__card-decorations {
-  width: 1160px;
-  height: 516px;
+  height: 100%;
+  background-size: 100% 516px;
+  background-repeat: no-repeat;
   background-image: url("../img/grid7.jpg");
   background-image: -webkit-image-set(url("../img/grid7.avif") 1x, url("../img/grid7.webp") 1x, url("../img/grid7.jpg") 1x);
   background-image: image-set(url("../img/grid7.avif") 1x, url("../img/grid7.webp") 1x, url("../img/grid7.jpg") 1x);
@@ -1220,8 +1243,9 @@ template {
 }
 
 .card-grid__card-woman {
-  width: 245px;
-  height: 516px;
+  height: 100%;
+  background-size: 100% 516px;
+  background-repeat: no-repeat;
   background-image: url("../img/grid8.jpg");
   background-image: -webkit-image-set(url("../img/grid8.avif") 1x, url("../img/grid8.webp") 1x, url("../img/grid8.jpg") 1x);
   background-image: image-set(url("../img/grid8.avif") 1x, url("../img/grid8.webp") 1x, url("../img/grid8.jpg") 1x);
@@ -1229,8 +1253,9 @@ template {
 }
 
 .card-grid__card-chemicals {
-  width: 245px;
-  height: 228px;
+  height: 100%;
+  background-size: 100% 228px;
+  background-repeat: no-repeat;
   background-image: url("../img/grid9.jpg");
   background-image: -webkit-image-set(url("../img/grid9.avif") 1x, url("../img/grid9.webp") 1x, url("../img/grid9.jpg") 1x);
   background-image: image-set(url("../img/grid9.avif") 1x, url("../img/grid9.webp") 1x, url("../img/grid9.jpg") 1x);
@@ -1238,8 +1263,9 @@ template {
 }
 
 .card-grid__card-balls {
-  width: 245px;
-  height: 228px;
+  height: 100%;
+  background-size: 100% 228px;
+  background-repeat: no-repeat;
   background-image: url("../img/grid10.jpg");
   background-image: -webkit-image-set(url("../img/grid10.avif") 1x, url("../img/grid10.webp") 1x, url("../img/grid10.jpg") 1x);
   background-image: image-set(url("../img/grid10.avif") 1x, url("../img/grid10.webp") 1x, url("../img/grid10.jpg") 1x);
@@ -1257,14 +1283,14 @@ template {
   line-height: 130%;
 }
 
+.card-footer__section {
+  padding: 0px 58px 55px 76px;
+}
+
 .card-footer__list {
   display: flex;
   flex-wrap: wrap;
   gap: 53px 30px;
-}
-
-.card-footer__section {
-  padding: 0px 58px 55px 76px;
 }
 
 .card-footer__item {
@@ -2235,6 +2261,7 @@ template {
 
 .footer__contacts-socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -2326,14 +2353,14 @@ template {
   font-family: Lato;
   font-weight: regular;
   font-display: swap;
-  src: url("../fonts/Lato-regular.woff2") format("woff2"), url("../fonts/Lato-regular.woff") format("woff");
+  src: url("/dist/fonts/Lato-regular.woff2") format("woff2"), url("/dist/fonts/Lato-regular.woff") format("woff");
 }
 
 @font-face {
   font-family: Lato;
   font-weight: bold;
   font-display: swap;
-  src: url("../fonts/Lato-bold.woff2") format("woff2"), url("../fonts/Lato-bold.woff") format("woff");
+  src: url("/dist/fonts/Lato-bold.woff2") format("woff2"), url("/dist/fonts/Lato-bold.woff") format("woff");
 }
 
 html {
@@ -2447,16 +2474,20 @@ main {
     padding: 27px 40px 45px 25px;
   }
 
-  .header__nav-btn {
-    pointer-events: none;
-  }
-
-  .header__nav-input {
-    width: 450px;
-  }
-
   .header__nav-item4 {
     gap: 20px;
+  }
+
+  .menu__catalog {
+    margin-right: 350px;
+  }
+
+  .menu__catalog-list {
+    gap: 20px 0;
+  }
+
+  .menu__clients {
+    margin-right: 70px;
   }
 
   .blog-wrapper {
@@ -2467,6 +2498,31 @@ main {
     font-size: 30px;
     line-height: 130%;
   }
+
+  .card-grid__list {
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+
+  .footer__catalog {
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+
+  .footer__catalog-list {
+    height: 100%;
+    flex-wrap: nowrap;
+    padding-right: 20px;
+  }
+
+  .footer__contacts-socials {
+    gap: 10px;
+  }
+
+  .footer__copy-list {
+    padding-right: 126px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -2476,13 +2532,12 @@ main {
 
   .header__nav-list {
     row-gap: 35px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 0.2fr 1fr;
     grid-template-areas: "logo area" "menu input";
     margin-bottom: 31px;
   }
 
   .header__nav-input {
-    width: 700px;
     border: none;
   }
 
@@ -2500,6 +2555,16 @@ main {
     height: 14px;
     bottom: 4px;
     right: -24px;
+  }
+
+  .menu__catalog {
+    margin-right: 50px;
+  }
+
+  .menu__catalog-list {
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
   }
 
   .blog-wrapper {
@@ -2790,58 +2855,95 @@ main {
     grid-template-areas: "one one one one" "two three four four" "six six four four" "five five nine ten" "seven seven nine eleven" "eight eight eight eight";
   }
 
-  .card-grid__card-banner {
-    width: 944px;
+  .card-grid__item-banner {
     height: 314px;
-    background-image: url("../img/banner1024.jpg");
-    background-image: -webkit-image-set(url("../img/banner1024.avif") 1x, url("../img/banner1024.webp") 1x, url("../img/banner1024.jpg") 1x);
-    background-image: image-set(url("../img/banner1024.avif") 1x, url("../img/banner1024.webp") 1x, url("../img/banner1024.jpg") 1x);
+  }
+
+  .card-grid__item-book {
+    height: 202px;
+  }
+
+  .card-grid__item-discount {
+    height: 202px;
+  }
+
+  .card-grid__item-sneakers {
+    height: 418px;
+  }
+
+  .card-grid__item-presents {
+    height: 194px;
+  }
+
+  .card-grid__item-red {
+    height: 194px;
+  }
+
+  .card-grid__item-appliances {
+    height: 194px;
+  }
+
+  .card-grid__item-decorations {
+    height: 418px;
+  }
+
+  .card-grid__item-woman {
+    height: 410px;
+  }
+
+  .card-grid__item-chemicals {
+    height: 196px;
+  }
+
+  .card-grid__item-balls {
+    height: 196px;
+  }
+
+  .card-grid__card-banner {
+    background-size: 100% 314px;
+    background-image: url("/dist/img/banner1024.jpg");
+    background-image: -webkit-image-set(url("/dist/img/banner1024.avif") 1x, url("/dist/img/banner1024.webp") 1x, url("/dist/img/banner1024.jpg") 1x);
+    background-image: image-set(url("/dist/img/banner1024.avif") 1x, url("/dist/img/banner1024.webp") 1x, url("/dist/img/banner1024.jpg") 1x);
     margin-bottom: 24px;
   }
 
   .card-grid__card-book {
-    width: 217px;
-    height: 202px;
+    background-size: 100% 202px;
     background-image: url("../img/book1024.jpg");
     background-image: -webkit-image-set(url("../img/book1024.avif") 1x, url("../img/book1024.webp") 1x, url("../img/book1024.jpg") 1x);
     background-image: image-set(url("../img/book1024.avif") 1x, url("../img/book1024.webp") 1x, url("../img/book1024.jpg") 1x);
   }
 
   .card-grid__card-discount {
-    width: 217px;
-    height: 202px;
+    background-size: 100% 202px;
     background-image: url("../img/discount1024.jpg");
     background-image: -webkit-image-set(url("../img/discount1024.avif") 1x, url("../img/discount1024.webp") 1x, url("../img/discount1024.jpg") 1x);
     background-image: image-set(url("../img/discount1024.avif") 1x, url("../img/discount1024.webp") 1x, url("../img/discount1024.jpg") 1x);
   }
 
   .card-grid__card-sneakers {
-    width: 446px;
-    height: 418px;
+    background-size: 100% 418px;
     background-image: url("../img/sneackers1024.jpg");
     background-image: -webkit-image-set(url("../img/sneackers1024.avif") 1x, url("../img/sneackers1024.webp") 1x, url("../img/sneackers1024.jpg") 1x);
     background-image: image-set(url("../img/sneackers1024.avif") 1x, url("../img/sneackers1024.webp") 1x, url("../img/sneackers1024.jpg") 1x);
   }
 
   .card-grid__card-presents {
-    width: 464px;
-    height: 194px;
+    background-size: 100% 194px;
     background-image: url("../img/presents1024.jpg");
     background-image: -webkit-image-set(url("../img/presents1024.avif") 1x, url("../img/presents1024.webp") 1x, url("../img/presents1024.jpg") 1x);
     background-image: image-set(url("../img/presents1024.avif") 1x, url("../img/presents1024.webp") 1x, url("../img/presents1024.jpg") 1x);
   }
 
   .card-grid__card-red {
-    width: 464px;
-    height: 194px;
+    background-size: 100% 194px;
     background-image: url("../img/red1024.jpg");
     background-image: -webkit-image-set(url("../img/red1024.avif") 1x, url("../img/red1024.webp") 1x, url("../img/red1024.jpg") 1x);
     background-image: image-set(url("../img/red1024.avif") 1x, url("../img/red1024.webp") 1x, url("../img/red1024.jpg") 1x);
   }
 
   .card-grid__card-appliances {
-    width: 464px;
-    height: 194px;
+    background-size: 100% 194px;
     margin-bottom: 27px;
     background-image: url("../img/appliances1024.jpg");
     background-image: -webkit-image-set(url("../img/appliances1024.avif") 1x, url("../img/appliances1024.webp") 1x, url("../img/appliances1024.jpg") 1x);
@@ -2849,32 +2951,28 @@ main {
   }
 
   .card-grid__card-decorations {
-    width: 940px;
-    height: 418px;
+    background-size: 100% 418px;
     background-image: url("../img/decorations1024.jpg");
     background-image: -webkit-image-set(url("../img/decorations1024.avif") 1x, url("../img/decorations1024.webp") 1x, url("../img/decorations1024.jpg") 1x);
     background-image: image-set(url("../img/decorations1024.avif") 1x, url("../img/decorations1024.webp") 1x, url("../img/decorations1024.jpg") 1x);
   }
 
   .card-grid__card-woman {
-    width: 206px;
-    height: 410px;
+    background-size: 100% 410px;
     background-image: url("../img/woman1024.jpg");
     background-image: -webkit-image-set(url("../img/woman1024.avif") 1x, url("../img/woman1024.webp") 1x, url("../img/woman1024.jpg") 1x);
     background-image: image-set(url("../img/woman1024.avif") 1x, url("../img/woman1024.webp") 1x, url("../img/woman1024.jpg") 1x);
   }
 
   .card-grid__card-chemicals {
-    width: 210px;
-    height: 196px;
+    background-size: 100% 196px;
     background-image: url("../img/chemicals1024.jpg");
     background-image: -webkit-image-set(url("../img/chemicals1024.avif") 1x, url("../img/chemicals1024.webp") 1x, url("../img/chemicals1024.jpg") 1x);
     background-image: image-set(url("../img/chemicals1024.avif") 1x, url("../img/chemicals1024.webp") 1x, url("../img/chemicals1024.jpg") 1x);
   }
 
   .card-grid__card-balls {
-    width: 210px;
-    height: 196px;
+    background-size: 100% 196px;
     background-image: url("../img/balls1024.jpg");
     background-image: -webkit-image-set(url("../img/balls1024.avif") 1x, url("../img/balls1024.webp") 1x, url("../img/balls1024.jpg") 1x);
     background-image: image-set(url("../img/balls1024.avif") 1x, url("../img/balls1024.webp") 1x, url("../img/balls1024.jpg") 1x);
@@ -2889,25 +2987,13 @@ main {
     font-size: 40px;
   }
 
-  .card-footer__list {
-    gap: 55px 20px;
-  }
-
   .card-footer__section {
     padding: 0px 42px 55px 40px;
     margin-bottom: 50px;
   }
 
-  .card-footer__item {
-    max-width: 300px;
-  }
-
-  .card-footer__item {
-    max-width: 220px;
-  }
-
-  .card-footer__item {
-    max-width: 130px;
+  .card-footer__list {
+    gap: 55px 20px;
   }
 
   .card-footer__item-discount {
@@ -3176,11 +3262,6 @@ main {
     margin-bottom: 29px;
   }
 
-  .footer__catalog-list {
-    height: 100%;
-    flex-wrap: nowrap;
-  }
-
   .footer__logo-wrapper {
     margin-bottom: 63px;
   }
@@ -3201,6 +3282,10 @@ main {
     margin-bottom: 34px;
   }
 
+  .footer__contacts-socials {
+    gap: 20px;
+  }
+
   .footer__copy-list {
     padding-right: 87px;
   }
@@ -3217,7 +3302,6 @@ main {
 
   .header__nav-list {
     row-gap: 27px;
-    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "logo area" "menu input";
     margin-bottom: 27px;
   }
@@ -3229,7 +3313,7 @@ main {
   .header__nav-logo {
     height: 35px;
     width: 165px;
-    background-image: url("../img/logo768.svg");
+    background-image: url("/dist/img/logo768.svg");
     margin-right: 0;
     padding-top: 0;
   }
@@ -3237,12 +3321,10 @@ main {
   .header__nav-btn {
     width: 115px;
     height: 42px;
-    background-image: url("../img/btn768.svg");
-    pointer-events: none;
+    background-image: url("/dist/img/btn768.svg");
   }
 
   .header__nav-input {
-    width: 540px;
     height: 42px;
     padding-left: 30px;
     font-size: 12px;
@@ -3252,19 +3334,19 @@ main {
     width: 82px;
     height: 42px;
     margin-left: -80px;
-    background-image: url("../img/search-btn768.svg");
+    background-image: url("/dist/img/search-btn768.svg");
   }
 
   .header__nav-profile {
     width: 52px;
     height: 44px;
-    background-image: url("../img/profile768.svg");
+    background-image: url("/dist/img/profile768.svg");
   }
 
   .header__nav-basket {
     width: 47px;
     height: 44px;
-    background-image: url("../img/basket768.svg");
+    background-image: url("/dist/img/basket768.svg");
   }
 
   .header__nav-basket-quantity {
@@ -3275,7 +3357,7 @@ main {
   .header__nav-favorite {
     width: 62px;
     height: 44px;
-    background-image: url("../img/favourite768.svg");
+    background-image: url("/dist/img/favourite768.svg");
   }
 
   .header__nav-item2 {
@@ -3301,6 +3383,72 @@ main {
 
   .header__breadcrumb-ref {
     font-size: 14px;
+  }
+
+  .menu {
+    top: 35px;
+  }
+
+  .menu__wrapper {
+    height: 763px;
+    padding: 30px 0 10px 0;
+    height: 556px;
+    display: grid;
+    grid-template-areas: "catalog catalog" "clients contacts";
+  }
+
+  .menu__catalog-list,
+  .menu__clients-list {
+    font-size: 18px;
+  }
+
+  .menu__catalog {
+    margin: 0;
+    padding-left: 10px;
+  }
+
+  .menu__catalog-title {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .menu__catalog-list {
+    flex-direction: row;
+    row-gap: 8px;
+    -moz-column-gap: 18px;
+    column-gap: 18px;
+    justify-content: space-evenly;
+  }
+
+  .menu__clients {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu__clients-title {
+    font-size: 28px;
+  }
+
+  .menu__clients-list {
+    padding-left: 25px;
+  }
+
+  .menu__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu__contacts-title {
+    font-size: 28px;
+  }
+
+  .menu__contacts-link {
+    font-size: 18px;
   }
 
   .blog-wrapper {
@@ -3541,62 +3689,99 @@ main {
     -moz-column-gap: 18px;
     column-gap: 18px;
     row-gap: 18px;
-    grid-template-columns: 140px 140px 190px 190px;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "one one one one" "two three four four" "six six four four" "five five nine ten" "seven seven nine eleven" "eight eight eight eight";
   }
 
-  .card-grid__card-banner {
-    width: 700px;
+  .card-grid__item-banner {
     height: 280px;
-    background-image: url("../img/banner768.jpg");
-    background-image: -webkit-image-set(url("../img/banner768.avif") 1x, url("../img/banner768.webp") 1x, url("../img/banner768.jpg") 1x);
-    background-image: image-set(url("../img/banner768.avif") 1x, url("../img/banner768.webp") 1x, url("../img/banner768.jpg") 1x);
+  }
+
+  .card-grid__item-book {
+    height: 130px;
+  }
+
+  .card-grid__item-discount {
+    height: 130px;
+  }
+
+  .card-grid__item-sneakers {
+    height: 278px;
+  }
+
+  .card-grid__item-presents {
+    height: 126px;
+  }
+
+  .card-grid__item-red {
+    height: 126px;
+  }
+
+  .card-grid__item-appliances {
+    height: 126px;
+  }
+
+  .card-grid__item-decorations {
+    height: 337px;
+  }
+
+  .card-grid__item-woman {
+    height: 273px;
+  }
+
+  .card-grid__item-chemicals {
+    height: 131px;
+  }
+
+  .card-grid__item-balls {
+    height: 131px;
+  }
+
+  .card-grid__card-banner {
+    background-size: 100% 280px;
+    background-image: url("/dist/img/banner768.jpg");
+    background-image: -webkit-image-set(url("/dist/img/banner768.avif") 1x, url("/dist/img/banner768.webp") 1x, url("/dist/img/banner768.jpg") 1x);
+    background-image: image-set(url("/dist/img/banner768.avif") 1x, url("/dist/img/banner768.webp") 1x, url("/dist/img/banner768.jpg") 1x);
     margin-bottom: 24px;
   }
 
   .card-grid__card-book {
-    width: 140px;
-    height: 130px;
+    background-size: 100% 130px;
     background-image: url("../img/book768.jpg");
     background-image: -webkit-image-set(url("../img/book768.avif") 1x, url("../img/book768.webp") 1x, url("../img/book768.jpg") 1x);
     background-image: image-set(url("../img/book768.avif") 1x, url("../img/book768.webp") 1x, url("../img/book768.jpg") 1x);
   }
 
   .card-grid__card-discount {
-    width: 140px;
-    height: 130px;
+    background-size: 100% 130px;
     background-image: url("../img/discount768.jpg");
     background-image: -webkit-image-set(url("../img/discount768.avif") 1x, url("../img/discount768.webp") 1x, url("../img/discount768.jpg") 1x);
     background-image: image-set(url("../img/discount768.avif") 1x, url("../img/discount768.webp") 1x, url("../img/discount768.jpg") 1x);
   }
 
   .card-grid__card-sneakers {
-    width: 380px;
-    height: 278px;
+    background-size: 100% 278px;
     background-image: url("../img/sneackers768.jpg");
     background-image: -webkit-image-set(url("../img/sneackers768.avif") 1x, url("../img/sneackers768.webp") 1x, url("../img/sneackers768.jpg") 1x);
     background-image: image-set(url("../img/sneackers768.avif") 1x, url("../img/sneackers768.webp") 1x, url("../img/sneackers768.jpg") 1x);
   }
 
   .card-grid__card-presents {
-    width: 300px;
-    height: 126px;
+    background-size: 100% 126px;
     background-image: url("../img/presents768.jpg");
     background-image: -webkit-image-set(url("../img/presents768.avif") 1x, url("../img/presents768.webp") 1x, url("../img/presents768.jpg") 1x);
     background-image: image-set(url("../img/presents768.avif") 1x, url("../img/presents768.webp") 1x, url("../img/presents768.jpg") 1x);
   }
 
   .card-grid__card-red {
-    width: 300px;
-    height: 126px;
+    background-size: 100% 126px;
     background-image: url("../img/red768.jpg");
     background-image: -webkit-image-set(url("../img/red768.avif") 1x, url("../img/red768.webp") 1x, url("../img/red768.jpg") 1x);
     background-image: image-set(url("../img/red768.avif") 1x, url("../img/red768.webp") 1x, url("../img/red768.jpg") 1x);
   }
 
   .card-grid__card-appliances {
-    width: 300px;
-    height: 126px;
+    background-size: 100% 126px;
     margin-bottom: 0px;
     background-image: url("../img/appliances768.jpg");
     background-image: -webkit-image-set(url("../img/appliances768.avif") 1x, url("../img/appliances768.webp") 1x, url("../img/appliances768.jpg") 1x);
@@ -3604,32 +3789,28 @@ main {
   }
 
   .card-grid__card-decorations {
-    width: 700px;
-    height: 337px;
+    background-size: 100% 337px;
     background-image: url("../img/decorations768.jpg");
     background-image: -webkit-image-set(url("../img/decorations768.avif") 1x, url("../img/decorations768.webp") 1x, url("../img/decorations768.jpg") 1x);
     background-image: image-set(url("../img/decorations768.avif") 1x, url("../img/decorations768.webp") 1x, url("../img/decorations768.jpg") 1x);
   }
 
   .card-grid__card-woman {
-    width: 182px;
-    height: 273px;
+    background-size: 100% 273px;
     background-image: url("../img/woman768.jpg");
     background-image: -webkit-image-set(url("../img/woman768.avif") 1x, url("../img/woman768.webp") 1x, url("../img/woman768.jpg") 1x);
     background-image: image-set(url("../img/woman768.avif") 1x, url("../img/woman768.webp") 1x, url("../img/woman768.jpg") 1x);
   }
 
   .card-grid__card-chemicals {
-    width: 178px;
-    height: 131px;
+    background-size: 100% 131px;
     background-image: url("../img/chemicals768.jpg");
     background-image: -webkit-image-set(url("../img/chemicals768.avif") 1x, url("../img/chemicals768.webp") 1x, url("../img/chemicals768.jpg") 1x);
     background-image: image-set(url("../img/chemicals768.avif") 1x, url("../img/chemicals768.webp") 1x, url("../img/chemicals768.jpg") 1x);
   }
 
   .card-grid__card-balls {
-    width: 178px;
-    height: 131px;
+    background-size: 100% 131px;
     background-image: url("../img/balls768.jpg");
     background-image: -webkit-image-set(url("../img/balls768.avif") 1x, url("../img/balls768.webp") 1x, url("../img/balls768.jpg") 1x);
     background-image: image-set(url("../img/balls768.avif") 1x, url("../img/balls768.webp") 1x, url("../img/balls768.jpg") 1x);
@@ -3644,12 +3825,12 @@ main {
     font-size: 30px;
   }
 
-  .card-footer__list {
-    gap: 39px 20px;
-  }
-
   .card-footer__section {
     padding: 0px 32px 55px 33px;
+  }
+
+  .card-footer__list {
+    gap: 39px 20px;
   }
 
   .card-footer__item-discount {
@@ -4215,6 +4396,18 @@ main {
   }
 }
 
+@media (max-width: 550px) {
+  .header__nav-item4 {
+    gap: 0;
+  }
+
+  .footer__wrapper {
+    padding: 30px 0 19px 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "catalog" "clients" "contacts" "copyright";
+  }
+}
+
 @media (max-width: 320px) {
   .header__nav {
     padding: 24px 20px 19px 19px;
@@ -4230,17 +4423,16 @@ main {
   .header__nav-logo {
     width: 114px;
     height: 25px;
-    background-image: url("../img/logo320.svg");
+    background-image: url("/dist/img/logo320.svg");
   }
 
   .header__nav-btn {
     width: 79px;
     height: 30px;
-    background-image: url("../img/btn320.svg");
+    background-image: url("/dist/img/btn320.svg");
   }
 
   .header__nav-input {
-    width: 280px;
     height: 30px;
     padding-left: 16px;
     font-size: 8px;
@@ -4250,19 +4442,19 @@ main {
     width: 50px;
     height: 30px;
     margin-left: -50px;
-    background-image: url("../img/search-btn320.svg");
+    background-image: url("/dist/img/search-btn320.svg");
   }
 
   .header__nav-profile {
     width: 30px;
     height: 30px;
-    background-image: url("../img/profile320.svg");
+    background-image: url("/dist/img/profile320.svg");
   }
 
   .header__nav-basket {
     width: 30px;
     height: 30px;
-    background-image: url("../img/basket320.svg");
+    background-image: url("/dist/img/basket320.svg");
   }
 
   .header__nav-basket-quantity {
@@ -4272,7 +4464,7 @@ main {
   .header__nav-favorite {
     width: 30px;
     height: 30px;
-    background-image: url("../img/favourite320.svg");
+    background-image: url("/dist/img/favourite320.svg");
   }
 
   .header__nav-item2 {
@@ -4298,6 +4490,49 @@ main {
 
   .header__breadcrumb-ref {
     font-size: 8px;
+  }
+
+  .menu__wrapper {
+    height: 640px;
+    padding: 30px 0 90px 0;
+  }
+
+  .menu__catalog-list,
+  .menu__clients-list {
+    font-size: 16px;
+  }
+
+  .menu__catalog {
+    padding-left: 0;
+  }
+
+  .menu__catalog-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .menu__catalog-list {
+    row-gap: 5px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+  }
+
+  .menu__clients {
+    padding-left: 20px;
+  }
+
+  .menu__clients-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .menu__contacts-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .menu__contacts-link {
+    font-size: 16px;
   }
 
   .blog-wrapper {
@@ -4469,7 +4704,7 @@ main {
   .product__card-discount-btn {
     width: 14px;
     height: 14px;
-    background-image: url("../img/card/card-bell@320.svg");
+    background-image: url("/dist/img/card/card-bell@320.svg");
   }
 
   .product__card-discount-txt {
@@ -4591,58 +4826,95 @@ main {
     grid-template-areas: "one one" "one one" "two three" "six six" "four four" "four four" "five five" "seven seven" "nine ten" "nine eleven" "eight eight";
   }
 
-  .card-grid__card-banner {
-    width: 280px;
+  .card-grid__item-banner {
     height: 340px;
-    background-image: url("../img/banner320.jpg");
-    background-image: -webkit-image-set(url("../img/banner320.avif") 1x, url("../img/banner320.webp") 1x, url("../img/banner320.jpg") 1x);
-    background-image: image-set(url("../img/banner320.avif") 1x, url("../img/banner320.webp") 1x, url("../img/banner320.jpg") 1x);
+  }
+
+  .card-grid__item-book {
+    height: 120px;
+  }
+
+  .card-grid__item-discount {
+    height: 120px;
+  }
+
+  .card-grid__item-sneakers {
+    height: 206px;
+  }
+
+  .card-grid__item-presents {
+    height: 118px;
+  }
+
+  .card-grid__item-red {
+    height: 118px;
+  }
+
+  .card-grid__item-appliances {
+    height: 118px;
+  }
+
+  .card-grid__item-decorations {
+    height: 123px;
+  }
+
+  .card-grid__item-woman {
+    height: 195px;
+  }
+
+  .card-grid__item-chemicals {
+    height: 95px;
+  }
+
+  .card-grid__item-balls {
+    height: 94px;
+  }
+
+  .card-grid__card-banner {
+    background-size: 100% 340px;
+    background-image: url("/dist/img/banner320.jpg");
+    background-image: -webkit-image-set(url("/dist/img/banner320.avif") 1x, url("/dist/img/banner320.webp") 1x, url("/dist/img/banner320.jpg") 1x);
+    background-image: image-set(url("/dist/img/banner320.avif") 1x, url("/dist/img/banner320.webp") 1x, url("/dist/img/banner320.jpg") 1x);
     margin-bottom: 0px;
   }
 
   .card-grid__card-book {
-    width: 130px;
-    height: 120px;
+    background-size: 100% 120px;
     background-image: url("../img/book320.jpg");
     background-image: -webkit-image-set(url("../img/book320.avif") 1x, url("../img/book320.webp") 1x, url("../img/book320.jpg") 1x);
     background-image: image-set(url("../img/book320.avif") 1x, url("../img/book320.webp") 1x, url("../img/book320.jpg") 1x);
   }
 
   .card-grid__card-discount {
-    width: 130px;
-    height: 120px;
+    background-size: 100% 120px;
     background-image: url("../img/discount320.jpg");
     background-image: -webkit-image-set(url("../img/discount320.avif") 1x, url("../img/discount320.webp") 1x, url("../img/discount320.jpg") 1x);
     background-image: image-set(url("../img/discount320.avif") 1x, url("../img/discount320.webp") 1x, url("../img/discount320.jpg") 1x);
   }
 
   .card-grid__card-sneakers {
-    width: 280px;
-    height: 206px;
+    background-size: 100% 206px;
     background-image: url("../img/sneackers320.jpg");
     background-image: -webkit-image-set(url("../img/sneackers320.avif") 1x, url("../img/sneackers320.webp") 1x, url("../img/sneackers320.jpg") 1x);
     background-image: image-set(url("../img/sneackers320.avif") 1x, url("../img/sneackers320.webp") 1x, url("../img/sneackers320.jpg") 1x);
   }
 
   .card-grid__card-presents {
-    width: 280px;
-    height: 118px;
+    background-size: 100% 118px;
     background-image: url("../img/presents320.jpg");
     background-image: -webkit-image-set(url("../img/presents320.avif") 1x, url("../img/presents320.webp") 1x, url("../img/presents320.jpg") 1x);
     background-image: image-set(url("../img/presents320.avif") 1x, url("../img/presents320.webp") 1x, url("../img/presents320.jpg") 1x);
   }
 
   .card-grid__card-red {
-    width: 280px;
-    height: 118px;
+    background-size: 100% 118px;
     background-image: url("../img/red320.jpg");
     background-image: -webkit-image-set(url("../img/red320.avif") 1x, url("../img/red320.webp") 1x, url("../img/red320.jpg") 1x);
     background-image: image-set(url("../img/red320.avif") 1x, url("../img/red320.webp") 1x, url("../img/red320.jpg") 1x);
   }
 
   .card-grid__card-appliances {
-    width: 280px;
-    height: 118px;
+    background-size: 100% 118px;
     margin-bottom: 0px;
     background-image: url("../img/appliances320.jpg");
     background-image: -webkit-image-set(url("../img/appliances320.avif") 1x, url("../img/appliances320.webp") 1x, url("../img/appliances320.jpg") 1x);
@@ -4650,32 +4922,28 @@ main {
   }
 
   .card-grid__card-decorations {
-    width: 280px;
-    height: 123px;
+    background-size: 100% 123px;
     background-image: url("../img/decorations320.jpg");
     background-image: -webkit-image-set(url("../img/decorations320.avif") 1x, url("../img/decorations320.webp") 1x, url("../img/decorations320.jpg") 1x);
     background-image: image-set(url("../img/decorations320.avif") 1x, url("../img/decorations320.webp") 1x, url("../img/decorations320.jpg") 1x);
   }
 
   .card-grid__card-woman {
-    width: 130px;
-    height: 195px;
+    background-size: 100% 195px;
     background-image: url("../img/woman320.jpg");
     background-image: -webkit-image-set(url("../img/woman320.avif") 1x, url("../img/woman320.webp") 1x, url("../img/woman320.jpg") 1x);
     background-image: image-set(url("../img/woman320.avif") 1x, url("../img/woman320.webp") 1x, url("../img/woman320.jpg") 1x);
   }
 
   .card-grid__card-chemicals {
-    width: 130px;
-    height: 95px;
+    background-size: 100% 95px;
     background-image: url("../img/chemicals320.jpg");
     background-image: -webkit-image-set(url("../img/chemicals320.avif") 1x, url("../img/chemicals320.webp") 1x, url("../img/chemicals320.jpg") 1x);
     background-image: image-set(url("../img/chemicals320.avif") 1x, url("../img/chemicals320.webp") 1x, url("../img/chemicals320.jpg") 1x);
   }
 
   .card-grid__card-balls {
-    width: 130px;
-    height: 94px;
+    background-size: 100% 94px;
     background-image: url("../img/balls320.jpg");
     background-image: -webkit-image-set(url("../img/balls320.avif") 1x, url("../img/balls320.webp") 1x, url("../img/balls320.jpg") 1x);
     background-image: image-set(url("../img/balls320.avif") 1x, url("../img/balls320.webp") 1x, url("../img/balls320.jpg") 1x);
@@ -4690,12 +4958,12 @@ main {
     font-size: 20px;
   }
 
-  .card-footer__list {
-    gap: 33px 21px;
-  }
-
   .card-footer__section {
     padding: 18px 19px 55px 20px;
+  }
+
+  .card-footer__list {
+    gap: 33px 21px;
   }
 
   .card-footer__item-discount {
@@ -5074,12 +5342,6 @@ main {
   .basket-total__misc-tos {
     padding: 7px 0 0 25px;
     font-size: 10px;
-  }
-
-  .footer__wrapper {
-    padding: 30px 0 19px 20px;
-    grid-template-columns: 1fr;
-    grid-template-areas: "logo" "catalog" "clients" "contacts" "copyright";
   }
 
   .footer__catalog {

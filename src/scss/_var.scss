@@ -12,8 +12,8 @@ $underline-clr: #E8E8E8;
     weight: $weight;
     display: swap;
   }
-  src: url("../fonts/#{ $name }-#{ $weight }.woff2")  format("woff2"),
-    url("../fonts/#{ $name }-#{ $weight }.woff")  format("woff");
+  src: url("/dist/fonts/#{ $name }-#{ $weight }.woff2")  format("woff2"),
+    url("/dist/fonts/#{ $name }-#{ $weight }.woff")  format("woff");
 }
 
 @mixin laptopL {
@@ -30,6 +30,12 @@ $underline-clr: #E8E8E8;
 
 @mixin tablet {
   @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobileL {
+  @media (max-width: 550px) {
     @content;
   }
 }

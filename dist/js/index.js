@@ -717,7 +717,6 @@ const acc = () => {
 
 
 const navBar = document.querySelector('.header__nav');
-const breadCrumb = document.querySelector('.header__breadcrumb-list');
 const modalEvents = () => {
   navBar.addEventListener('click', e => {
     const target = e.target;
@@ -730,6 +729,8 @@ const modalEvents = () => {
     }
 
     if (target.closest('.header__nav-basket')) {
+      const breadCrumb = document.querySelector('.header__breadcrumb-list');
+
       if (breadCrumb) {
         breadCrumb.innerHTML = '';
         breadCrumb.insertAdjacentHTML('afterbegin', `

@@ -20,7 +20,7 @@
       padding: 41px 0 35px 34px;
       grid-template-columns: 0.3fr 0.48fr 0.5fr;
     }
-    @include mobile {
+    @include mobileL {
       padding: 30px 0 19px 20px;
       grid-template-columns: 1fr;     
       grid-template-areas: 
@@ -38,6 +38,9 @@
     margin-bottom: 50px;
     max-height: 500px;
     grid-area: catalog;
+    @include laptopL {
+      max-height: fit-content;
+    }
     @include laptop {
       margin-bottom: 95px;
     }
@@ -75,9 +78,10 @@
       font-weight: 400;
       font-size: 22px;
       line-height: 150%;
-      @include laptop {
+      @include laptopL {
         height: 100%;
         flex-wrap: nowrap;
+        padding-right: 20px;
       }
       @include tablet {
         gap: 10px;
@@ -271,8 +275,15 @@
     }
     &-socials {
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
-      @media (max-width: 768px) {
+      @include laptopL {
+        gap: 10px;
+      }
+      @include laptop {
+        gap: 20px;
+      }
+      @include tablet {
         gap: 15px;
       }
     }
@@ -317,14 +328,17 @@
       font-weight: 700;
       font-size: 16px;
       line-height: 130%;
-      @media (max-width: 1024px) {
+      @include laptopL {
+        padding-right: 126px;
+      }
+      @include laptop {
         padding-right: 87px;
       }
-      @media (max-width: 768px) {
+      @include tablet {
         padding-right: 113px;
         font-size: 12px;
       }
-      @media (max-width: 320px) {
+      @include mobile {
         padding-right: 40px;
         font-size: 10px;
       }

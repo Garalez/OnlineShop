@@ -11,7 +11,7 @@
   }
   &__list {
     display: grid;
-    grid-gap: 61px;
+    gap: 61px;
     grid-template-columns: repeat(6, 1fr);
     grid-template-areas:
       "one one one one one one"
@@ -19,6 +19,9 @@
       "six six four four seven seven"
       "eight eight eight eight nine ten"
       "eight eight eight eight nine eleven";
+    @include laptopL {
+      column-gap: 20px;
+    }
     @include laptop {
       column-gap: 26px;
       row-gap: 23px;
@@ -33,15 +36,15 @@
     }
     @include tablet {
       column-gap: 18px;
-    row-gap: 18px;
-    grid-template-columns: 140px 140px 190px 190px;
-    grid-template-areas:
-      "one one one one"
-      "two three four four"
-      "six six four four"
-      "five five nine ten"
-      "seven seven nine eleven"
-      "eight eight eight eight";
+      row-gap: 18px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "one one one one"
+        "two three four four"
+        "six six four four"
+        "five five nine ten"
+        "seven seven nine eleven"
+        "eight eight eight eight";
     }
     @include mobile {
       column-gap: 9px;
@@ -63,122 +66,230 @@
   }
   &__item {
     &-banner {
+      height: 480px;
       grid-area: one;
+      @include laptop {
+        height: 314px;
+      }
+      @include tablet {
+        height: 280px;
+      }
+      @include mobile {
+        height: 340px;
+      }
     }
     &-book {
+      height: 228px;
       grid-area: two;
+      @include laptop {
+        height: 202px;
+      }
+      @include tablet {
+        height: 130px;
+      }
+      @include mobile {
+        height: 120px;
+      }
     }
     &-discount {
+      height: 228px;
       grid-area: three;
+      @include laptop {
+        height: 202px;
+      }
+      @include tablet {
+        height: 130px;
+      }
+      @include mobile {
+        height: 120px;
+      }
     }
     &-sneakers {
+      height: 516px;
       grid-area: four;
+      @include laptop {
+        height: 418px;
+      }
+      @include tablet {
+        height: 278px;
+      }
+      @include mobile {
+        height: 206px;
+      }
     }
     &-presents {
+      height: 228px;
       grid-area: five;
+      @include laptop {
+        height: 194px;
+      }
+      @include tablet {
+        height: 126px;
+      }
+      @include mobile {
+        height: 118px;
+      }
     }
     &-red {
+      height: 228px;
       grid-area: six;
+      @include laptop {
+        height: 194px;
+      }
+      @include tablet {
+        height: 126px;
+      }
+      @include mobile {
+        height: 118px;
+      }
     }
     &-appliances {
+      height: 228px;
       grid-area: seven;
+      @include laptop {
+        height: 194px;
+      }
+      @include tablet {
+        height: 126px;
+      }
+      @include mobile {
+        height: 118px;
+      }
     }
     &-decorations {
+      height: 516px;
       grid-area: eight;
+      @include laptop {
+        height: 418px;
+      }
+      @include tablet {
+        height: 337px;
+      }
+      @include mobile {
+        height: 123px;
+      }
     }
     &-woman {
+      height: 516px;
       grid-area: nine;
+      @include laptop {
+        height: 410px;
+      }
+      @include tablet {
+        height: 273px;
+      }
+      @include mobile {
+        height: 195px;
+      }
     }
     &-chemicals {
+      height: 228px;
       grid-area: ten;
+      @include laptop {
+        height: 196px;
+      }
+      @include tablet {
+        height: 131px;
+      }
+      @include mobile {
+        height: 95px;
+      }
     }
     &-balls {
+      height: 228px;
       grid-area: eleven;
+      @include laptop {
+        height: 196px;
+      }
+      @include tablet {
+        height: 131px;
+      }
+      @include mobile {
+        height: 94px;
+      }
     }
   }
   &__card {
     &-banner {
-      width: 1770px;
-      height: 480px;
-      background-image: url("../img/banner.jpg");
+      height: 100%;
+      background-size: 100% 480px;
+      background-repeat: no-repeat;
+      background-image: url("/dist/img/banner.jpg");
       background-image: -webkit-image-set(
-        url("../img/banner.avif") 1x,
-        url("../img/banner.webp") 1x,
-        url("../img/banner.jpg") 1x
+        url("/dist/img/banner.avif") 1x,
+        url("/dist/img/banner.webp") 1x,
+        url("/dist/img/banner.jpg") 1x
       );
       background-image: image-set(
-        url("../img/banner.avif") 1x,
-        url("../img/banner.webp") 1x,
-        url("../img/banner.jpg") 1x
+        url("/dist/img/banner.avif") 1x,
+        url("/dist/img/banner.webp") 1x,
+        url("/dist/img/banner.jpg") 1x
       );
       display: block;
       @include laptop {
-        width: 944px;
-        height: 314px;
-        background-image: url("../img/banner1024.jpg");
+        background-size: 100% 314px;
+        background-image: url("/dist/img/banner1024.jpg");
         background-image: -webkit-image-set(
-          url("../img/banner1024.avif") 1x,
-          url("../img/banner1024.webp") 1x,
-          url("../img/banner1024.jpg") 1x
+          url("/dist/img/banner1024.avif") 1x,
+          url("/dist/img/banner1024.webp") 1x,
+          url("/dist/img/banner1024.jpg") 1x
         );
         background-image: image-set(
-          url("../img/banner1024.avif") 1x,
-          url("../img/banner1024.webp") 1x,
-          url("../img/banner1024.jpg") 1x
+          url("/dist/img/banner1024.avif") 1x,
+          url("/dist/img/banner1024.webp") 1x,
+          url("/dist/img/banner1024.jpg") 1x
         );
         margin-bottom: 24px;
       }
       @include tablet {
-        width: 700px;
-        height: 280px;
-        background-image: url("../img/banner768.jpg");
+        background-size: 100% 280px;
+        background-image: url("/dist/img/banner768.jpg");
         background-image: -webkit-image-set(
-          url("../img/banner768.avif") 1x,
-          url("../img/banner768.webp") 1x,
-          url("../img/banner768.jpg") 1x
+          url("/dist/img/banner768.avif") 1x,
+          url("/dist/img/banner768.webp") 1x,
+          url("/dist/img/banner768.jpg") 1x
         );
         background-image: image-set(
-          url("../img/banner768.avif") 1x,
-          url("../img/banner768.webp") 1x,
-          url("../img/banner768.jpg") 1x
+          url("/dist/img/banner768.avif") 1x,
+          url("/dist/img/banner768.webp") 1x,
+          url("/dist/img/banner768.jpg") 1x
         );
         margin-bottom: 24px;
       }
       @include mobile {
-        width: 280px;
-        height: 340px;
-        background-image: url("../img/banner320.jpg");
+        background-size: 100% 340px;
+        background-image: url("/dist/img/banner320.jpg");
         background-image: -webkit-image-set(
-          url("../img/banner320.avif") 1x,
-          url("../img/banner320.webp") 1x,
-          url("../img/banner320.jpg") 1x
+          url("/dist/img/banner320.avif") 1x,
+          url("/dist/img/banner320.webp") 1x,
+          url("/dist/img/banner320.jpg") 1x
         );
         background-image: image-set(
-          url("../img/banner320.avif") 1x,
-          url("../img/banner320.webp") 1x,
-          url("../img/banner320.jpg") 1x
+          url("/dist/img/banner320.avif") 1x,
+          url("/dist/img/banner320.webp") 1x,
+          url("/dist/img/banner320.jpg") 1x
         );
         margin-bottom: 0px;
       }
     }
     &-book {
-      width: 245px;
-      height: 228px;
-      background-image: url("../img/grid1.jpg");
+      height: 100%;
+      background-size: 100% 228px;
+      background-repeat: no-repeat;
+      background-image: url("/dist/img/grid1.jpg");
       background-image: -webkit-image-set(
-        url("../img/grid1.avif") 1x,
-        url("../img/grid1.webp") 1x,
-        url("../img/grid1.jpg") 1x
+        url("/dist/img/grid1.avif") 1x,
+        url("/dist/img/grid1.webp") 1x,
+        url("/dist/img/grid1.jpg") 1x
       );
       background-image: image-set(
-        url("../img/grid1.avif") 1x,
-        url("../img/grid1.webp") 1x,
-        url("../img/grid1.jpg") 1x
+        url("/dist/img/grid1.avif") 1x,
+        url("/dist/img/grid1.webp") 1x,
+        url("/dist/img/grid1.jpg") 1x
       );
       display: block;
       @include laptop {
-        width: 217px;
-        height: 202px;
+        background-size: 100% 202px;
         background-image: url("../img/book1024.jpg");
         background-image: -webkit-image-set(
           url("../img/book1024.avif") 1x,
@@ -192,8 +303,7 @@
         );
       }
       @include tablet {
-        width: 140px;
-        height: 130px;
+        background-size: 100% 130px;
         background-image: url("../img/book768.jpg");
         background-image: -webkit-image-set(
           url("../img/book768.avif") 1x,
@@ -207,8 +317,7 @@
         );
       }
       @include mobile {
-        width: 130px;
-        height: 120px;
+        background-size: 100% 120px;
         background-image: url("../img/book320.jpg");
         background-image: -webkit-image-set(
           url("../img/book320.avif") 1x,
@@ -223,23 +332,23 @@
       }
     }
     &-discount {
-      width: 245px;
-      height: 228px;
-      background-image: url("../img/grid2.jpg");
+      height: 100%;
+      background-size: 100% 228px;
+      background-repeat: no-repeat;
+      background-image: url("/dist/img/grid2.jpg");
       background-image: -webkit-image-set(
-        url("../img/grid2.avif") 1x,
-        url("../img/grid2.webp") 1x,
-        url("../img/grid2.jpg") 1x
+        url("/dist/img/grid2.avif") 1x,
+        url("/dist/img/grid2.webp") 1x,
+        url("/dist/img/grid2.jpg") 1x
       );
       background-image: image-set(
-        url("../img/grid2.avif") 1x,
-        url("../img/grid2.webp") 1x,
-        url("../img/grid2.jpg") 1x
+        url("/dist/img/grid2.avif") 1x,
+        url("/dist/img/grid2.webp") 1x,
+        url("/dist/img/grid2.jpg") 1x
       );
       display: block;
       @include laptop {
-        width: 217px;
-        height: 202px;
+        background-size: 100% 202px;
         background-image: url("../img/discount1024.jpg");
         background-image: -webkit-image-set(
           url("../img/discount1024.avif") 1x,
@@ -253,8 +362,7 @@
         );
       }
       @include tablet {
-        width: 140px;
-        height: 130px;
+        background-size: 100% 130px;
         background-image: url("../img/discount768.jpg");
         background-image: -webkit-image-set(
           url("../img/discount768.avif") 1x,
@@ -268,8 +376,7 @@
         );
       }
       @include mobile {
-        width: 130px;
-        height: 120px;
+        background-size: 100% 120px;
         background-image: url("../img/discount320.jpg");
         background-image: -webkit-image-set(
           url("../img/discount320.avif") 1x,
@@ -284,23 +391,23 @@
       }
     }
     &-sneakers {
-      width: 550px;
-      height: 516px;
-      background-image: url("../img/grid3.jpg");
+      height: 100%;
+      background-size: 100% 516px;
+      background-repeat: no-repeat;
+      background-image: url("/dist/img/grid3.jpg");
       background-image: -webkit-image-set(
-        url("../img/grid3.avif") 1x,
-        url("../img/grid3.webp") 1x,
-        url("../img/grid3.jpg") 1x
+        url("/dist/img/grid3.avif") 1x,
+        url("/dist/img/grid3.webp") 1x,
+        url("/dist/img/grid3.jpg") 1x
       );
       background-image: image-set(
-        url("../img/grid3.avif") 1x,
-        url("../img/grid3.webp") 1x,
-        url("../img/grid3.jpg") 1x
+        url("/dist/img/grid3.avif") 1x,
+        url("/dist/img/grid3.webp") 1x,
+        url("/dist/img/grid3.jpg") 1x
       );
       display: block;
       @include laptop {
-        width: 446px;
-        height: 418px;
+        background-size: 100% 418px;
         background-image: url("../img/sneackers1024.jpg");
         background-image: -webkit-image-set(
           url("../img/sneackers1024.avif") 1x,
@@ -314,8 +421,7 @@
         );
       }
       @include tablet {
-        width: 380px;
-        height: 278px;
+        background-size: 100% 278px;
         background-image: url("../img/sneackers768.jpg");
         background-image: -webkit-image-set(
           url("../img/sneackers768.avif") 1x,
@@ -329,8 +435,7 @@
         );
       }
       @include mobile {
-        width: 280px;
-        height: 206px;
+        background-size: 100% 206px;
         background-image: url("../img/sneackers320.jpg");
         background-image: -webkit-image-set(
           url("../img/sneackers320.avif") 1x,
@@ -345,23 +450,23 @@
       }
     }
     &-presents {
-      width: 550px;
-      height: 228px;
-      background-image: url("../img/grid4.jpg");
+      height: 100%;
+      background-size: 100% 228px;
+      background-repeat: no-repeat;
+      background-image: url("/dist/img/grid4.jpg");
       background-image: -webkit-image-set(
-        url("../img/grid4.avif") 1x,
-        url("../img/grid4.webp") 1x,
-        url("../img/grid4.jpg") 1x
+        url("/dist/img/grid4.avif") 1x,
+        url("/dist/img/grid4.webp") 1x,
+        url("/dist/img/grid4.jpg") 1x
       );
       background-image: image-set(
-        url("../img/grid4.avif") 1x,
-        url("../img/grid4.webp") 1x,
-        url("../img/grid4.jpg") 1x
+        url("/dist/img/grid4.avif") 1x,
+        url("/dist/img/grid4.webp") 1x,
+        url("/dist/img/grid4.jpg") 1x
       );
       display: block;
       @include laptop {
-        width: 464px;
-        height: 194px;
+        background-size: 100% 194px;
         background-image: url("../img/presents1024.jpg");
         background-image: -webkit-image-set(
           url("../img/presents1024.avif") 1x,
@@ -375,8 +480,7 @@
         );
       }
       @include tablet {
-        width: 300px;
-        height: 126px;
+        background-size: 100% 126px;
         background-image: url("../img/presents768.jpg");
         background-image: -webkit-image-set(
           url("../img/presents768.avif") 1x,
@@ -390,8 +494,7 @@
         );
       }
       @include mobile {
-        width: 280px;
-        height: 118px;
+        background-size: 100% 118px;
         background-image: url("../img/presents320.jpg");
         background-image: -webkit-image-set(
           url("../img/presents320.avif") 1x,
@@ -406,8 +509,9 @@
       }
     }
     &-red {
-      width: 550px;
-      height: 228px;
+      height: 100%;
+      background-size: 100% 228px;
+      background-repeat: no-repeat;
       background-image: url("../img/grid5.jpg");
       background-image: -webkit-image-set(
         url("../img/grid5.avif") 1x,
@@ -421,8 +525,7 @@
       );
       display: block;
       @include laptop {
-        width: 464px;
-        height: 194px;
+        background-size: 100% 194px;
         background-image: url("../img/red1024.jpg");
         background-image: -webkit-image-set(
           url("../img/red1024.avif") 1x,
@@ -436,8 +539,7 @@
         );
       }
       @include tablet {
-        width: 300px;
-        height: 126px;
+        background-size: 100% 126px;
         background-image: url("../img/red768.jpg");
         background-image: -webkit-image-set(
           url("../img/red768.avif") 1x,
@@ -451,8 +553,7 @@
         );
       }
       @include mobile {
-        width: 280px;
-        height: 118px;
+        background-size: 100% 118px;
         background-image: url("../img/red320.jpg");
         background-image: -webkit-image-set(
           url("../img/red320.avif") 1x,
@@ -467,8 +568,9 @@
       }
     }
     &-appliances {
-      width: 550px;
-      height: 228px;
+      height: 100%;
+      background-size: 100% 228px;
+      background-repeat: no-repeat;
       background-image: url("../img/grid6.jpg");
       background-image: -webkit-image-set(
         url("../img/grid6.avif") 1x,
@@ -482,8 +584,7 @@
       );
       display: block;
       @include laptop {
-        width: 464px;
-        height: 194px;
+        background-size: 100% 194px;
         margin-bottom: 27px;
         background-image: url("../img/appliances1024.jpg");
         background-image: -webkit-image-set(
@@ -498,8 +599,7 @@
         );
       }
       @include tablet {
-        width: 300px;
-        height: 126px;
+        background-size: 100% 126px;
         margin-bottom: 0px;
         background-image: url("../img/appliances768.jpg");
         background-image: -webkit-image-set(
@@ -514,8 +614,7 @@
         );
       }
       @include mobile {
-        width: 280px;
-        height: 118px;
+        background-size: 100% 118px;
         margin-bottom: 0px;
         background-image: url("../img/appliances320.jpg");
         background-image: -webkit-image-set(
@@ -531,8 +630,9 @@
       }
     }
     &-decorations {
-      width: 1160px;
-      height: 516px;
+      height: 100%;
+      background-size: 100% 516px;
+      background-repeat: no-repeat;
       background-image: url("../img/grid7.jpg");
       background-image: -webkit-image-set(
         url("../img/grid7.avif") 1x,
@@ -546,8 +646,7 @@
       );
       display: block;
       @include laptop {
-        width: 940px;
-        height: 418px;
+        background-size: 100% 418px;
         background-image: url("../img/decorations1024.jpg");
         background-image: -webkit-image-set(
           url("../img/decorations1024.avif") 1x,
@@ -561,8 +660,7 @@
         );
       }
       @include tablet {
-        width: 700px;
-        height: 337px;
+        background-size: 100% 337px;
         background-image: url("../img/decorations768.jpg");
         background-image: -webkit-image-set(
           url("../img/decorations768.avif") 1x,
@@ -576,8 +674,7 @@
         );
       }
       @include mobile {
-        width: 280px;
-        height: 123px;
+        background-size: 100% 123px;
         background-image: url("../img/decorations320.jpg");
         background-image: -webkit-image-set(
           url("../img/decorations320.avif") 1x,
@@ -592,8 +689,9 @@
       }
     }
     &-woman {
-      width: 245px;
-      height: 516px;
+      height: 100%;
+      background-size: 100% 516px;
+      background-repeat: no-repeat;
       background-image: url("../img/grid8.jpg");
       background-image: -webkit-image-set(
         url("../img/grid8.avif") 1x,
@@ -607,8 +705,7 @@
       );
       display: block;
       @include laptop {
-        width: 206px;
-        height: 410px;
+        background-size: 100% 410px;
         background-image: url("../img/woman1024.jpg");
         background-image: -webkit-image-set(
           url("../img/woman1024.avif") 1x,
@@ -622,8 +719,7 @@
         );
       }
       @include tablet {
-        width: 182px;
-        height: 273px;
+        background-size: 100% 273px;
         background-image: url("../img/woman768.jpg");
         background-image: -webkit-image-set(
           url("../img/woman768.avif") 1x,
@@ -637,8 +733,7 @@
         );
       }
       @include mobile {
-        width: 130px;
-        height: 195px;
+        background-size: 100% 195px;
         background-image: url("../img/woman320.jpg");
         background-image: -webkit-image-set(
           url("../img/woman320.avif") 1x,
@@ -653,8 +748,9 @@
       }
     }
     &-chemicals {
-      width: 245px;
-      height: 228px;
+      height: 100%;
+      background-size: 100% 228px;
+      background-repeat: no-repeat;
       background-image: url("../img/grid9.jpg");
       background-image: -webkit-image-set(
         url("../img/grid9.avif") 1x,
@@ -668,8 +764,7 @@
       );
       display: block;
       @include laptop {
-        width: 210px;
-        height: 196px;
+        background-size: 100% 196px;
         background-image: url("../img/chemicals1024.jpg");
         background-image: -webkit-image-set(
           url("../img/chemicals1024.avif") 1x,
@@ -683,8 +778,7 @@
         );
       }
       @include tablet {
-        width: 178px;
-        height: 131px;
+        background-size: 100% 131px;
         background-image: url("../img/chemicals768.jpg");
         background-image: -webkit-image-set(
           url("../img/chemicals768.avif") 1x,
@@ -698,8 +792,7 @@
         );
       }
       @include mobile {
-        width: 130px;
-        height: 95px;
+        background-size: 100% 95px;
         background-image: url("../img/chemicals320.jpg");
         background-image: -webkit-image-set(
           url("../img/chemicals320.avif") 1x,
@@ -714,8 +807,9 @@
       }
     }
     &-balls {
-      width: 245px;
-      height: 228px;
+      height: 100%;
+      background-size: 100% 228px;
+      background-repeat: no-repeat;
       background-image: url("../img/grid10.jpg");
       background-image: -webkit-image-set(
         url("../img/grid10.avif") 1x,
@@ -729,8 +823,7 @@
       );
       display: block;
       @include laptop {
-        width: 210px;
-        height: 196px;
+        background-size: 100% 196px;
         background-image: url("../img/balls1024.jpg");
         background-image: -webkit-image-set(
           url("../img/balls1024.avif") 1x,
@@ -744,8 +837,7 @@
         );
       }
       @include tablet {
-        width: 178px;
-        height: 131px;
+        background-size: 100% 131px;
         background-image: url("../img/balls768.jpg");
         background-image: -webkit-image-set(
           url("../img/balls768.avif") 1x,
@@ -759,8 +851,7 @@
         );
       }
       @include mobile {
-        width: 130px;
-        height: 94px;
+        background-size: 100% 94px;
         background-image: url("../img/balls320.jpg");
         background-image: -webkit-image-set(
           url("../img/balls320.avif") 1x,

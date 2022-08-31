@@ -27,6 +27,19 @@
       font-size: 20px;
     }
   }
+  &__section {
+    padding: 0px 58px 55px 76px;
+    @include laptop {
+      padding: 0px 42px 55px 40px;
+      margin-bottom: 50px;
+    }
+    @include tablet{
+      padding: 0px 32px 55px 33px;
+    }
+    @include mobile{
+      padding: 18px 19px 55px 20px;
+    }
+  }
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -41,30 +54,9 @@
       gap: 33px 21px;
     }
   }
-  &__section {
-    padding: 0px 58px 55px 76px;
-    @include laptop {
-      padding: 0px 42px 55px 40px;
-      margin-bottom: 50px;
-    }
-    @include tablet{
-      padding: 0px 32px 55px 33px;
-    }
-    @include mobile{
-      padding: 18px 19px 55px 20px;
-    }
-  }
+  
   &__item {
     position: relative;
-    @include laptop {
-      max-width: 300px;
-    }
-    @include laptop {
-      max-width: 220px;
-    }
-    @include laptop {
-      max-width: 130px;
-    }
     &-link {
       color: $black;
     }

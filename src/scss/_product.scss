@@ -336,7 +336,7 @@
         width: 33px;
         height: 33px;
         background: {
-          image: url("../img/card/card-favorite.svg");
+          image: url("/dist/img/card/card-favorite.svg");
           repeat: no-repeat;
           color: transparent; 
           size: cover;
@@ -353,7 +353,7 @@
         width: 33px;
         height: 33px;
         background: {
-          image: url("../img/card/card-favorite-active.svg");
+          image: url("/dist/img/card/card-favorite-active.svg");
           repeat: no-repeat;
           color: transparent;  
           size: cover;
@@ -422,7 +422,7 @@
         width: 24px;
         height: 24px;
         background: {
-          image: url("../img/card/card-bell.svg");
+          image: url("/dist/img/card/card-bell.svg");
           repeat: no-repeat;
           color: transparent; 
         };
@@ -430,7 +430,7 @@
         @include mobile {
           width: 14px;
           height: 14px;
-          background-image: url("../img/card/card-bell@320.svg");
+          background-image: url("/dist/img/card/card-bell@320.svg");
         }
       }
       &-txt {

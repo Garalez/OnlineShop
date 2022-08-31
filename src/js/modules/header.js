@@ -6,7 +6,6 @@ import {httpRequest} from './data.js';
 import {getStorage} from './localStorage.js';
 
 const navBar = document.querySelector('.header__nav');
-const breadCrumb = document.querySelector('.header__breadcrumb-list');
 
 export const modalEvents = () => {
   navBar.addEventListener('click', e => {
@@ -19,6 +18,7 @@ export const modalEvents = () => {
       });
     }
     if (target.closest('.header__nav-basket')) {
+      const breadCrumb = document.querySelector('.header__breadcrumb-list');
       if (breadCrumb) {
         breadCrumb.innerHTML = '';
         breadCrumb.insertAdjacentHTML('afterbegin', `
