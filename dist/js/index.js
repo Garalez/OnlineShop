@@ -540,9 +540,6 @@ const wrapper = document.querySelector('.footer__wrapper');
 const catalogBtn = document.querySelector('.footer__catalog-btn');
 const clientBtn = document.querySelector('.footer__clients-btn');
 const loadCategoryGoods = (e, err, data) => {
-  console.log(e.target);
-  console.log(data);
-
   if (err) {
     console.log(err);
   } else {
@@ -756,7 +753,6 @@ const modalEvents = () => {
 
       (0,_preloader_js__WEBPACK_IMPORTED_MODULE_2__/* .preloader */ .x)();
       const storagedItems = (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_3__/* .getStorage */ .cF)('basket');
-      console.log(storagedItems);
       (0,_basket_js__WEBPACK_IMPORTED_MODULE_4__/* .renderBasketProducts */ .X)(storagedItems);
     }
   });
@@ -1209,11 +1205,9 @@ const renderProductInfo = () => {
 
         addToBasketBtn.addEventListener('click', () => {
           const getData = (0,_localStorage_js__WEBPACK_IMPORTED_MODULE_3__/* .getStorage */ .cF)('basket');
-          console.log(getData);
 
           if (getData.length > 0) {
             const storageItem = getData.findIndex(el => el.id === data.id);
-            console.log(storageItem);
 
             if (storageItem >= 0) {
               alert('Товар уже есть в корзине');

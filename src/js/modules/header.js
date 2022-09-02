@@ -43,7 +43,6 @@ export const modalEvents = () => {
       }
       preloader();
       const storagedItems = getStorage('basket');
-      console.log(storagedItems);
       renderBasketProducts(storagedItems);
     }
   });

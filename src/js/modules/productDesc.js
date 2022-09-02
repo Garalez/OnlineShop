@@ -157,10 +157,8 @@ export const renderProductInfo = () => {
 
         addToBasketBtn.addEventListener('click', () => {
           const getData = getStorage('basket');
-          console.log(getData);
           if (getData.length > 0) {
             const storageItem = getData.findIndex(el => el.id === data.id);
-            console.log(storageItem);
             if (storageItem >= 0) {
               alert('Товар уже есть в корзине');
             } else {

@@ -242,6 +242,10 @@ export const critCSS = () => gulp
       base: path.dist.base,
       inline: true,
       css: [path.dist.cssIndex],
+      rebase: {
+        from: 'dist/css/index.min.css',
+        to: 'dist/index.html',
+      },
     }))
     .on('error', err => {
       console.error(err.message);

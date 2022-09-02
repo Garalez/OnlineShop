@@ -9,8 +9,6 @@ const catalogBtn = document.querySelector('.footer__catalog-btn');
 const clientBtn = document.querySelector('.footer__clients-btn');
 
 export const loadCategoryGoods = (e, err, data) => {
-  console.log(e.target);
-  console.log(data);
   if (err) {
     console.log(err);
   } else {
