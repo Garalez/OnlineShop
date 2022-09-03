@@ -370,7 +370,7 @@ template {
 }
 
 .header__nav {
-  padding: 27px 52px 45px 77px;
+  padding: 27px 52px 32px 77px;
 }
 
 .header__nav-list {
@@ -408,6 +408,9 @@ template {
 
 .header__nav-btn:hover {
   background-image: url("../img/btn-menu-hover.svg");
+  background-repeat: no-repeat;
+  background-size: 151px 54px;
+  background-color: transparent;
   transition: all 0.4s ease;
 }
 
@@ -769,6 +772,13 @@ template {
   grid-template-areas: "pic card" "desc .";
 }
 
+.product__item-wrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+
 .product__item-card:nth-child(1) {
   position: relative;
   grid-area: pic;
@@ -785,8 +795,8 @@ template {
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 42%;
-  top: 20px;
+  right: 9%;
+  top: 30px;
   width: 88px;
   height: 88px;
   border-radius: 50%;
@@ -798,7 +808,7 @@ template {
 }
 
 .product__item-pic {
-  width: 757px;
+  max-width: 757px;
   height: 427px;
 }
 
@@ -1097,179 +1107,204 @@ template {
 }
 
 .card-grid {
-  padding: 0 50px 50px 79px;
+  padding: 0 50px 50px 75px;
 }
 
 .card-grid__list {
   display: grid;
-  gap: 61px;
+  gap: 54px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas: "one one one one one one" "two three four four five five" "six six four four seven seven" "eight eight eight eight nine ten" "eight eight eight eight nine eleven";
 }
 
+.card-grid__item-text {
+  position: absolute;
+  top: 31%;
+  left: 6.2%;
+  font-weight: 700;
+  font-size: 3.66vw;
+  line-height: 130%;
+}
+
 .card-grid__item-banner {
-  height: 480px;
+  position: relative;
   grid-area: one;
 }
 
+.card-grid__item-banner-pic1024 {
+  display: none;
+}
+
+.card-grid__item-banner-pic768 {
+  display: none;
+}
+
+.card-grid__item-banner-pic320 {
+  display: none;
+}
+
+.card-grid__item-banner-desc {
+  position: absolute;
+  top: 69%;
+  left: 36.5%;
+  font-weight: 700;
+  font-size: 1.64vw;
+  line-height: 130%;
+}
+
+.card-grid__item-banner-discount {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.84vw;
+  line-height: 130%;
+}
+
+.card-grid__item-banner-timer {
+  display: flex;
+  gap: 30px;
+}
+
+.card-grid__item-banner-days-counter,
+.card-grid__item-banner-minutes-counter,
+.card-grid__item-banner-seconds-counter {
+  font-weight: 700;
+  font-size: 3.13vw;
+  line-height: 130%;
+}
+
 .card-grid__item-book {
-  height: 228px;
   grid-area: two;
 }
 
 .card-grid__item-discount {
-  height: 228px;
+  position: relative;
   grid-area: three;
 }
 
+.card-grid__item-discount-sale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10.5%;
+  top: 51%;
+  width: 35%;
+  height: 37.5%;
+  border-radius: 50%;
+  background-color: #FFBD13;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.54vw;
+  line-height: 130%;
+}
+
+.card-grid__item-discount-desc {
+  position: absolute;
+  right: 12.5%;
+  top: 30%;
+  font-weight: 700;
+  font-size: 1.58vw;
+  line-height: 130%;
+}
+
 .card-grid__item-sneakers {
-  height: 516px;
   grid-area: four;
 }
 
+.card-grid__item-sneakers-pic768 {
+  display: none;
+}
+
 .card-grid__item-presents {
-  height: 228px;
   grid-area: five;
 }
 
 .card-grid__item-red {
-  height: 228px;
+  position: relative;
   grid-area: six;
 }
 
+.card-grid__item-red-discount {
+  right: 80.6%;
+  top: 8.3%;
+  width: 15.8%;
+  height: 37.5%;
+}
+
 .card-grid__item-appliances {
-  height: 228px;
+  position: relative;
   grid-area: seven;
 }
 
+.card-grid__item-appliances-discount {
+  right: 5%;
+  top: 51%;
+  width: 16%;
+  height: 37.5%;
+}
+
+.card-grid__item-appliances-desc {
+  position: absolute;
+  right: auto;
+  left: 5.5%;
+  top: 59%;
+  font-weight: 700;
+  font-size: 2.07vw;
+  line-height: 130%;
+}
+
 .card-grid__item-decorations {
-  height: 516px;
   grid-area: eight;
 }
 
 .card-grid__item-woman {
-  height: 516px;
+  position: relative;
   grid-area: nine;
 }
 
+.card-grid__item-woman-pic768 {
+  display: none;
+}
+
+.card-grid__item-woman-discount {
+  right: 11%;
+  top: 77.8%;
+  width: 35%;
+  height: 17%;
+}
+
 .card-grid__item-chemicals {
-  height: 228px;
+  position: relative;
   grid-area: ten;
 }
 
+.card-grid__item-chemicals-pic768 {
+  display: none;
+}
+
+.card-grid__item-chemicals-discount {
+  right: 57.5%;
+  top: 8%;
+  width: 35.1%;
+  height: 37.6%;
+}
+
+.card-grid__item-chemicals-desc {
+  position: absolute;
+  left: 7.5%;
+  top: 57%;
+  font-weight: 700;
+  font-size: 1.55vw;
+  line-height: 130%;
+}
+
 .card-grid__item-balls {
-  height: 228px;
   grid-area: eleven;
 }
 
-.card-grid__card-banner {
-  height: 100%;
-  background-size: 100% 480px;
-  background-repeat: no-repeat;
-  background-image: url("../img/banner.jpg");
-  background-image: -webkit-image-set(url("../img/banner.avif") 1x, url("../img/banner.webp") 1x, url("../img/banner.jpg") 1x);
-  background-image: image-set(url("../img/banner.avif") 1x, url("../img/banner.webp") 1x, url("../img/banner.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-book {
-  height: 100%;
-  background-size: 100% 228px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid1.jpg");
-  background-image: -webkit-image-set(url("../img/grid1.avif") 1x, url("../img/grid1.webp") 1x, url("../img/grid1.jpg") 1x);
-  background-image: image-set(url("../img/grid1.avif") 1x, url("../img/grid1.webp") 1x, url("../img/grid1.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-discount {
-  height: 100%;
-  background-size: 100% 228px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid2.jpg");
-  background-image: -webkit-image-set(url("../img/grid2.avif") 1x, url("../img/grid2.webp") 1x, url("../img/grid2.jpg") 1x);
-  background-image: image-set(url("../img/grid2.avif") 1x, url("../img/grid2.webp") 1x, url("../img/grid2.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-sneakers {
-  height: 100%;
-  background-size: 100% 516px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid3.jpg");
-  background-image: -webkit-image-set(url("../img/grid3.avif") 1x, url("../img/grid3.webp") 1x, url("../img/grid3.jpg") 1x);
-  background-image: image-set(url("../img/grid3.avif") 1x, url("../img/grid3.webp") 1x, url("../img/grid3.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-presents {
-  height: 100%;
-  background-size: 100% 228px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid4.jpg");
-  background-image: -webkit-image-set(url("../img/grid4.avif") 1x, url("../img/grid4.webp") 1x, url("../img/grid4.jpg") 1x);
-  background-image: image-set(url("../img/grid4.avif") 1x, url("../img/grid4.webp") 1x, url("../img/grid4.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-red {
-  height: 100%;
-  background-size: 100% 228px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid5.jpg");
-  background-image: -webkit-image-set(url("../img/grid5.avif") 1x, url("../img/grid5.webp") 1x, url("../img/grid5.jpg") 1x);
-  background-image: image-set(url("../img/grid5.avif") 1x, url("../img/grid5.webp") 1x, url("../img/grid5.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-appliances {
-  height: 100%;
-  background-size: 100% 228px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid6.jpg");
-  background-image: -webkit-image-set(url("../img/grid6.avif") 1x, url("../img/grid6.webp") 1x, url("../img/grid6.jpg") 1x);
-  background-image: image-set(url("../img/grid6.avif") 1x, url("../img/grid6.webp") 1x, url("../img/grid6.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-decorations {
-  height: 100%;
-  background-size: 100% 516px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid7.jpg");
-  background-image: -webkit-image-set(url("../img/grid7.avif") 1x, url("../img/grid7.webp") 1x, url("../img/grid7.jpg") 1x);
-  background-image: image-set(url("../img/grid7.avif") 1x, url("../img/grid7.webp") 1x, url("../img/grid7.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-woman {
-  height: 100%;
-  background-size: 100% 516px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid8.jpg");
-  background-image: -webkit-image-set(url("../img/grid8.avif") 1x, url("../img/grid8.webp") 1x, url("../img/grid8.jpg") 1x);
-  background-image: image-set(url("../img/grid8.avif") 1x, url("../img/grid8.webp") 1x, url("../img/grid8.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-chemicals {
-  height: 100%;
-  background-size: 100% 228px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid9.jpg");
-  background-image: -webkit-image-set(url("../img/grid9.avif") 1x, url("../img/grid9.webp") 1x, url("../img/grid9.jpg") 1x);
-  background-image: image-set(url("../img/grid9.avif") 1x, url("../img/grid9.webp") 1x, url("../img/grid9.jpg") 1x);
-  display: block;
-}
-
-.card-grid__card-balls {
-  height: 100%;
-  background-size: 100% 228px;
-  background-repeat: no-repeat;
-  background-image: url("../img/grid10.jpg");
-  background-image: -webkit-image-set(url("../img/grid10.avif") 1x, url("../img/grid10.webp") 1x, url("../img/grid10.jpg") 1x);
-  background-image: image-set(url("../img/grid10.avif") 1x, url("../img/grid10.webp") 1x, url("../img/grid10.jpg") 1x);
-  display: block;
+.card-grid__item-balls-pic768 {
+  display: none;
 }
 
 .card-footer {
@@ -1295,6 +1330,7 @@ template {
 
 .card-footer__item {
   position: relative;
+  max-width: 420px;
 }
 
 .card-footer__item-link {
@@ -1307,7 +1343,7 @@ template {
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 115px;
+  bottom: 40px;
   left: 19px;
   width: 88px;
   height: 88px;
@@ -1322,7 +1358,12 @@ template {
 .card-footer__item-pic {
   height: 295px;
   width: 420px;
+  margin-bottom: 20px;
   border-radius: 14px;
+}
+
+.card-footer__item-pic-wrapper {
+  position: relative;
 }
 
 .card-footer__item-shirts {
@@ -2142,9 +2183,104 @@ template {
   }
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay__modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.modal {
+  background: #F2F0F9;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  position: relative;
+  padding: 32px 106px 39px;
+  max-width: 792px;
+}
+
+.modal__title {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: transparent;
+  border: none;
+  color: #6E6893;
+}
+
+.modal__close:hover {
+  opacity: 0.6;
+}
+
+.modal__close:active {
+  opacity: 0.9;
+}
+
+.modal__input {
+  margin-bottom: 30px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: none;
+  padding: 5px;
+}
+
+.modal__input:focus {
+  outline: 2px solid #6E6893;
+}
+
+.modal__submit {
+  width: 10vw;
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  line-height: 19px;
+  text-transform: uppercase;
+  background-color: #3670c7;
+  border-radius: 6px;
+  color: #FFFFFF;
+}
+
+.buttons__wrapper {
+  display: flex;
+  gap: 120px;
+}
+
+.footer {
+  background-color: #2d2d2d;
+}
+
 .footer__wrapper {
   padding: 83px 0px 79px 73px;
-  background-color: #2d2d2d;
   color: #ffffff;
   display: grid;
   grid-template-columns: 0.3fr 0.57fr 0.43fr 0.5fr;
@@ -2470,10 +2606,6 @@ main {
 }
 
 @media (max-width: 1440px) {
-  .header__nav {
-    padding: 27px 40px 45px 25px;
-  }
-
   .header__nav-item4 {
     gap: 20px;
   }
@@ -2527,7 +2659,7 @@ main {
 
 @media (max-width: 1024px) {
   .header__nav {
-    padding: 33px 41px 30px 42px;
+    padding: 33px 41px 23px 42px;
   }
 
   .header__nav-list {
@@ -2659,7 +2791,7 @@ main {
   }
 
   .product__item-pic {
-    width: 540px;
+    max-width: 540px;
     height: 303px;
   }
 
@@ -2855,127 +2987,96 @@ main {
     grid-template-areas: "one one one one" "two three four four" "six six four four" "five five nine ten" "seven seven nine eleven" "eight eight eight eight";
   }
 
+  .card-grid__item-text {
+    top: 26.3%;
+    left: 8.2%;
+    font-size: 3.91vw;
+  }
+
   .card-grid__item-banner {
-    height: 314px;
+    margin-bottom: 20px;
   }
 
-  .card-grid__item-book {
-    height: 202px;
+  .card-grid__item-banner-pic {
+    display: none;
   }
 
-  .card-grid__item-discount {
-    height: 202px;
+  .card-grid__item-banner-pic1024 {
+    display: block;
   }
 
-  .card-grid__item-sneakers {
-    height: 418px;
+  .card-grid__item-banner-desc {
+    top: 62%;
+    left: 33.1%;
+    font-size: 2vw;
   }
 
-  .card-grid__item-presents {
-    height: 194px;
+  .card-grid__item-banner-discount {
+    font-size: 1.53vw;
   }
 
-  .card-grid__item-red {
-    height: 194px;
+  .card-grid__item-banner-timer {
+    gap: 20px;
   }
 
-  .card-grid__item-appliances {
-    height: 194px;
+  .card-grid__item-banner-days-counter,
+  .card-grid__item-banner-minutes-counter,
+  .card-grid__item-banner-seconds-counter {
+    font-size: 4vw;
   }
 
-  .card-grid__item-decorations {
-    height: 418px;
+  .card-grid__item-discount-sale {
+    right: 2.5%;
+    top: 49.1%;
+    width: 41%;
+    height: 41.3%;
+    font-size: 2.8vw;
   }
 
-  .card-grid__item-woman {
-    height: 410px;
+  .card-grid__item-discount-desc {
+    right: 16.5%;
+    top: 27%;
+    font-size: 2.3vw;
   }
 
-  .card-grid__item-chemicals {
-    height: 196px;
+  .card-grid__item-red-discount {
+    right: 78.3%;
+    top: 4.4%;
+    width: 19.8%;
+    height: 43.5%;
   }
 
-  .card-grid__item-balls {
-    height: 196px;
+  .card-grid__item-appliances-discount {
+    right: 1%;
+    top: 43.7%;
+    width: 20%;
+    height: 39.8%;
   }
 
-  .card-grid__card-banner {
-    background-size: 100% 314px;
-    background-image: url("../img/banner1024.jpg");
-    background-image: -webkit-image-set(url("../img/banner1024.avif") 1x, url("../img/banner1024.webp") 1x, url("../img/banner1024.jpg") 1x);
-    background-image: image-set(url("../img/banner1024.avif") 1x, url("../img/banner1024.webp") 1x, url("../img/banner1024.jpg") 1x);
-    margin-bottom: 24px;
+  .card-grid__item-appliances-desc {
+    left: 6%;
+    top: 56%;
+    font-size: 2.9vw;
   }
 
-  .card-grid__card-book {
-    background-size: 100% 202px;
-    background-image: url("../img/book1024.jpg");
-    background-image: -webkit-image-set(url("../img/book1024.avif") 1x, url("../img/book1024.webp") 1x, url("../img/book1024.jpg") 1x);
-    background-image: image-set(url("../img/book1024.avif") 1x, url("../img/book1024.webp") 1x, url("../img/book1024.jpg") 1x);
+  .card-grid__item-woman-discount {
+    right: 8.5%;
+    top: 76.6%;
+    width: 40%;
+    height: 19%;
   }
 
-  .card-grid__card-discount {
-    background-size: 100% 202px;
-    background-image: url("../img/discount1024.jpg");
-    background-image: -webkit-image-set(url("../img/discount1024.avif") 1x, url("../img/discount1024.webp") 1x, url("../img/discount1024.jpg") 1x);
-    background-image: image-set(url("../img/discount1024.avif") 1x, url("../img/discount1024.webp") 1x, url("../img/discount1024.jpg") 1x);
+  .card-grid__item-chemicals-discount {
+    right: 52.5%;
+    top: 5.4%;
+    width: 41.1%;
+    height: 40.6%;
   }
 
-  .card-grid__card-sneakers {
-    background-size: 100% 418px;
-    background-image: url("../img/sneackers1024.jpg");
-    background-image: -webkit-image-set(url("../img/sneackers1024.avif") 1x, url("../img/sneackers1024.webp") 1x, url("../img/sneackers1024.jpg") 1x);
-    background-image: image-set(url("../img/sneackers1024.avif") 1x, url("../img/sneackers1024.webp") 1x, url("../img/sneackers1024.jpg") 1x);
-  }
-
-  .card-grid__card-presents {
-    background-size: 100% 194px;
-    background-image: url("../img/presents1024.jpg");
-    background-image: -webkit-image-set(url("../img/presents1024.avif") 1x, url("../img/presents1024.webp") 1x, url("../img/presents1024.jpg") 1x);
-    background-image: image-set(url("../img/presents1024.avif") 1x, url("../img/presents1024.webp") 1x, url("../img/presents1024.jpg") 1x);
-  }
-
-  .card-grid__card-red {
-    background-size: 100% 194px;
-    background-image: url("../img/red1024.jpg");
-    background-image: -webkit-image-set(url("../img/red1024.avif") 1x, url("../img/red1024.webp") 1x, url("../img/red1024.jpg") 1x);
-    background-image: image-set(url("../img/red1024.avif") 1x, url("../img/red1024.webp") 1x, url("../img/red1024.jpg") 1x);
-  }
-
-  .card-grid__card-appliances {
-    background-size: 100% 194px;
-    margin-bottom: 27px;
-    background-image: url("../img/appliances1024.jpg");
-    background-image: -webkit-image-set(url("../img/appliances1024.avif") 1x, url("../img/appliances1024.webp") 1x, url("../img/appliances1024.jpg") 1x);
-    background-image: image-set(url("../img/appliances1024.avif") 1x, url("../img/appliances1024.webp") 1x, url("../img/appliances1024.jpg") 1x);
-  }
-
-  .card-grid__card-decorations {
-    background-size: 100% 418px;
-    background-image: url("../img/decorations1024.jpg");
-    background-image: -webkit-image-set(url("../img/decorations1024.avif") 1x, url("../img/decorations1024.webp") 1x, url("../img/decorations1024.jpg") 1x);
-    background-image: image-set(url("../img/decorations1024.avif") 1x, url("../img/decorations1024.webp") 1x, url("../img/decorations1024.jpg") 1x);
-  }
-
-  .card-grid__card-woman {
-    background-size: 100% 410px;
-    background-image: url("../img/woman1024.jpg");
-    background-image: -webkit-image-set(url("../img/woman1024.avif") 1x, url("../img/woman1024.webp") 1x, url("../img/woman1024.jpg") 1x);
-    background-image: image-set(url("../img/woman1024.avif") 1x, url("../img/woman1024.webp") 1x, url("../img/woman1024.jpg") 1x);
-  }
-
-  .card-grid__card-chemicals {
-    background-size: 100% 196px;
-    background-image: url("../img/chemicals1024.jpg");
-    background-image: -webkit-image-set(url("../img/chemicals1024.avif") 1x, url("../img/chemicals1024.webp") 1x, url("../img/chemicals1024.jpg") 1x);
-    background-image: image-set(url("../img/chemicals1024.avif") 1x, url("../img/chemicals1024.webp") 1x, url("../img/chemicals1024.jpg") 1x);
-  }
-
-  .card-grid__card-balls {
-    background-size: 100% 196px;
-    background-image: url("../img/balls1024.jpg");
-    background-image: -webkit-image-set(url("../img/balls1024.avif") 1x, url("../img/balls1024.webp") 1x, url("../img/balls1024.jpg") 1x);
-    background-image: image-set(url("../img/balls1024.avif") 1x, url("../img/balls1024.webp") 1x, url("../img/balls1024.jpg") 1x);
+  .card-grid__item-chemicals-desc {
+    left: 7.5%;
+    top: 72%;
+    font-size: 1.9vw;
   }
 
   .card-footer {
@@ -2994,6 +3095,10 @@ main {
 
   .card-footer__list {
     gap: 55px 20px;
+  }
+
+  .card-footer__item {
+    max-width: 300px;
   }
 
   .card-footer__item-discount {
@@ -3324,6 +3429,10 @@ main {
     background-image: url("../img/btn768.svg");
   }
 
+  .header__nav-btn:hover {
+    background-size: 115px 42px;
+  }
+
   .header__nav-input {
     height: 42px;
     padding-left: 30px;
@@ -3539,7 +3648,7 @@ main {
   }
 
   .product__item-pic {
-    width: 380px;
+    max-width: 380px;
     height: 213px;
   }
 
@@ -3686,134 +3795,139 @@ main {
   }
 
   .card-grid__list {
-    -moz-column-gap: 18px;
-    column-gap: 18px;
-    row-gap: 18px;
-    grid-template-columns: repeat(4, 1fr);
+    -moz-column-gap: 15px;
+    column-gap: 15px;
+    row-gap: 14px;
+    grid-template-columns: 0.55fr 0.53fr 0.69fr 0.7fr;
     grid-template-areas: "one one one one" "two three four four" "six six four four" "five five nine ten" "seven seven nine eleven" "eight eight eight eight";
   }
 
-  .card-grid__item-banner {
-    height: 280px;
+  .card-grid__item-text {
+    top: 23.5%;
+    left: 11.4%;
+    font-size: 3.9vw;
+  }
+
+  .card-grid__item-banner-pic1024 {
+    display: none;
+  }
+
+  .card-grid__item-banner-pic768 {
+    display: block;
+  }
+
+  .card-grid__item-banner-desc {
+    top: 65%;
+    left: 33.2%;
+    font-size: 2.1vw;
+  }
+
+  .card-grid__item-banner-discount {
+    font-size: 1.6vw;
+  }
+
+  .card-grid__item-banner-timer {
+    gap: 10px;
   }
 
   .card-grid__item-book {
-    height: 130px;
+    max-width: 140px;
+    max-height: 130px;
   }
 
   .card-grid__item-discount {
-    height: 130px;
+    max-width: 140px;
+    max-height: 130px;
   }
 
-  .card-grid__item-sneakers {
-    height: 278px;
+  .card-grid__item-discount-sale {
+    right: 7.5%;
+    top: 53.2%;
+    width: 36%;
+    height: 39.3%;
+    font-size: 2.1vw;
+  }
+
+  .card-grid__item-discount-desc {
+    right: 11.5%;
+    top: 14%;
+    font-size: 2.1vw;
+  }
+
+  .card-grid__item-sneakers-pic {
+    display: none;
+  }
+
+  .card-grid__item-sneakers-pic768 {
+    display: block;
   }
 
   .card-grid__item-presents {
-    height: 126px;
+    max-height: 126px;
   }
 
-  .card-grid__item-red {
-    height: 126px;
+  .card-grid__item-red-discount {
+    right: 80%;
+    top: 8.4%;
+    width: 17%;
+    height: 39%;
   }
 
-  .card-grid__item-appliances {
-    height: 126px;
+  .card-grid__item-appliances-discount {
+    right: 4%;
+    top: 46.7%;
+    width: 17%;
+    height: 36.8%;
   }
 
-  .card-grid__item-decorations {
-    height: 337px;
+  .card-grid__item-appliances-desc {
+    left: 7%;
+    top: 62%;
+    font-size: 2.1vw;
   }
 
-  .card-grid__item-woman {
-    height: 273px;
+  .card-grid__item-woman-pic {
+    display: none;
   }
 
-  .card-grid__item-chemicals {
-    height: 131px;
+  .card-grid__item-woman-pic768 {
+    display: block;
   }
 
-  .card-grid__item-balls {
-    height: 131px;
+  .card-grid__item-woman-discount {
+    right: 4.5%;
+    top: 74.8%;
+    width: 28%;
+    height: 17%;
   }
 
-  .card-grid__card-banner {
-    background-size: 100% 280px;
-    background-image: url("../img/banner768.jpg");
-    background-image: -webkit-image-set(url("../img/banner768.avif") 1x, url("../img/banner768.webp") 1x, url("../img/banner768.jpg") 1x);
-    background-image: image-set(url("../img/banner768.avif") 1x, url("../img/banner768.webp") 1x, url("../img/banner768.jpg") 1x);
-    margin-bottom: 24px;
+  .card-grid__item-chemicals-pic {
+    display: none;
   }
 
-  .card-grid__card-book {
-    background-size: 100% 130px;
-    background-image: url("../img/book768.jpg");
-    background-image: -webkit-image-set(url("../img/book768.avif") 1x, url("../img/book768.webp") 1x, url("../img/book768.jpg") 1x);
-    background-image: image-set(url("../img/book768.avif") 1x, url("../img/book768.webp") 1x, url("../img/book768.jpg") 1x);
+  .card-grid__item-chemicals-pic768 {
+    display: block;
   }
 
-  .card-grid__card-discount {
-    background-size: 100% 130px;
-    background-image: url("../img/discount768.jpg");
-    background-image: -webkit-image-set(url("../img/discount768.avif") 1x, url("../img/discount768.webp") 1x, url("../img/discount768.jpg") 1x);
-    background-image: image-set(url("../img/discount768.avif") 1x, url("../img/discount768.webp") 1x, url("../img/discount768.jpg") 1x);
+  .card-grid__item-chemicals-discount {
+    right: 64.5%;
+    top: 8.4%;
+    width: 26.1%;
+    height: 36.6%;
   }
 
-  .card-grid__card-sneakers {
-    background-size: 100% 278px;
-    background-image: url("../img/sneackers768.jpg");
-    background-image: -webkit-image-set(url("../img/sneackers768.avif") 1x, url("../img/sneackers768.webp") 1x, url("../img/sneackers768.jpg") 1x);
-    background-image: image-set(url("../img/sneackers768.avif") 1x, url("../img/sneackers768.webp") 1x, url("../img/sneackers768.jpg") 1x);
+  .card-grid__item-chemicals-desc {
+    left: 10.5%;
+    top: 72%;
+    font-size: 2.1vw;
   }
 
-  .card-grid__card-presents {
-    background-size: 100% 126px;
-    background-image: url("../img/presents768.jpg");
-    background-image: -webkit-image-set(url("../img/presents768.avif") 1x, url("../img/presents768.webp") 1x, url("../img/presents768.jpg") 1x);
-    background-image: image-set(url("../img/presents768.avif") 1x, url("../img/presents768.webp") 1x, url("../img/presents768.jpg") 1x);
+  .card-grid__item-balls-pic {
+    display: none;
   }
 
-  .card-grid__card-red {
-    background-size: 100% 126px;
-    background-image: url("../img/red768.jpg");
-    background-image: -webkit-image-set(url("../img/red768.avif") 1x, url("../img/red768.webp") 1x, url("../img/red768.jpg") 1x);
-    background-image: image-set(url("../img/red768.avif") 1x, url("../img/red768.webp") 1x, url("../img/red768.jpg") 1x);
-  }
-
-  .card-grid__card-appliances {
-    background-size: 100% 126px;
-    margin-bottom: 0px;
-    background-image: url("../img/appliances768.jpg");
-    background-image: -webkit-image-set(url("../img/appliances768.avif") 1x, url("../img/appliances768.webp") 1x, url("../img/appliances768.jpg") 1x);
-    background-image: image-set(url("../img/appliances768.avif") 1x, url("../img/appliances768.webp") 1x, url("../img/appliances768.jpg") 1x);
-  }
-
-  .card-grid__card-decorations {
-    background-size: 100% 337px;
-    background-image: url("../img/decorations768.jpg");
-    background-image: -webkit-image-set(url("../img/decorations768.avif") 1x, url("../img/decorations768.webp") 1x, url("../img/decorations768.jpg") 1x);
-    background-image: image-set(url("../img/decorations768.avif") 1x, url("../img/decorations768.webp") 1x, url("../img/decorations768.jpg") 1x);
-  }
-
-  .card-grid__card-woman {
-    background-size: 100% 273px;
-    background-image: url("../img/woman768.jpg");
-    background-image: -webkit-image-set(url("../img/woman768.avif") 1x, url("../img/woman768.webp") 1x, url("../img/woman768.jpg") 1x);
-    background-image: image-set(url("../img/woman768.avif") 1x, url("../img/woman768.webp") 1x, url("../img/woman768.jpg") 1x);
-  }
-
-  .card-grid__card-chemicals {
-    background-size: 100% 131px;
-    background-image: url("../img/chemicals768.jpg");
-    background-image: -webkit-image-set(url("../img/chemicals768.avif") 1x, url("../img/chemicals768.webp") 1x, url("../img/chemicals768.jpg") 1x);
-    background-image: image-set(url("../img/chemicals768.avif") 1x, url("../img/chemicals768.webp") 1x, url("../img/chemicals768.jpg") 1x);
-  }
-
-  .card-grid__card-balls {
-    background-size: 100% 131px;
-    background-image: url("../img/balls768.jpg");
-    background-image: -webkit-image-set(url("../img/balls768.avif") 1x, url("../img/balls768.webp") 1x, url("../img/balls768.jpg") 1x);
-    background-image: image-set(url("../img/balls768.avif") 1x, url("../img/balls768.webp") 1x, url("../img/balls768.jpg") 1x);
+  .card-grid__item-balls-pic768 {
+    display: block;
   }
 
   .card-footer {
@@ -3833,6 +3947,10 @@ main {
     gap: 39px 20px;
   }
 
+  .card-footer__item {
+    max-width: 220px;
+  }
+
   .card-footer__item-discount {
     width: 60px;
     height: 60px;
@@ -3844,6 +3962,7 @@ main {
   .card-footer__item-pic {
     height: 216px;
     width: 220px;
+    margin-bottom: 15px;
     border-radius: 12px;
   }
 
@@ -4397,6 +4516,14 @@ main {
 }
 
 @media (max-width: 550px) {
+  .header__nav {
+    padding: 23px 30px 27px 0;
+  }
+
+  .header__nav-basket-quantity {
+    left: 77px;
+  }
+
   .header__nav-item4 {
     gap: 0;
   }
@@ -4430,6 +4557,10 @@ main {
     width: 79px;
     height: 30px;
     background-image: url("../img/btn320.svg");
+  }
+
+  .header__nav-btn:hover {
+    background-size: 79px 30px;
   }
 
   .header__nav-input {
@@ -4602,7 +4733,7 @@ main {
   }
 
   .product__item-pic {
-    width: 280px;
+    max-width: 280px;
     height: 157px;
   }
 
@@ -4815,138 +4946,107 @@ main {
   }
 
   .card-grid {
-    padding: 22px 21px 20px 20px;
+    padding: 16px 20px 20px 20px;
   }
 
   .card-grid__list {
-    -moz-column-gap: 9px;
-    column-gap: 9px;
-    row-gap: 19px;
+    -moz-column-gap: 15px;
+    column-gap: 15px;
+    row-gap: 13px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "one one" "one one" "two three" "six six" "four four" "four four" "five five" "seven seven" "nine ten" "nine eleven" "eight eight";
   }
 
+  .card-grid__item-text {
+    top: 15%;
+    left: 10.4%;
+    font-size: 6.86vw;
+  }
+
   .card-grid__item-banner {
-    height: 340px;
+    margin-bottom: 0;
   }
 
-  .card-grid__item-book {
-    height: 120px;
+  .card-grid__item-banner-pic768 {
+    display: none;
   }
 
-  .card-grid__item-discount {
-    height: 120px;
+  .card-grid__item-banner-pic320 {
+    display: block;
   }
 
-  .card-grid__item-sneakers {
-    height: 206px;
+  .card-grid__item-banner-desc {
+    top: 77.6%;
+    left: 20%;
+    font-size: 3.8vw;
   }
 
-  .card-grid__item-presents {
-    height: 118px;
+  .card-grid__item-banner-discount {
+    margin-bottom: 6px;
+    font-size: 2.5vw;
   }
 
-  .card-grid__item-red {
-    height: 118px;
+  .card-grid__item-banner-timer {
+    gap: 8px;
   }
 
-  .card-grid__item-appliances {
-    height: 118px;
+  .card-grid__item-banner-days-counter,
+  .card-grid__item-banner-minutes-counter,
+  .card-grid__item-banner-seconds-counter {
+    font-size: 6.2vw;
   }
 
-  .card-grid__item-decorations {
-    height: 123px;
+  .card-grid__item-discount-sale {
+    right: 3.5%;
+    top: 51.1%;
+    width: 38%;
+    font-size: 5.1vw;
   }
 
-  .card-grid__item-woman {
-    height: 195px;
+  .card-grid__item-discount-desc {
+    right: 30.5%;
+    top: 17%;
+    font-size: 3.7vw;
   }
 
-  .card-grid__item-chemicals {
-    height: 95px;
+  .card-grid__item-red-discount {
+    right: 80%;
+    top: 3.4%;
+    width: 19%;
+    height: 41%;
   }
 
-  .card-grid__item-balls {
-    height: 94px;
+  .card-grid__item-appliances-discount {
+    right: 1.8%;
+    top: 50.4%;
+    width: 18%;
+    height: 41.8%;
   }
 
-  .card-grid__card-banner {
-    background-size: 100% 340px;
-    background-image: url("../img/banner320.jpg");
-    background-image: -webkit-image-set(url("../img/banner320.avif") 1x, url("../img/banner320.webp") 1x, url("../img/banner320.jpg") 1x);
-    background-image: image-set(url("../img/banner320.avif") 1x, url("../img/banner320.webp") 1x, url("../img/banner320.jpg") 1x);
-    margin-bottom: 0px;
+  .card-grid__item-appliances-desc {
+    left: 3%;
+    top: 72%;
+    font-size: 3.8vw;
   }
 
-  .card-grid__card-book {
-    background-size: 100% 120px;
-    background-image: url("../img/book320.jpg");
-    background-image: -webkit-image-set(url("../img/book320.avif") 1x, url("../img/book320.webp") 1x, url("../img/book320.jpg") 1x);
-    background-image: image-set(url("../img/book320.avif") 1x, url("../img/book320.webp") 1x, url("../img/book320.jpg") 1x);
+  .card-grid__item-woman-discount {
+    right: 7.5%;
+    top: 61.2%;
+    width: 39%;
+    height: 23%;
   }
 
-  .card-grid__card-discount {
-    background-size: 100% 120px;
-    background-image: url("../img/discount320.jpg");
-    background-image: -webkit-image-set(url("../img/discount320.avif") 1x, url("../img/discount320.webp") 1x, url("../img/discount320.jpg") 1x);
-    background-image: image-set(url("../img/discount320.avif") 1x, url("../img/discount320.webp") 1x, url("../img/discount320.jpg") 1x);
+  .card-grid__item-chemicals-discount {
+    right: 57.5%;
+    top: 4.4%;
+    width: 38.1%;
+    height: 48.6%;
   }
 
-  .card-grid__card-sneakers {
-    background-size: 100% 206px;
-    background-image: url("../img/sneackers320.jpg");
-    background-image: -webkit-image-set(url("../img/sneackers320.avif") 1x, url("../img/sneackers320.webp") 1x, url("../img/sneackers320.jpg") 1x);
-    background-image: image-set(url("../img/sneackers320.avif") 1x, url("../img/sneackers320.webp") 1x, url("../img/sneackers320.jpg") 1x);
-  }
-
-  .card-grid__card-presents {
-    background-size: 100% 118px;
-    background-image: url("../img/presents320.jpg");
-    background-image: -webkit-image-set(url("../img/presents320.avif") 1x, url("../img/presents320.webp") 1x, url("../img/presents320.jpg") 1x);
-    background-image: image-set(url("../img/presents320.avif") 1x, url("../img/presents320.webp") 1x, url("../img/presents320.jpg") 1x);
-  }
-
-  .card-grid__card-red {
-    background-size: 100% 118px;
-    background-image: url("../img/red320.jpg");
-    background-image: -webkit-image-set(url("../img/red320.avif") 1x, url("../img/red320.webp") 1x, url("../img/red320.jpg") 1x);
-    background-image: image-set(url("../img/red320.avif") 1x, url("../img/red320.webp") 1x, url("../img/red320.jpg") 1x);
-  }
-
-  .card-grid__card-appliances {
-    background-size: 100% 118px;
-    margin-bottom: 0px;
-    background-image: url("../img/appliances320.jpg");
-    background-image: -webkit-image-set(url("../img/appliances320.avif") 1x, url("../img/appliances320.webp") 1x, url("../img/appliances320.jpg") 1x);
-    background-image: image-set(url("../img/appliances320.avif") 1x, url("../img/appliances320.webp") 1x, url("../img/appliances320.jpg") 1x);
-  }
-
-  .card-grid__card-decorations {
-    background-size: 100% 123px;
-    background-image: url("../img/decorations320.jpg");
-    background-image: -webkit-image-set(url("../img/decorations320.avif") 1x, url("../img/decorations320.webp") 1x, url("../img/decorations320.jpg") 1x);
-    background-image: image-set(url("../img/decorations320.avif") 1x, url("../img/decorations320.webp") 1x, url("../img/decorations320.jpg") 1x);
-  }
-
-  .card-grid__card-woman {
-    background-size: 100% 195px;
-    background-image: url("../img/woman320.jpg");
-    background-image: -webkit-image-set(url("../img/woman320.avif") 1x, url("../img/woman320.webp") 1x, url("../img/woman320.jpg") 1x);
-    background-image: image-set(url("../img/woman320.avif") 1x, url("../img/woman320.webp") 1x, url("../img/woman320.jpg") 1x);
-  }
-
-  .card-grid__card-chemicals {
-    background-size: 100% 95px;
-    background-image: url("../img/chemicals320.jpg");
-    background-image: -webkit-image-set(url("../img/chemicals320.avif") 1x, url("../img/chemicals320.webp") 1x, url("../img/chemicals320.jpg") 1x);
-    background-image: image-set(url("../img/chemicals320.avif") 1x, url("../img/chemicals320.webp") 1x, url("../img/chemicals320.jpg") 1x);
-  }
-
-  .card-grid__card-balls {
-    background-size: 100% 94px;
-    background-image: url("../img/balls320.jpg");
-    background-image: -webkit-image-set(url("../img/balls320.avif") 1x, url("../img/balls320.webp") 1x, url("../img/balls320.jpg") 1x);
-    background-image: image-set(url("../img/balls320.avif") 1x, url("../img/balls320.webp") 1x, url("../img/balls320.jpg") 1x);
+  .card-grid__item-chemicals-desc {
+    left: 7.5%;
+    top: 69%;
+    font-size: 3.7vw;
   }
 
   .card-footer {
@@ -4966,6 +5066,10 @@ main {
     gap: 33px 21px;
   }
 
+  .card-footer__item {
+    max-width: 130px;
+  }
+
   .card-footer__item-discount {
     width: 40px;
     height: 40px;
@@ -4977,6 +5081,7 @@ main {
   .card-footer__item-pic {
     height: 130px;
     width: 130px;
+    margin-bottom: 10px;
     margin-bottom: 2px;
   }
 
@@ -5452,5 +5557,11 @@ main {
     padding-left: 11px;
     font-size: 12px;
     line-height: 14px;
+  }
+}
+
+@media laptopL {
+  .header__nav {
+    padding: 27px 40px 45px 25px;
   }
 }

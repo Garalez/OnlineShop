@@ -144,6 +144,44 @@ const openBasket = () => {
   const deleteProduct = document.querySelector('.basket-head__clear');
   const allCheckboxes = document.querySelector('.basket-head__checkall');
   const btnWrapper = document.querySelector('.basket-head__btn-wrapper');
+  const deliveryPointBtn = document.querySelector('.basket-delivery__btn-change');
+
+  deliveryPointBtn.addEventListener('click', e => {
+    e.preventDefault();
+    document.body.insertAdjacentHTML('beforeend', `
+      <div class="overlay active">
+        <div class="overlay__modal modal">
+          <button class="modal__close">
+            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="m2 2 20 20M2 22 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
+          </button>
+          <div class="modal_top">
+            <h2 class="modal__title">Введите пункт выдачи</h2>
+          </div>
+          <input class="modal__input" type="text">
+          <div class="buttons__wrapper">
+            <button class="modal__accept modal__submit">ОК</button>
+            <button class="modal__decline modal__submit">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    `);
+    const overlay = document.querySelector('.overlay');
+    const deliveryPointAddress = document.querySelector('.basket-delivery__item-address');
+    const overlayInput = document.querySelector('.modal__input');
+
+    overlay.addEventListener('click', event => {
+      const target = event.target;
+      if (target.closest('.modal__accept')) {
+        deliveryPointAddress.textContent = overlayInput.value;
+        overlay.remove();
+      }
+      if (target.closest('.modal__decline') || !target.closest('.overlay__modal') ||
+          target.closest('.modal__close')) {
+        overlay.remove();
+      }
+    });
+  });
 
   return {
     productHeadCounter,
@@ -327,4 +365,3 @@ export const renderBasketProducts = (data) => {
     }, 500);
   }
 };
-

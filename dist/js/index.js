@@ -12,7 +12,9 @@
 /* harmony import */ var _modules_header_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(918);
 /* harmony import */ var _modules_footer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(592);
 /* harmony import */ var _modules_productDesc_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(773);
+/* harmony import */ var _modules_offers_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(461);
 /* harmony import */ var _modules_localStorage_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(424);
+
 
 
 
@@ -39,6 +41,10 @@ const init = () => {
 
   if (window.location.toString().includes('card')) {
     (0,_modules_productDesc_js__WEBPACK_IMPORTED_MODULE_5__/* .renderProductInfo */ .X)();
+  }
+
+  if (window.location.toString().includes('index')) {
+    (0,_modules_offers_js__WEBPACK_IMPORTED_MODULE_8__/* .itemsToOffer */ .B)();
   }
 };
 
@@ -197,6 +203,43 @@ const openBasket = () => {
   const deleteProduct = document.querySelector('.basket-head__clear');
   const allCheckboxes = document.querySelector('.basket-head__checkall');
   const btnWrapper = document.querySelector('.basket-head__btn-wrapper');
+  const deliveryPointBtn = document.querySelector('.basket-delivery__btn-change');
+  deliveryPointBtn.addEventListener('click', e => {
+    e.preventDefault();
+    document.body.insertAdjacentHTML('beforeend', `
+      <div class="overlay active">
+        <div class="overlay__modal modal">
+          <button class="modal__close">
+            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="m2 2 20 20M2 22 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
+          </button>
+          <div class="modal_top">
+            <h2 class="modal__title">Введите пункт выдачи</h2>
+          </div>
+          <input class="modal__input" type="text">
+          <div class="buttons__wrapper">
+            <button class="modal__accept modal__submit">ОК</button>
+            <button class="modal__decline modal__submit">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    `);
+    const overlay = document.querySelector('.overlay');
+    const deliveryPointAddress = document.querySelector('.basket-delivery__item-address');
+    const overlayInput = document.querySelector('.modal__input');
+    overlay.addEventListener('click', event => {
+      const target = event.target;
+
+      if (target.closest('.modal__accept')) {
+        deliveryPointAddress.textContent = overlayInput.value;
+        overlay.remove();
+      }
+
+      if (target.closest('.modal__decline') || !target.closest('.overlay__modal') || target.closest('.modal__close')) {
+        overlay.remove();
+      }
+    });
+  });
   return {
     productHeadCounter,
     productTotalCounter,
@@ -560,8 +603,10 @@ const loadCategoryGoods = (e, err, data) => {
         categoryList.insertAdjacentHTML('afterbegin', `
           <li class="card-footer__item" tabindex="0">
             <a class="card-footer__item-link"  href="card.html?id=${item.id}">
-              <img class="card-footer__item-pic" src="./img/${item.image}" alt="${item.title}">
-              <p class="card-footer__item-discount">-${item.discount}%</p>
+              <div class="card-footer__item-pic-wrapper">
+                <img class="card-footer__item-pic" src="./img/${item.image}" alt="${item.title}">
+                <p class="card-footer__item-discount">-${item.discount}%</p>
+              </div>
               <div class="card-footer__item-price-wrapper">
               <p class="card-footer__item-price-discount"></p>
                 <p class="card-footer__item-nodiscount"></p>
@@ -946,6 +991,57 @@ const showMenu = (err, data) => {
 
 /***/ }),
 
+/***/ 461:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "B": () => (/* binding */ itemsToOffer)
+/* harmony export */ });
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(732);
+/* eslint-disable max-len */
+
+const itemsToOffer = () => {
+  const offerList = document.querySelector('.card-footer__list');
+  (0,_data_js__WEBPACK_IMPORTED_MODULE_0__/* .httpRequest */ .c)('https://hidden-castle-31466.herokuapp.com/api/goods', {
+    method: 'GET',
+
+    callback(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        offerList.innerHTML = '';
+        const dataWithDiscount = [];
+        data.map(item => {
+          if (item.discount > 0) {
+            dataWithDiscount.push(item);
+          }
+        });
+        dataWithDiscount.length = Math.min(dataWithDiscount.length, 8);
+        dataWithDiscount.map(product => {
+          offerList.insertAdjacentHTML('beforeend', `
+            <li class="card-footer__item" tabindex="0">
+              <a class="card-footer__item-link"  href="card.html?id=${product.id}">
+                <div class="card-footer__item-pic-wrapper">
+                  <img class="card-footer__item-pic" src="./img/${product.image}" alt="${product.title}">
+                  <p class="card-footer__item-discount">-${product.discount}%</p>
+                </div>
+                <div class="card-footer__item-price-wrapper">
+                  <p class="card-footer__item-price-discount">${product.price - product.price * (product.discount / 100)} ₽</p>
+                  <p class="card-footer__item-nodiscount">${product.price} ₽</p>
+                </div>
+                <p class="card-footer__item-name">${product.title}</p>
+              </a>
+            </li>
+          `);
+        });
+      }
+    }
+
+  });
+};
+
+/***/ }),
+
 /***/ 64:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -1076,8 +1172,10 @@ const renderProductInfo = () => {
             <h1 class="product__title">${data.title}</h1>
             <ul class="product__list">
               <li class="product__item-card">
-                <p class="product__item-discount">-15%</p>
-                <img class="product__item-pic" src="./img/${data.image}" alt="Картинка продукта">
+                <div class="product__item-wrapper">
+                  <p class="product__item-discount">-15%</p>
+                  <img class="product__item-pic" src="./img/${data.image}" alt="Картинка продукта">
+                </div>
               </li>
               <li class="product__item-card">
                 <ul class="product__card-list">
@@ -1323,6 +1421,7 @@ const renderProductInfo = () => {
 /******/ 	__webpack_require__(918);
 /******/ 	__webpack_require__(424);
 /******/ 	__webpack_require__(113);
+/******/ 	__webpack_require__(461);
 /******/ 	__webpack_require__(64);
 /******/ 	__webpack_require__(422);
 /******/ 	var __webpack_exports__ = __webpack_require__(773);

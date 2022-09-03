@@ -1,14 +1,17 @@
 .header {
   &__nav {
-    padding: 27px 52px 45px 77px;
-    @media (max-width: 1440px) {
+    padding: 27px 52px 32px 77px;
+    @media laptopL {
       padding: 27px 40px 45px 25px;
     }
     @include laptop {
-      padding: 33px 41px 30px 42px;
+      padding: 33px 41px 23px 42px;
     }
     @include tablet {
       padding: 23px 30px 27px 33px;
+    }
+    @include mobileL {
+      padding: 23px 30px 27px 0;
     }
     @include mobile {
       padding: 24px 20px 19px 19px;
@@ -80,10 +83,6 @@
       background-image: url("../img/btn.svg");
       background-repeat: no-repeat;
       border: none;
-      &:hover {
-        background-image: url("../img/btn-menu-hover.svg");
-        transition: all 0.4s ease;
-      }
       @include tablet {
         width: 115px;
         height: 42px;
@@ -93,6 +92,21 @@
         width: 79px;
         height: 30px;
         background-image: url("../img/btn320.svg");
+      }
+      &:hover {
+        background: {
+          image: url("../img/btn-menu-hover.svg");
+          repeat: no-repeat;
+          size: 151px 54px;
+          color: transparent;
+        }
+        transition: all 0.4s ease;
+        @include tablet {
+          background-size: 115px 42px;
+        }
+        @include mobile {
+          background-size: 79px 30px;
+        }
       }
     }
     &-btn.menu-active {
@@ -207,6 +221,9 @@
         @include tablet {
           top: 0;
           left: 110px;
+        }
+        @include mobileL {
+          left: 77px;
         }
         @include mobile {
           left: 67px;

@@ -84,6 +84,10 @@
     }
   }
   &__item{
+    &-wrapper {
+      width: fit-content;
+      position: relative;
+    }
     &-card{
       &:nth-child(1) {
         position: relative;
@@ -109,8 +113,8 @@
       align-items: center;
       justify-content: center;
       position: absolute;
-      right: 42%;
-      top: 20px;
+      right: 9%;
+      top: 30px;
       width: 88px;
       height: 88px;
       border-radius: 50%;
@@ -144,18 +148,18 @@
       }
     }
     &-pic {
-      width: 757px;
+      max-width: 757px;
       height: 427px;
       @include laptop {
-        width: 540px;
+        max-width: 540px;
         height: 303px;
       }
       @include tablet {
-        width: 380px;
+        max-width: 380px;
         height: 213px;
       }
       @include mobile {
-        width: 280px;
+        max-width: 280px;
         height: 157px;
       }
     }

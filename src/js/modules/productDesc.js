@@ -27,8 +27,10 @@ export const renderProductInfo = () => {
             <h1 class="product__title">${data.title}</h1>
             <ul class="product__list">
               <li class="product__item-card">
-                <p class="product__item-discount">-15%</p>
-                <img class="product__item-pic" src="./img/${data.image}" alt="Картинка продукта">
+                <div class="product__item-wrapper">
+                  <p class="product__item-discount">-15%</p>
+                  <img class="product__item-pic" src="./img/${data.image}" alt="Картинка продукта">
+                </div>
               </li>
               <li class="product__item-card">
                 <ul class="product__card-list">

@@ -32,8 +32,10 @@ export const loadCategoryGoods = (e, err, data) => {
         categoryList.insertAdjacentHTML('afterbegin', `
           <li class="card-footer__item" tabindex="0">
             <a class="card-footer__item-link"  href="card.html?id=${item.id}">
-              <img class="card-footer__item-pic" src="./img/${item.image}" alt="${item.title}">
-              <p class="card-footer__item-discount">-${item.discount}%</p>
+              <div class="card-footer__item-pic-wrapper">
+                <img class="card-footer__item-pic" src="./img/${item.image}" alt="${item.title}">
+                <p class="card-footer__item-discount">-${item.discount}%</p>
+              </div>
               <div class="card-footer__item-price-wrapper">
               <p class="card-footer__item-price-discount"></p>
                 <p class="card-footer__item-nodiscount"></p>
