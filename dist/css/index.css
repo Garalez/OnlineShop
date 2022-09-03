@@ -1325,6 +1325,7 @@ template {
 .card-footer__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 53px 30px;
 }
 
