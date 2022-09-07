@@ -34,7 +34,7 @@ export const showMenu = (err, data) => {
                 <a class="menu__clients-link" href="">Условия возврата заказа</a>
               </li>
               <li class="menu__clients-item">
-                <a class="menu__clients-link" href="">Блог</a>
+                <a class="menu__clients-link" href="blog.html">Блог</a>
               </li>
             </ul>
           </section>

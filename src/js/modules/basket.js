@@ -145,6 +145,12 @@ const openBasket = () => {
   const allCheckboxes = document.querySelector('.basket-head__checkall');
   const btnWrapper = document.querySelector('.basket-head__btn-wrapper');
   const deliveryPointBtn = document.querySelector('.basket-delivery__btn-change');
+  const form = document.querySelector('.basket');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('На данное время в ТЗ не было указанно действия для заказа');
+  });
 
   deliveryPointBtn.addEventListener('click', e => {
     e.preventDefault();
@@ -155,7 +161,7 @@ const openBasket = () => {
             <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="m2 2 20 20M2 22 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
           </button>
-          <div class="modal_top">
+          <div class="modal__top">
             <h2 class="modal__title">Введите пункт выдачи</h2>
           </div>
           <input class="modal__input" type="text">

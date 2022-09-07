@@ -204,6 +204,11 @@ const openBasket = () => {
   const allCheckboxes = document.querySelector('.basket-head__checkall');
   const btnWrapper = document.querySelector('.basket-head__btn-wrapper');
   const deliveryPointBtn = document.querySelector('.basket-delivery__btn-change');
+  const form = document.querySelector('.basket');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('На данное время в ТЗ не было указанно действия для заказа');
+  });
   deliveryPointBtn.addEventListener('click', e => {
     e.preventDefault();
     document.body.insertAdjacentHTML('beforeend', `
@@ -213,7 +218,7 @@ const openBasket = () => {
             <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="m2 2 20 20M2 22 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
           </button>
-          <div class="modal_top">
+          <div class="modal__top">
             <h2 class="modal__title">Введите пункт выдачи</h2>
           </div>
           <input class="modal__input" type="text">
@@ -598,6 +603,9 @@ const loadCategoryGoods = (e, err, data) => {
     wrapper.style.height = '100%';
     const categoryList = document.createElement('ul');
     categoryList.classList.add('card-footer__list');
+
+    const validNumber = num => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
+
     data.map(item => {
       if (e.target.textContent === item.category) {
         categoryList.insertAdjacentHTML('afterbegin', `
@@ -622,10 +630,10 @@ const loadCategoryGoods = (e, err, data) => {
         const discount = document.querySelector('.card-footer__item-discount');
 
         if (item.discount > 0) {
-          productPrice.textContent = `${item.price - item.price * (item.discount / 100)} ₽`;
-          priceNoDiscount.textContent = `${item.price} ₽`;
+          productPrice.textContent = `${validNumber(item.price - item.price * (item.discount / 100))} ₽`;
+          priceNoDiscount.textContent = `${validNumber(item.price)} ₽`;
         } else {
-          productPrice.textContent = `${item.price} ₽`;
+          productPrice.textContent = `${validNumber(item.price)} ₽`;
           priceNoDiscount.remove();
           discount.remove();
         }
@@ -900,7 +908,7 @@ const showMenu = (err, data) => {
                 <a class="menu__clients-link" href="">Условия возврата заказа</a>
               </li>
               <li class="menu__clients-item">
-                <a class="menu__clients-link" href="">Блог</a>
+                <a class="menu__clients-link" href="blog.html">Блог</a>
               </li>
             </ul>
           </section>
@@ -1154,6 +1162,9 @@ const preloader = () => {
 const renderProductInfo = () => {
   const breadCrumb = document.querySelector('.header__breadcrumb-list');
   breadCrumb.innerHTML = '';
+
+  const validNumber = num => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
+
   const pageParams = new URLSearchParams(location.search);
   const postId = pageParams.get('id');
   (0,_preloader_js__WEBPACK_IMPORTED_MODULE_1__/* .preloader */ .x)();
@@ -1170,46 +1181,42 @@ const renderProductInfo = () => {
         wrapper.insertAdjacentHTML('afterbegin', `
           <section class="product">
             <h1 class="product__title">${data.title}</h1>
+            <div class="product__img-wrapper">
+              <p class="product__discount">-15%</p>
+              <img class="product__pic" src="./img/${data.image}" alt="${data.title}">
+            </div>
+
             <ul class="product__list">
-              <li class="product__item-card">
-                <div class="product__item-wrapper">
-                  <p class="product__item-discount">-15%</p>
-                  <img class="product__item-pic" src="./img/${data.image}" alt="Картинка продукта">
+              <li class="product__item product__item-price">
+                <span class="product__price-discount">${validNumber(data.price - data.price / 100 * data.discount)} ₽</span>
+                <s class="product__price-nodiscount">${validNumber(data.price)} ₽</s>
+              </li>
+              <li class="product__item product__item-credit">В кредит от 5600 ₽ </li>
+              <li class="product__item product__item-btns">
+                <button class="product__item-btns-bucket">Добавить в корзину</button>
+                <input class="product__item-btns-checkbox" type="checkbox" name="favorite" id="favorite">
+                <label class="product__item-btns-favorite" for="favorite"></label>
+              </li>
+              <li class="product__item product__item-info">
+                <div class="product__item-info-shipping-wrapper">
+                  <p class="product__item-info-shipping">Доставка</p>
+                  <p class="product__item-info-date">1-3 января</p>
+                </div>
+                <div class="product__item-info-seller-wrapper">
+                  <p class="product__item-info-seller">Продавец</p>
+                  <p class="product__item-info-name">ShopOnline</p>
                 </div>
               </li>
-              <li class="product__item-card">
-                <ul class="product__card-list">
-                  <li class="product__card-price">
-                    <span class="product__card-price-discount">${data.price - data.price / 100 * data.discount} ₽</span>
-                    <span class="product__card-price-nodiscount">${data.price} ₽</span>
-                  </li>
-                  <li class="product__card-credit">В кредит от 5600 ₽ </li>
-                  <li class="product__card-btns">
-                    <button class="product__card-btns-bucket">Добавить в корзину</button>
-                    <input class="product__card-btns-checkbox" type="checkbox" name="favorite" id="favorite">
-                    <label class="product__card-btns-favorite" for="favorite"></label>
-                  </li>
-                  <li class="product__card-info">
-                    <div class="product__card-info-shipping-wrapper">
-                      <p class="product__card-info-shipping">Доставка</p>
-                      <p class="product__card-info-date">1-3 января</p>
-                    </div>
-                    <div class="product__card-info-seller-wrapper">
-                      <p class="product__card-info-seller">Продавец</p>
-                      <p class="product__card-info-name">ShopOnline</p>
-                    </div>
-                  </li>
-                  <li class="product__card-discount">
-                    <button class="product__card-discount-btn"></button>
-                    <p class="product__card-discount-txt">Узнать о снижении цены</p>
-                  </li>
-                </ul>
-              </li>
-              <li class="product__item-desc">
-                <p class="product__item-desc-title">Описание:</p>
-                <p class="product__item-desc-subtitle">${data.description}</p>
+              <li class="product__item product__item-discount">
+                <button class="product__item-discount-btn"></button>
+                <p class="product__item-discount-txt">Узнать о снижении цены</p>
               </li>
             </ul>
+
+            <div class="product__desc">
+              <p class="product__desc-title">Описание:</p>
+              <p class="product__desc-subtitle">${data.description}</p>
+            </div>
           </section>
 
           <section class="offer">
@@ -1290,9 +1297,9 @@ const renderProductInfo = () => {
             </ul>
           </section>
         `);
-        const discountPrice = document.querySelector('.product__card-price-nodiscount');
-        const discountNumber = document.querySelector('.product__item-discount');
-        const addToBasketBtn = document.querySelector('.product__card-btns-bucket');
+        const discountPrice = document.querySelector('.product__price-nodiscount');
+        const discountNumber = document.querySelector('.product__discount');
+        const addToBasketBtn = document.querySelector('.product__item-btns-bucket');
 
         if (data.discount === 0) {
           discountPrice.remove();

@@ -1,7 +1,7 @@
 .header {
   &__nav {
     padding: 27px 52px 32px 77px;
-    @media laptopL {
+    @include laptopL {
       padding: 27px 40px 45px 25px;
     }
     @include laptop {
@@ -11,7 +11,7 @@
       padding: 23px 30px 27px 33px;
     }
     @include mobileL {
-      padding: 23px 30px 27px 0;
+      padding: 23px 0px 27px 0;
     }
     @include mobile {
       padding: 24px 20px 19px 19px;
@@ -215,6 +215,9 @@
         font-size: 14px;
         line-height: 130%;
         pointer-events: none;
+        @include laptopL {
+          left: 123px;
+        }
         @include laptop {
           left: 145px;
         }
@@ -273,7 +276,9 @@
       gap: 70px;
       justify-self: flex-end;
       grid-area: area;
-      @media (max-width: 1440px) {
+      padding-right: 24px;
+      @include laptopL {
+        padding-right: 0;
         gap: 20px;
       }
       @include laptop {
@@ -297,12 +302,13 @@
     &-list {
       display: flex;
       flex-direction: row;
-      gap: 38px;
+      flex-wrap: wrap;
+      column-gap: 38px;
       @include tablet {
-        gap: 49px;
+        column-gap: 49px;
       }
       @include mobile {
-        gap: 24px;
+        column-gap: 24px;
       }
     }
 
@@ -345,6 +351,7 @@
       font-weight: 700;
       font-size: 16px;
       line-height: 130%;
+      white-space: nowrap;
       @include tablet {
         font-size: 14px;
       }

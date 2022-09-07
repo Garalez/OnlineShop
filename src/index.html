@@ -101,32 +101,41 @@
                 <source srcset="./img/grid1.webp" type="image/webp">
                 <img class="card-grid__item-pic" src="./img/grid1.jpg" alt="Книга - лучший подарок">
               </picture>
+              <p class="card-grid__item-book-desc">
+                Книга – <span class="card-grid__item-book-desc-small">лучший подарок</span></p>
             </a>
           </li>
           <li class="card-grid__item card-grid__item-discount">
             <a class="card-grid__item-btn card-grid__card-discount" tabindex="0" href="">
-              <picture>
-                <source srcset="./img/grid2.avif" type="image/avif">
-                <source srcset="./img/grid2.webp" type="image/webp">
-                <img class="card-grid__item-pic" src="./img/grid2.jpg" alt="Время скидок">
-              </picture>
-              <p class="card-grid__item-discount-desc">Время скидок!</p>
-              <p class="card-grid__item-discount-sale">-25%</p>
+              <div class="card-grid__item-discount-wrapper">
+                <picture>
+                  <source srcset="./img/grid2.avif" type="image/avif">
+                  <source srcset="./img/grid2.webp" type="image/webp">
+                  <img class="card-grid__item-pic" src="./img/grid2.jpg" alt="Время скидок">
+                </picture>
+                <p class="card-grid__item-discount-desc">Время скидок!</p>
+                <p class="card-grid__item-discount-sale">-25%</p>
+              </div>
             </a>
           </li>
           <li class="card-grid__item card-grid__item-sneakers">
             <a class="card-grid__item-btn card-grid__card-sneakers" tabindex="0" href="">
-              <picture class="card-grid__item-sneakers-pic">
-                <source srcset="./img/grid3.avif" type="image/avif">
-                <source srcset="./img/grid3.webp" type="image/webp">
-                <img class="card-grid__item-pic" src="./img/grid3.jpg" alt="Вторая пара кроссовок в подарок">
-              </picture>
-
-              <picture class="card-grid__item-sneakers-pic768">
-                <source srcset="./img/sneakers768.avif" type="image/avif">
-                <source srcset="./img/sneakers768.webp" type="image/webp">
-                <img class="card-grid__item-pic" src="./img/sneakers768.jpg" alt="Вторая пара кроссовок в подарок">
-              </picture>
+              <div class="card-grid__item-sneakers-wrapper">
+                <picture class="card-grid__item-sneakers-pic">
+                  <source srcset="./img/grid3.avif" type="image/avif">
+                  <source srcset="./img/grid3.webp" type="image/webp">
+                  <img class="card-grid__item-pic" src="./img/grid3.jpg" alt="Вторая пара кроссовок в подарок">
+                </picture>
+                <picture class="card-grid__item-sneakers-pic768">
+                  <source srcset="./img/sneakers768.avif" type="image/avif">
+                  <source srcset="./img/sneakers768.webp" type="image/webp">
+                  <img class="card-grid__item-pic" src="./img/sneakers768.jpg" alt="Вторая пара кроссовок в подарок">
+                </picture>
+                <div class="card-grid__item-sneakers-desc-wrapper">
+                  <p class="card-grid__item-sneakers-desc">Вторая пара кроссовок
+                    <span class="card-grid__item-sneakers-desc-big">в подарок!</span></p>
+                </div>
+              </div>
             </a>
           </li>
           <li class="card-grid__item card-grid__item-presents">
@@ -136,6 +145,7 @@
                 <source srcset="./img/grid4.webp" type="image/webp">
                 <img class="card-grid__item-pic" src="./img/grid4.jpg" alt="Идеи новогодних подарков">
               </picture>
+              <p class="card-grid__item-presents-desc">Идеи новогодних подарков</p>
             </a>
           </li>
           <li class="card-grid__item card-grid__item-red">
@@ -150,13 +160,15 @@
           </li>
           <li class="card-grid__item card-grid__item-appliances">
             <a class="card-grid__item-btn card-grid__card-appliances" tabindex="0" href="">
-              <picture>
-                <source srcset="./img/grid6.avif" type="image/avif">
-                <source srcset="./img/grid6.webp" type="image/webp">
-                <img class="card-grid__item-pic" src="./img/grid6.jpg" alt="Выгодно в декабре. Скидки 15%">
-              </picture>
-              <p class="card-grid__item-discount-sale card-grid__item-appliances-discount">-15%</p>
-              <p class="card-grid__item-appliances-desc">Выгодно в декабре!</p>
+              <div class="card-grid__item-appliances-wrapper">
+                <picture>
+                  <source srcset="./img/grid6.avif" type="image/avif">
+                  <source srcset="./img/grid6.webp" type="image/webp">
+                  <img class="card-grid__item-pic" src="./img/grid6.jpg" alt="Выгодно в декабре. Скидки 15%">
+                </picture>
+                <p class="card-grid__item-discount-sale card-grid__item-appliances-discount">-15%</p>
+                <p class="card-grid__item-appliances-desc">Выгодно в декабре!</p>
+              </div>
             </a>
           </li>
           <li class="card-grid__item card-grid__item-decorations">
@@ -166,22 +178,29 @@
                 <source srcset="./img/grid7.webp" type="image/webp">
                 <img class="card-grid__item-pic" src="./img/grid7.jpg" alt="Новогодние украшения">
               </picture>
+              <p class="card-grid__item-decorations-desc">Новогодние украшения</p>
             </a>
           </li>
           <li class="card-grid__item card-grid__item-woman">
             <a class="card-grid__item-btn card-grid__card-woman" tabindex="0" href="">
-              <picture class="card-grid__item-woman-pic">
-                <source srcset="./img/grid8.avif" type="image/avif">
-                <source srcset="./img/grid8.webp" type="image/webp">
-                <img class="card-grid__item-pic" src="./img/grid8.jpg" alt="Скидки на платья 55%">
-              </picture>
-
-              <picture class="card-grid__item-woman-pic768">
-                <source srcset="./img/woman768.avif" type="image/avif">
-                <source srcset="./img/woman768.webp" type="image/webp">
-                <img class="card-grid__item-pic" src="./img/woman768.jpg" alt="Скидки на платья 55%">
-              </picture>
-              <p class="card-grid__item-discount-sale card-grid__item-woman-discount">-55%</p>
+              <div class="card-grid__item-woman-wrapper">
+                <picture class="card-grid__item-woman-pic">
+                  <source srcset="./img/grid8.avif" type="image/avif">
+                  <source srcset="./img/grid8.webp" type="image/webp">
+                  <img class="card-grid__item-pic" src="./img/grid8.jpg" alt="Скидки на платья 55%">
+                </picture>
+                <picture class="card-grid__item-woman-pic1024">
+                  <source srcset="./img/woman1024.avif" type="image/avif">
+                  <source srcset="./img/woman1024.webp" type="image/webp">
+                  <img class="card-grid__item-pic" src="./img/woman1024.jpg" alt="Скидки на платья 55%">
+                </picture>
+                <picture class="card-grid__item-woman-pic768">
+                  <source srcset="./img/woman768.avif" type="image/avif">
+                  <source srcset="./img/woman768.webp" type="image/webp">
+                  <img class="card-grid__item-pic" src="./img/woman768.jpg" alt="Скидки на платья 55%">
+                </picture>
+                <p class="card-grid__item-discount-sale card-grid__item-woman-discount">-55%</p>
+              </div>
             </a>
           </li>
           <li class="card-grid__item card-grid__item-chemicals">
@@ -289,7 +308,7 @@
               <a class="footer__clients-link" href="">Условия возврата заказа</a>
             </li>
             <li class="footer__clients-item">
-              <a class="footer__clients-link" href="">Блог</a>
+              <a class="footer__clients-link" href="blog.html">Блог</a>
             </li>
           </ul>
         </section>

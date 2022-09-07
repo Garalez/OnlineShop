@@ -27,6 +27,8 @@ export const loadCategoryGoods = (e, err, data) => {
     const categoryList = document.createElement('ul');
     categoryList.classList.add('card-footer__list');
 
+    const validNumber = (num) => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
+
     data.map(item => {
       if (e.target.textContent === item.category) {
         categoryList.insertAdjacentHTML('afterbegin', `
@@ -51,10 +53,10 @@ export const loadCategoryGoods = (e, err, data) => {
         const discount = document.querySelector('.card-footer__item-discount');
 
         if (item.discount > 0) {
-          productPrice.textContent = `${item.price - (item.price * (item.discount / 100))} ₽`;
-          priceNoDiscount.textContent = `${item.price} ₽`;
+          productPrice.textContent = `${validNumber(item.price - (item.price * (item.discount / 100)))} ₽`;
+          priceNoDiscount.textContent = `${validNumber(item.price)} ₽`;
         } else {
-          productPrice.textContent = `${item.price} ₽`;
+          productPrice.textContent = `${validNumber(item.price)} ₽`;
           priceNoDiscount.remove();
           discount.remove();
         }

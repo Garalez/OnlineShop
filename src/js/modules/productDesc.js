@@ -7,6 +7,7 @@ import {renewBasketQuantity, setStorage, getStorage} from './localStorage.js';
 export const renderProductInfo = () => {
   const breadCrumb = document.querySelector('.header__breadcrumb-list');
   breadCrumb.innerHTML = '';
+  const validNumber = (num) => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
 
   const pageParams = new URLSearchParams(location.search);
   const postId = pageParams.get('id');
@@ -25,46 +26,42 @@ export const renderProductInfo = () => {
         wrapper.insertAdjacentHTML('afterbegin', `
           <section class="product">
             <h1 class="product__title">${data.title}</h1>
+            <div class="product__img-wrapper">
+              <p class="product__discount">-15%</p>
+              <img class="product__pic" src="./img/${data.image}" alt="${data.title}">
+            </div>
+
             <ul class="product__list">
-              <li class="product__item-card">
-                <div class="product__item-wrapper">
-                  <p class="product__item-discount">-15%</p>
-                  <img class="product__item-pic" src="./img/${data.image}" alt="Картинка продукта">
+              <li class="product__item product__item-price">
+                <span class="product__price-discount">${validNumber(data.price - (data.price / 100 * data.discount))} ₽</span>
+                <s class="product__price-nodiscount">${validNumber(data.price)} ₽</s>
+              </li>
+              <li class="product__item product__item-credit">В кредит от 5600 ₽ </li>
+              <li class="product__item product__item-btns">
+                <button class="product__item-btns-bucket">Добавить в корзину</button>
+                <input class="product__item-btns-checkbox" type="checkbox" name="favorite" id="favorite">
+                <label class="product__item-btns-favorite" for="favorite"></label>
+              </li>
+              <li class="product__item product__item-info">
+                <div class="product__item-info-shipping-wrapper">
+                  <p class="product__item-info-shipping">Доставка</p>
+                  <p class="product__item-info-date">1-3 января</p>
+                </div>
+                <div class="product__item-info-seller-wrapper">
+                  <p class="product__item-info-seller">Продавец</p>
+                  <p class="product__item-info-name">ShopOnline</p>
                 </div>
               </li>
-              <li class="product__item-card">
-                <ul class="product__card-list">
-                  <li class="product__card-price">
-                    <span class="product__card-price-discount">${data.price - (data.price / 100 * data.discount)} ₽</span>
-                    <span class="product__card-price-nodiscount">${data.price} ₽</span>
-                  </li>
-                  <li class="product__card-credit">В кредит от 5600 ₽ </li>
-                  <li class="product__card-btns">
-                    <button class="product__card-btns-bucket">Добавить в корзину</button>
-                    <input class="product__card-btns-checkbox" type="checkbox" name="favorite" id="favorite">
-                    <label class="product__card-btns-favorite" for="favorite"></label>
-                  </li>
-                  <li class="product__card-info">
-                    <div class="product__card-info-shipping-wrapper">
-                      <p class="product__card-info-shipping">Доставка</p>
-                      <p class="product__card-info-date">1-3 января</p>
-                    </div>
-                    <div class="product__card-info-seller-wrapper">
-                      <p class="product__card-info-seller">Продавец</p>
-                      <p class="product__card-info-name">ShopOnline</p>
-                    </div>
-                  </li>
-                  <li class="product__card-discount">
-                    <button class="product__card-discount-btn"></button>
-                    <p class="product__card-discount-txt">Узнать о снижении цены</p>
-                  </li>
-                </ul>
-              </li>
-              <li class="product__item-desc">
-                <p class="product__item-desc-title">Описание:</p>
-                <p class="product__item-desc-subtitle">${data.description}</p>
+              <li class="product__item product__item-discount">
+                <button class="product__item-discount-btn"></button>
+                <p class="product__item-discount-txt">Узнать о снижении цены</p>
               </li>
             </ul>
+
+            <div class="product__desc">
+              <p class="product__desc-title">Описание:</p>
+              <p class="product__desc-subtitle">${data.description}</p>
+            </div>
           </section>
 
           <section class="offer">
@@ -146,9 +143,9 @@ export const renderProductInfo = () => {
           </section>
         `);
 
-        const discountPrice = document.querySelector('.product__card-price-nodiscount');
-        const discountNumber = document.querySelector('.product__item-discount');
-        const addToBasketBtn = document.querySelector('.product__card-btns-bucket');
+        const discountPrice = document.querySelector('.product__price-nodiscount');
+        const discountNumber = document.querySelector('.product__discount');
+        const addToBasketBtn = document.querySelector('.product__item-btns-bucket');
 
         if (data.discount === 0) {
           discountPrice.remove();
