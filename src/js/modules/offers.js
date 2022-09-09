@@ -3,6 +3,7 @@ import {httpRequest} from './data.js';
 
 export const itemsToOffer = () => {
   const offerList = document.querySelector('.card-footer__list');
+  const validNumber = (num) => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
 
   httpRequest('https://hidden-castle-31466.herokuapp.com/api/goods', {
     method: 'GET',
@@ -27,8 +28,8 @@ export const itemsToOffer = () => {
                   <p class="card-footer__item-discount">-${product.discount}%</p>
                 </div>
                 <div class="card-footer__item-price-wrapper">
-                  <p class="card-footer__item-price-discount">${product.price - (product.price * (product.discount / 100))} ₽</p>
-                  <p class="card-footer__item-nodiscount">${product.price} ₽</p>
+                  <p class="card-footer__item-price-discount">${validNumber(product.price - (product.price * (product.discount / 100)))} ₽</p>
+                  <p class="card-footer__item-nodiscount">${validNumber(product.price)} ₽</p>
                 </div>
                 <p class="card-footer__item-name">${product.title}</p>
               </a>

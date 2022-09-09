@@ -485,6 +485,12 @@
     }
     &-appliances {
       grid-area: seven;
+      @include laptop {
+        margin-bottom: 30px;
+      }
+      @include tablet {
+        margin-bottom: 0;
+      }
       @include mobile {
         margin-bottom: 15px;
       }
@@ -546,12 +552,6 @@
     &-decorations {
       position: relative;
       grid-area: eight;
-      @include laptop {
-        padding-top: 30px;
-      }
-      @include tablet {
-        padding-top: 0;
-      }
       &-desc {
         width: 55.1%;
         height: 20.7%;

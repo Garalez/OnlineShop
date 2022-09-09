@@ -1010,6 +1010,9 @@ const showMenu = (err, data) => {
 
 const itemsToOffer = () => {
   const offerList = document.querySelector('.card-footer__list');
+
+  const validNumber = num => num.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
+
   (0,_data_js__WEBPACK_IMPORTED_MODULE_0__/* .httpRequest */ .c)('https://hidden-castle-31466.herokuapp.com/api/goods', {
     method: 'GET',
 
@@ -1034,8 +1037,8 @@ const itemsToOffer = () => {
                   <p class="card-footer__item-discount">-${product.discount}%</p>
                 </div>
                 <div class="card-footer__item-price-wrapper">
-                  <p class="card-footer__item-price-discount">${product.price - product.price * (product.discount / 100)} ₽</p>
-                  <p class="card-footer__item-nodiscount">${product.price} ₽</p>
+                  <p class="card-footer__item-price-discount">${validNumber(product.price - product.price * (product.discount / 100))} ₽</p>
+                  <p class="card-footer__item-nodiscount">${validNumber(product.price)} ₽</p>
                 </div>
                 <p class="card-footer__item-name">${product.title}</p>
               </a>

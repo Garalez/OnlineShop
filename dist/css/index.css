@@ -3215,6 +3215,10 @@ main {
     height: 43.5%;
   }
 
+  .card-grid__item-appliances {
+    margin-bottom: 30px;
+  }
+
   .card-grid__item-appliances-discount {
     right: 2%;
     top: 49.7%;
@@ -3226,10 +3230,6 @@ main {
     left: 6%;
     top: 63%;
     font-size: 2.9vw;
-  }
-
-  .card-grid__item-decorations {
-    padding-top: 30px;
   }
 
   .card-grid__item-decorations-desc {
@@ -4136,6 +4136,10 @@ main {
     height: 39%;
   }
 
+  .card-grid__item-appliances {
+    margin-bottom: 0;
+  }
+
   .card-grid__item-appliances-discount {
     right: 4%;
     top: 49.7%;
@@ -4147,10 +4151,6 @@ main {
     left: 7%;
     top: 66%;
     font-size: 2.08vw;
-  }
-
-  .card-grid__item-decorations {
-    padding-top: 0;
   }
 
   .card-grid__item-decorations-desc {
